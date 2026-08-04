@@ -9,7 +9,7 @@ export default function Home() {
   return <main className="home-page">
     <header className="site-header home-header">
       <a className="brand" href="/" aria-label="Yoga Soda Pop home"><img src="/assets/yoga-soda-pop-logo-transparent.png" alt="Yoga Soda Pop" /></a>
-      <nav aria-label="Main navigation"><a className="active" href="/">Home</a><a href="/kids">Kids</a><a href="/beats">Beats</a><a href="/shop">Shop <span>Soon</span></a><a href="/about">About</a></nav>
+      <nav aria-label="Main navigation"><a className="active" href="/">Home</a><a href="/kids">Kids</a><a href="/travel">Travel</a><a href="/beats">Beats</a><a href="/shop">Shop <span>Soon</span></a><a href="/about">About</a></nav>
     </header>
 
     <section className="home-hero">
@@ -21,6 +21,11 @@ export default function Home() {
         <div className="home-hero-actions"><a href="/kids">✦&nbsp; Yoga Soda Pop Kids</a><a href="/beats">♫&nbsp; Yoga Soda Pop Beats</a></div>
       </div>
       <div className="solo-girl-wrap"><span className="solo-glow"/><img src="/assets/pink-girl-hero.png" alt="Yoga Soda Pop pink-haired girl" /></div>
+    </section>
+
+    <section className="travel-feature">
+      <div className="travel-copy"><span className="choice-tag">✈ Screen-free travel fun</span><h2>Lumi&apos;s Big Travel Adventure</h2><p>Printable games, creative activities, seated calm-down breaks, and rest-stop movement ideas for car, plane, train, hotel, and holiday days.</p><div className="travel-checks"><span>✓ Safe-while-seated activities</span><span>✓ Games for the journey and destination</span><span>✓ A4 and US Letter friendly</span></div><a href="/travel">Explore the Travel Pack →</a></div>
+      <div className="travel-bubbles" aria-hidden="true"><b>CAR</b><b>PLANE</b><b>TRAIN</b><b>HOTEL</b></div>
     </section>
 
     <section className="two-worlds">
@@ -38,6 +43,6 @@ export default function Home() {
 
     <section className="join-universe"><i/><i/><i/><i/><div><h2>Join the Yoga Soda<br/>Pop Universe</h2><p>Pick your flavor — kids&apos; yoga or dance-pop beats — and dive in!</p><div className="home-hero-actions"><a href="/shop">✦&nbsp; Shop Kids Yoga Cards</a><a href="/beats">♫&nbsp; Listen to Beats</a></div></div></section>
 
-    <footer className="home-footer"><div className="footer-grid"><div><h3>🫧 Yoga Soda Pop</h3><p>Where yoga meets music and joy bubbles up! Two amazing worlds — Kids yoga and Dance-Pop Beats — all in one fizzy universe.</p></div><div><h3>Explore</h3><a href="/kids">Yoga Soda Pop Kids</a><a href="/beats">Yoga Soda Pop Beats</a><a href="/shop">Shop</a><a href="/about">About</a></div><div><h3>Follow Along</h3><a href="https://youtube.com/@yogasodapop">▻ @yogasodapop</a><a href="https://youtube.com/@yogasodapopbeats">▻ @yogasodapopbeats</a><a href="https://instagram.com/yogasodapop">◎ @yogasodapop</a><a href="https://instagram.com/yogasodapopbeats">◎ @yogasodapopbeats</a></div></div><div className="footer-bottom"><a href="mailto:yogasodapop@gmail.com">yogasodapop@gmail.com</a><span>© 2026 Yoga Soda Pop. All rights reserved. Made with 🫧 and joy.</span></div></footer>
+    <footer className="home-footer"><div className="footer-grid"><div><h3>🫧 Yoga Soda Pop</h3><p>Where yoga meets music and joy bubbles up — kids&apos; yoga, travel play, and dance-pop beats in one fizzy universe.</p></div><div><h3>Explore</h3><a href="/kids">Kids Yoga</a><a href="/travel">Travel Pack</a><a href="/beats">Beats</a><a href="/shop">Shop</a><a href="/about">About</a></div><div><h3>Follow Along</h3><a href="https://youtube.com/@yogasodapop">▻ @yogasodapop</a><a href="https://youtube.com/@yogasodapopbeats">▻ @yogasodapopbeats</a><a href="https://instagram.com/yogasodapop">◎ @yogasodapop</a><a href="https://instagram.com/yogasodapopbeats">◎ @yogasodapopbeats</a></div></div><div className="footer-bottom"><a href="mailto:yogasodapop@gmail.com">yogasodapop@gmail.com</a><span>© 2026 Yoga Soda Pop. All rights reserved.</span></div></footer>
   </main>;
 }

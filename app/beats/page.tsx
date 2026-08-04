@@ -1,10 +1,6 @@
-const tracks = [
-  ["Bubble Up", "Upbeat & energetic", "A feel-good anthem made for dancing, jumping, and smiling."],
-  ["Flow State", "Chill & dreamy", "A smooth track for stretching, breathing, and finding your flow."],
-  ["Fizz Pop Boogie", "Dance party", "Bright pop energy that makes it impossible to sit still."],
-  ["Mirror Heart", "Neon pop", "A sparkling original song with color, rhythm, and heart."],
-  ["Rainbow Rush", "Joyful & bright", "A burst of sound made to celebrate everything colorful."],
-  ["Starlight Stretch", "Calm & peaceful", "Gentle music for evening movement and winding down."],
+const musicVideos = [
+  { href: "https://www.youtube.com/watch?v=U9fPJENBpxw", videoId: "U9fPJENBpxw", label: "Watch music video 1" },
+  { href: "https://www.youtube.com/watch?v=NxScENI2SBE", videoId: "NxScENI2SBE", label: "Watch music video 2" },
 ];
 const beatsFeatures = [["♫","Original Music","100% original dance-pop tracks."],["🎬","Animated Videos","Vibrant colorful videos for every track."],["🎧","Feel-Good Vibes","Music designed to uplift and energize."],["🌈","New Drops","Fresh tracks and videos dropping regularly."]];
 
@@ -18,6 +14,7 @@ export default function BeatsPage() {
         <nav aria-label="Main navigation">
           <a href="/">Home</a>
           <a href="/kids">Kids</a>
+          <a href="/travel">Travel</a>
           <a className="active" href="/beats">Beats</a>
           <a href="/shop">Shop <span>Soon</span></a>
           <a href="/about">About</a>
@@ -34,6 +31,8 @@ export default function BeatsPage() {
           <p>Original feel-good dance-pop songs, vibrant music videos, and colorful worlds made for movement.</p>
           <div className="actions">
             <a className="button button-coral" href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">Watch on YouTube</a>
+            <a className="button button-spotify" href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">Listen on Spotify</a>
+            <a className="button button-apple" href="https://music.apple.com/us/artist/yoga-soda-pop-beats/6797212309" target="_blank" rel="noreferrer">Listen on Apple Music</a>
             <a className="button button-dark" href="https://instagram.com/yogasodapopbeats" target="_blank" rel="noreferrer">Follow on Instagram</a>
           </div>
         </div>
@@ -43,7 +42,7 @@ export default function BeatsPage() {
       <section className="beats-special"><div className="section-heading"><h2>What Makes Beats Special</h2><p>Pure feel-good energy, every single track</p></div><div>{beatsFeatures.map(([icon,title,text])=><article key={title}><span>{icon}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
 
       <section className="beats-story">
-        <div className="play-tile"><span>▶</span><b>Original music<br />made to move</b></div>
+        <a className="play-tile" href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer" aria-label="Watch Yoga Soda Pop Beats music videos on YouTube"><span>▶</span><b>Watch the music videos<br /><small>@yogasodapopbeats</small></b></a>
         <div>
           <p className="eyebrow sky">Where music meets movement</p>
           <h2>Every song is a whole vibe</h2>
@@ -52,12 +51,15 @@ export default function BeatsPage() {
       </section>
 
       <section className="tracks-section">
-        <div className="section-heading"><p className="eyebrow coral">The tracks</p><h2>Press play and feel it</h2></div>
-        <div className="beats-track-grid">
-          {tracks.map(([title, mood, text], index) => (
-            <article className={`beats-track track-${index + 1}`} key={title}>
-              <span>♫</span><b>▮▰▮▰▮</b><h3>{title}</h3><small>{mood}</small><p>{text}</p>
-            </article>
+        <div className="section-heading"><p className="eyebrow coral">Music videos</p><h2>Press play and feel it</h2></div>
+        <div className="beats-video-grid">
+          {musicVideos.map((video, index) => (
+            <a className="beats-video-card" href={video.href} target="_blank" rel="noreferrer" key={video.videoId} aria-label={video.label}>
+              <img src={`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`} alt="" />
+              <span aria-hidden="true">▶</span>
+              <b>Play on YouTube</b>
+              <small>Yoga Soda Pop Beats · Music Video {index + 1}</small>
+            </a>
           ))}
         </div>
       </section>
@@ -67,6 +69,8 @@ export default function BeatsPage() {
         <p>@yogasodapopbeats</p>
         <div className="actions centered">
           <a className="button button-light" href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">YouTube</a>
+          <a className="button button-spotify" href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">Spotify</a>
+          <a className="button button-apple" href="https://music.apple.com/us/artist/yoga-soda-pop-beats/6797212309" target="_blank" rel="noreferrer">Apple Music</a>
           <a className="button button-ghost" href="https://instagram.com/yogasodapopbeats" target="_blank" rel="noreferrer">Instagram</a>
         </div>
       </section>
