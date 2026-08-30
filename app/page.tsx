@@ -43,7 +43,7 @@ export default function Home() {
           <h1><b>YOGA SODA POP</b>FASHION. MUSIC.<br/><em>POP FANTASY.</em></h1>
           <p>Cute things that make every day brighter. ♡</p>
           <div className="hero-ctas">
-            <a className="primary" href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">▶ WATCH MY NEW MUSIC VIDEO</a>
+            <a className="primary" href="https://www.youtube.com/watch?v=fr1hD_pc9tw" target="_blank" rel="noreferrer">▶ WATCH MY NEW MUSIC VIDEO</a>
             <a className="secondary" href="/beats">♫ LISTEN TO MY MUSIC</a>
           </div>
         </div>
@@ -76,11 +76,11 @@ export default function Home() {
         <div className="panel music-panel">
           <div className="music-heading">🎧 <b>YOGA SODA POP BEATS</b></div>
           <div className="music-release">
-            <img src="/assets/pink-girl-hero.png" alt="Yoga Soda Pop Beats" />
-            <div><small>New Release</small><h2>Cosmic Dreams</h2><p>Out now!</p><a href="/beats">LISTEN NOW</a></div>
+            <img src="/assets/pink-girl-hero.png" alt="Our Game by Yoga Soda Pop Beats" />
+            <div><small>New Release</small><h2>Our Game</h2><p>Out now!</p><a href="https://www.youtube.com/watch?v=fr1hD_pc9tw" target="_blank" rel="noreferrer">LISTEN NOW</a></div>
           </div>
-          <div className="video-wrap"><iframe src="https://www.youtube.com/embed/U9fPJENBpxw" title="Yoga Soda Pop Beats music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>
-          <div className="platforms"><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">♫ Spotify</a><a href="https://music.apple.com/us/artist/yoga-soda-pop-beats/6797212309" target="_blank" rel="noreferrer">♪ Apple Music</a><a href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">▶ YouTube</a></div>
+          <div className="video-wrap"><iframe src="https://www.youtube.com/embed/fr1hD_pc9tw" title="Our Game by Yoga Soda Pop Beats" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>
+          <div className="platforms"><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">♫ Spotify</a><a href="https://music.apple.com/us/artist/yoga-soda-pop-beats/6797212309" target="_blank" rel="noreferrer">♪ Apple Music</a><a href="https://www.youtube.com/watch?v=fr1hD_pc9tw" target="_blank" rel="noreferrer">▶ YouTube</a></div>
         </div>
       </section>
 
