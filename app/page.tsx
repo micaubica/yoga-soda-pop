@@ -8,92 +8,39 @@ const products = [
 ];
 
 const worlds = [
-  ["🎀", "Kawaii & Lolita"],
-  ["♫", "K-Pop Inspired"],
-  ["♡", "Accessories"],
-  ["👜", "Bags"],
-  ["💎", "Jewelry"],
-  ["👒", "Hair & Hats"],
-  ["👟", "Shoes"],
-  ["🧸", "Kids"],
+  ["🎀", "Kawaii & Lolita"], ["♫", "K-Pop Inspired"], ["♡", "Accessories"], ["👜", "Bags"],
+  ["💎", "Jewelry"], ["👒", "Hair & Hats"], ["👟", "Shoes"], ["🧸", "Kids"],
 ];
 
 export default function Home() {
   return (
     <main className="premium-home">
       <div className="announcement">♫ MUSIC LIVE NOW &nbsp; | &nbsp; ♡ FASHION SHOP COMING SOON</div>
-
       <header className="premium-header">
-        <a className="brand" href="/" aria-label="Yoga Soda Pop home">
-          <img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop" />
-        </a>
-        <nav>
-          <a href="#shop">SHOP <small>COMING SOON</small></a>
-          <a href="#looks">SHOP THE LOOKS <small>COMING SOON</small></a>
-          <a href="#shop">ACCESSORIES <small>COMING SOON</small></a>
-          <a href="/beats">MUSIC</a>
-          <a href="/about">ABOUT</a>
-        </nav>
+        <a className="brand" href="/" aria-label="Yoga Soda Pop home"><img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop" /></a>
+        <nav><a href="#shop">SHOP <small>COMING SOON</small></a><a href="#looks">SHOP THE LOOKS <small>COMING SOON</small></a><a href="#shop">ACCESSORIES <small>COMING SOON</small></a><a href="/beats">MUSIC</a><a href="/about">ABOUT</a></nav>
         <div className="header-tools"><span>⌕</span><span>♡</span><span>♙</span></div>
       </header>
-
       <section className="premium-hero">
         <div className="hero-copy">
           <span className="launch-pill">FASHION SHOP COMING SOON</span>
           <h1><b>YOGA SODA POP</b>FASHION. MUSIC.<br/><em>POP FANTASY.</em></h1>
           <p>Cute things that make every day brighter. ♡</p>
           <div className="hero-ctas">
-            <a className="primary" href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">▶ WATCH MY NEW MUSIC VIDEO</a>
-            <a className="secondary" href="/beats">♫ LISTEN TO MY MUSIC</a>
+            <a className="primary" href="https://www.youtube.com/watch?v=fr1hD_pc9tw" target="_blank" rel="noreferrer">▶ WATCH MY NEW MUSIC VIDEO</a>
+            <a className="secondary" href="https://www.youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">♫ LISTEN TO MY MUSIC</a>
           </div>
         </div>
-        <div className="hero-image">
-          <img src="/assets/hero-yoga-soda-pop.webp" alt="Yoga Soda Pop pastel fashion world" />
-          <div className="coming-card"><span>♡</span><h2>SHOP<br/><strong>COMING SOON</strong></h2><p>We’re curating the cutest fashion and accessories for you.</p></div>
-        </div>
+        <div className="hero-image"><img src="/assets/hero-yoga-soda-pop.webp" alt="Yoga Soda Pop pastel fashion world" /><div className="coming-card"><span>♡</span><h2>SHOP<br/><strong>COMING SOON</strong></h2><p>We’re curating the cutest fashion and accessories for you.</p></div></div>
       </section>
-
       <section className="main-grid">
-        <div className="panel products-panel" id="shop">
-          <div className="panel-title"><h2>NEW DROPS</h2><span>COMING SOON</span></div>
-          <div className="products-grid">
-            {products.map((product) => (
-              <article className="product-card" key={product.title}>
-                <div className="product-photo"><img src={product.image} alt={product.title}/><span>♡</span></div>
-                <h3>{product.title}</h3><p>{product.price}</p>
-              </article>
-            ))}
-          </div>
-          <div className="soon-strip">♡ FASHION &amp; ACCESSORIES COMING SOON — be first to know when we launch</div>
-        </div>
-
-        <div className="panel worlds-panel" id="looks">
-          <div className="panel-title centered"><h2>SHOP BY WORLD</h2></div>
-          <div className="world-grid">{worlds.map(([icon, label]) => <div key={label}><span>{icon}</span><b>{label}</b></div>)}</div>
-          <div className="soon-strip">♡ SHOP COMING SOON — stay tuned</div>
-        </div>
-
-        <div className="panel music-panel">
-          <div className="music-heading">🎧 <b>YOGA SODA POP BEATS</b></div>
-          <div className="music-release">
-            <img src="/assets/pink-girl-hero.png" alt="Yoga Soda Pop Beats" />
-            <div><small>New Release</small><h2>Cosmic Dreams</h2><p>Out now!</p><a href="/beats">LISTEN NOW</a></div>
-          </div>
-          <div className="video-wrap"><iframe src="https://www.youtube.com/embed/U9fPJENBpxw" title="Yoga Soda Pop Beats music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>
-          <div className="platforms"><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">♫ Spotify</a><a href="https://music.apple.com/us/artist/yoga-soda-pop-beats/6797212309" target="_blank" rel="noreferrer">♪ Apple Music</a><a href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">▶ YouTube</a></div>
-        </div>
+        <div className="panel products-panel" id="shop"><div className="panel-title"><h2>NEW DROPS</h2><span>COMING SOON</span></div><div className="products-grid">{products.map((product) => <article className="product-card" key={product.title}><div className="product-photo"><img src={product.image} alt={product.title}/><span>♡</span></div><h3>{product.title}</h3><p>{product.price}</p></article>)}</div><div className="soon-strip">♡ FASHION &amp; ACCESSORIES COMING SOON — be first to know when we launch</div></div>
+        <div className="panel worlds-panel" id="looks"><div className="panel-title centered"><h2>SHOP BY WORLD</h2></div><div className="world-grid">{worlds.map(([icon, label]) => <div key={label}><span>{icon}</span><b>{label}</b></div>)}</div><div className="soon-strip">♡ SHOP COMING SOON — stay tuned</div></div>
+        <div className="panel music-panel"><div className="music-heading">🎧 <b>YOGA SODA POP BEATS</b></div><div className="music-release"><img src="/assets/pink-girl-hero.png" alt="Our Game by Yoga Soda Pop Beats" /><div><small>New Release</small><h2>Our Game</h2><p>Out now!</p><a href="https://www.youtube.com/watch?v=fr1hD_pc9tw" target="_blank" rel="noreferrer">LISTEN NOW</a></div></div><div className="video-wrap"><iframe src="https://www.youtube.com/embed/fr1hD_pc9tw" title="Our Game by Yoga Soda Pop Beats" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div><div className="platforms"><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">♫ Spotify</a><a href="https://music.apple.com/us/artist/yoga-soda-pop-beats/6797212309" target="_blank" rel="noreferrer">♪ Apple Music</a><a href="https://www.youtube.com/watch?v=fr1hD_pc9tw" target="_blank" rel="noreferrer">▶ YouTube</a></div></div>
       </section>
-
       <section className="join-strip"><div><b>JOIN THE POP CLUB!</b><span>Get early access, new drops &amp; happy vibes in your inbox.</span></div><form><input type="email" aria-label="Email address" placeholder="Enter your email"/><button type="button">JOIN NOW</button></form></section>
-
       <section className="affiliate-note"><b>Affiliate disclosure:</b> When the shop launches, some links may earn Yoga Soda Pop a commission at no extra cost to you.</section>
-
-      <footer className="premium-footer">
-        <div className="footer-brand"><img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop"/><p>Cute things. Happy vibes.<br/>Fashion, music and pop fantasy.</p></div>
-        <div><b>SHOP</b><span>New Drops — Coming Soon</span><span>Shop the Looks — Coming Soon</span><span>Accessories — Coming Soon</span></div>
-        <div><b>MUSIC</b><a href="/beats">Yoga Soda Pop Beats</a><a href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">YouTube</a><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">Spotify</a></div>
-        <div><b>ABOUT</b><a href="/about">Our World</a><a href="https://instagram.com/yogasodapop" target="_blank" rel="noreferrer">Instagram</a><small>© 2026 Yoga Soda Pop</small></div>
-      </footer>
+      <footer className="premium-footer"><div className="footer-brand"><img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop"/><p>Cute things. Happy vibes.<br/>Fashion, music and pop fantasy.</p></div><div><b>SHOP</b><span>New Drops — Coming Soon</span><span>Shop the Looks — Coming Soon</span><span>Accessories — Coming Soon</span></div><div><b>MUSIC</b><a href="/beats">Yoga Soda Pop Beats</a><a href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">YouTube</a><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">Spotify</a></div><div><b>ABOUT</b><a href="/about">Our World</a><a href="https://instagram.com/yogasodapop" target="_blank" rel="noreferrer">Instagram</a><small>© 2026 Yoga Soda Pop</small></div></footer>
     </main>
   );
 }
