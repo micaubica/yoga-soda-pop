@@ -25,7 +25,7 @@ export default function Home() {
 
       <header className="premium-header">
         <a className="brand" href="/" aria-label="Yoga Soda Pop home">
-          <img src="/assets/yoga-soda-pop-logo-transparent.png" alt="Yoga Soda Pop" />
+          <img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop" />
         </a>
         <nav>
           <a href="#shop">SHOP <small>COMING SOON</small></a>
@@ -89,7 +89,7 @@ export default function Home() {
       <section className="affiliate-note"><b>Affiliate disclosure:</b> When the shop launches, some links may earn Yoga Soda Pop a commission at no extra cost to you.</section>
 
       <footer className="premium-footer">
-        <div className="footer-brand"><img src="/assets/yoga-soda-pop-logo-transparent.png" alt="Yoga Soda Pop"/><p>Cute things. Happy vibes.<br/>Fashion, music and pop fantasy.</p></div>
+        <div className="footer-brand"><img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop"/><p>Cute things. Happy vibes.<br/>Fashion, music and pop fantasy.</p></div>
         <div><b>SHOP</b><span>New Drops — Coming Soon</span><span>Shop the Looks — Coming Soon</span><span>Accessories — Coming Soon</span></div>
         <div><b>MUSIC</b><a href="/beats">Yoga Soda Pop Beats</a><a href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">YouTube</a><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">Spotify</a></div>
         <div><b>ABOUT</b><a href="/about">Our World</a><a href="https://instagram.com/yogasodapop" target="_blank" rel="noreferrer">Instagram</a><small>© 2026 Yoga Soda Pop</small></div>
