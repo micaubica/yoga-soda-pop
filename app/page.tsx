@@ -8,8 +8,14 @@ const products = [
 ];
 
 const worlds = [
-  ["🎀", "Kawaii & Lolita"], ["♫", "K-Pop Inspired"], ["♡", "Accessories"], ["👜", "Bags"],
-  ["💎", "Jewelry"], ["👒", "Hair & Hats"], ["👟", "Shoes"], ["🧸", "Kids"],
+  { image: "/assets/kawaii-lolita-icon.webp", label: "Kawaii & Lolita" },
+  { image: "/assets/kpop-inspired-icon.webp", label: "K-Pop Inspired" },
+  { image: "/assets/accessories-icon.webp", label: "Accessories" },
+  { image: "/assets/bags-icon.webp", label: "Bags" },
+  { image: "/assets/jewelry-icon.webp", label: "Jewelry" },
+  { image: "/assets/hair-hats-icon.webp", label: "Hair & Hats" },
+  { image: "/assets/shoes-icon.webp", label: "Shoes" },
+  { image: "/assets/kids-icon.webp", label: "Kids" },
 ];
 
 export default function Home() {
@@ -35,7 +41,7 @@ export default function Home() {
       </section>
       <section className="main-grid">
         <div className="panel products-panel" id="shop"><div className="panel-title"><h2>NEW DROPS</h2><span>COMING SOON</span></div><div className="products-grid">{products.map((product) => <article className="product-card" key={product.title}><div className="product-photo"><img src={product.image} alt={product.title}/><span>♡</span></div><h3>{product.title}</h3><p>{product.price}</p></article>)}</div><div className="soon-strip">♡ FASHION &amp; ACCESSORIES COMING SOON — be first to know when we launch</div></div>
-        <div className="panel worlds-panel" id="looks"><div className="panel-title centered"><h2>SHOP BY WORLD</h2></div><div className="world-grid">{worlds.map(([icon, label]) => <div key={label}><span>{icon}</span><b>{label}</b></div>)}</div><div className="soon-strip">♡ SHOP COMING SOON — stay tuned</div></div>
+        <div className="panel worlds-panel" id="looks"><div className="panel-title centered"><h2>SHOP BY WORLD</h2></div><div className="world-grid">{worlds.map((world) => <div key={world.label}><img src={world.image} alt=""/><b>{world.label}</b></div>)}</div><div className="soon-strip">♡ SHOP COMING SOON — stay tuned</div></div>
         <div className="panel music-panel"><div className="music-heading">🎧 <b>YOGA SODA POP BEATS</b></div><div className="music-release"><img src="/assets/pink-girl-hero.png" alt="Our Game by Yoga Soda Pop Beats" /><div><small>New Release</small><h2>Our Game</h2><p>Out now!</p><a href="https://www.youtube.com/watch?v=fr1hD_pc9tw" target="_blank" rel="noreferrer">LISTEN NOW</a></div></div><div className="video-wrap"><iframe src="https://www.youtube.com/embed/fr1hD_pc9tw" title="Our Game by Yoga Soda Pop Beats" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div><div className="platforms"><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">♫ Spotify</a><a href="https://music.apple.com/us/artist/yoga-soda-pop-beats/6797212309" target="_blank" rel="noreferrer">♪ Apple Music</a><a href="https://www.youtube.com/watch?v=fr1hD_pc9tw" target="_blank" rel="noreferrer">▶ YouTube</a></div></div>
       </section>
       <section className="join-strip"><div><b>JOIN THE POP CLUB!</b><span>Get early access, new drops &amp; happy vibes in your inbox.</span></div><form><input type="email" aria-label="Email address" placeholder="Enter your email"/><button type="button">JOIN NOW</button></form></section>
