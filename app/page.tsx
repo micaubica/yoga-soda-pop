@@ -48,7 +48,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-image">
-          <img src="/assets/yoga-girls-transparent.png" alt="Yoga Soda Pop fashion characters" />
+          <img src="/assets/hero-yoga-soda-pop.webp" alt="Yoga Soda Pop pastel fashion world" />
           <div className="coming-card"><span>♡</span><h2>SHOP<br/><strong>COMING SOON</strong></h2><p>We’re curating the cutest fashion and accessories for you.</p></div>
         </div>
       </section>
