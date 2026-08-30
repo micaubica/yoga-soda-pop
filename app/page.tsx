@@ -1,48 +1,64 @@
-const socials = [
-  { platform: "YouTube", handle: "@yogasodapop", text: "Kids yoga videos, pose tutorials, and joyful movement for the whole family.", href: "https://youtube.com/@yogasodapop", tone: "coral" },
-  { platform: "YouTube", handle: "@yogasodapopbeats", text: "Original dance-pop music videos with vibrant animation and feel-good energy.", href: "https://youtube.com/@yogasodapopbeats", tone: "sky" },
-  { platform: "Instagram", handle: "@yogasodapop", text: "Daily yoga inspiration, behind-the-scenes fun, and community moments.", href: "https://instagram.com/yogasodapop", tone: "orange" },
-  { platform: "Instagram", handle: "@yogasodapopbeats", text: "Music drops, animated clips, and dance-pop vibes all day long.", href: "https://instagram.com/yogasodapopbeats", tone: "mint" },
+const drops = [
+  { icon: "🎀", title: "Vanilla Café", text: "Sweet Lolita, bows & dreamy details", href: "/shop" },
+  { icon: "✨", title: "Cosmic Pop", text: "Holographic, metallic & star accessories", href: "/shop" },
+  { icon: "💜", title: "Purple Dream", text: "Statement pieces with pop-star energy", href: "/shop" },
+  { icon: "🌈", title: "Kawaii Color", text: "Cute bags, jewelry & playful extras", href: "/shop" },
+];
+
+const worlds = [
+  ["🎀", "Kawaii & Lolita", "Sweet statement looks"],
+  ["✨", "Accessories", "Little things, big pop"],
+  ["👜", "Bags", "Cute carry-everywhere picks"],
+  ["💎", "Jewelry", "Stars, hearts & sparkle"],
+  ["🎧", "Music", "Yoga Soda Pop Beats"],
+  ["🧘", "Yoga Pop", "Movement with personality"],
 ];
 
 export default function Home() {
-  return <main className="home-page">
-    <header className="site-header home-header">
-      <a className="brand" href="/" aria-label="Yoga Soda Pop home"><img src="/assets/yoga-soda-pop-logo-transparent.png" alt="Yoga Soda Pop" /></a>
-      <nav aria-label="Main navigation"><a className="active" href="/">Home</a><a href="/kids">Kids</a><a href="/travel">Travel</a><a href="/beats">Beats</a><a href="/shop">Shop <span>Soon</span></a><a href="/about">About</a></nav>
+  return <main className="boutique-home">
+    <header className="boutique-header">
+      <a className="boutique-brand" href="/" aria-label="Yoga Soda Pop home"><img src="/assets/yoga-soda-pop-logo-transparent.png" alt="Yoga Soda Pop" /></a>
+      <nav aria-label="Main navigation"><a href="#shop">Shop</a><a href="#looks">Shop the Looks</a><a href="#accessories">Accessories</a><a href="/kids">Yoga</a><a href="/beats">Music</a><a href="/about">About</a></nav>
+      <a className="boutique-shop-link" href="/shop" aria-label="Open shop">♡ Shop</a>
     </header>
 
-    <section className="home-hero">
-      <i className="home-dot dot-pink"/><i className="home-dot dot-blue"/><i className="home-dot dot-mint"/><i className="home-dot dot-yellow"/>
-      <div className="home-hero-copy">
-        <h1>Yoga. Music.<br/>Joy.</h1>
-        <h2>Welcome to the Yoga Soda Pop Universe</h2>
-        <p>Two amazing worlds — kids&apos; yoga and dance-pop beats — fizzing with fun, movement, and good vibes.</p>
-        <div className="home-hero-actions"><a href="/kids">✦&nbsp; Yoga Soda Pop Kids</a><a href="/beats">♫&nbsp; Yoga Soda Pop Beats</a></div>
-      </div>
-      <div className="solo-girl-wrap"><span className="solo-glow"/><img src="/assets/pink-girl-hero.png" alt="Yoga Soda Pop pink-haired girl" /></div>
-    </section>
-
-    <section className="travel-feature">
-      <div className="travel-copy"><span className="choice-tag">✈ Screen-free travel fun</span><h2>Lumi&apos;s Big Travel Adventure</h2><p>Printable games, creative activities, seated calm-down breaks, and rest-stop movement ideas for car, plane, train, hotel, and holiday days.</p><div className="travel-checks"><span>✓ Safe-while-seated activities</span><span>✓ Games for the journey and destination</span><span>✓ A4 and US Letter friendly</span></div><a href="/travel">Explore the Travel Pack →</a></div>
-      <div className="travel-bubbles" aria-hidden="true"><b>CAR</b><b>PLANE</b><b>TRAIN</b><b>HOTEL</b></div>
-    </section>
-
-    <section className="two-worlds">
-      <div className="home-section-heading"><h2>Two Worlds. One Universe.</h2><p>Pick your flavor and dive in!</p></div>
-      <div className="world-choice-grid">
-        <article className="world-choice kids-choice"><span className="choice-tag">🧘 For Kids</span><h3>Yoga Soda Pop Kids</h3><h4>Move, stretch, and play!</h4><p>Digital yoga pose cards and fun activity packs designed for little movers. Make yoga a joyful adventure for kids of all ages.</p><a href="/kids">Explore Kids&nbsp; →</a></article>
-        <article className="world-choice beats-choice"><span className="choice-tag">♫ Dance-Pop Music</span><h3>Yoga Soda Pop<br/>Beats</h3><h4>Dance-pop music that moves you!</h4><p>Original dance-pop songs with animated music videos. Feel the beat, find your flow, and let the music take you somewhere amazing.</p><a href="/beats">Explore Beats&nbsp; →</a></article>
+    <section className="boutique-hero">
+      <div className="boutique-hero-art"><span className="boutique-orb orb-a"/><span className="boutique-orb orb-b"/><img src="/assets/yoga-girls-transparent.png" alt="Yoga Soda Pop girls" /></div>
+      <div className="boutique-hero-copy">
+        <p className="boutique-kicker">Fashion · Music · Movement · Pop Fantasy</p>
+        <h1>Yoga Soda Pop</h1>
+        <p>A colorful universe of statement accessories, dreamy looks, joyful movement and original pop music.</p>
+        <div className="boutique-actions"><a href="#shop">Shop the Looks</a><a href="/beats">Listen to Music</a></div>
       </div>
     </section>
 
-    <section className="home-socials">
-      <div className="home-section-heading"><h2>Find Us on YouTube &amp; Instagram</h2><p>Subscribe, follow, and join the Yoga Soda Pop community!</p></div>
-      <div className="social-card-grid">{socials.map(s => <a className={`home-social-card ${s.tone}`} href={s.href} target="_blank" rel="noreferrer" key={s.handle+s.platform}><small>{s.platform === "YouTube" ? "▻" : "◎"}&nbsp; {s.platform}</small><h3>{s.handle}</h3><p>{s.text}</p><b>Follow&nbsp; →</b></a>)}</div>
+    <section className="boutique-drops" id="shop">
+      <div className="boutique-heading"><span>✦ Fresh from the universe</span><h2>New Drops</h2><p>Curated pieces for turning everyday life into your own pop world.</p></div>
+      <div className="drop-grid">{drops.map((drop, index) => <a className={`drop-card drop-${index + 1}`} href={drop.href} key={drop.title}><div className="drop-art"><span>{drop.icon}</span></div><small>SHOP THE EDIT</small><h3>{drop.title}</h3><p>{drop.text}</p><b>Explore →</b></a>)}</div>
     </section>
 
-    <section className="join-universe"><i/><i/><i/><i/><div><h2>Join the Yoga Soda<br/>Pop Universe</h2><p>Pick your flavor — kids&apos; yoga or dance-pop beats — and dive in!</p><div className="home-hero-actions"><a href="/shop">✦&nbsp; Shop Kids Yoga Cards</a><a href="/beats">♫&nbsp; Listen to Beats</a></div></div></section>
+    <section className="boutique-worlds" id="accessories">
+      <div className="boutique-heading"><span>Pick your flavor</span><h2>Shop by World</h2></div>
+      <div className="world-pill-grid">{worlds.map(([icon,title,text]) => <a href={title === "Music" ? "/beats" : title === "Yoga Pop" ? "/kids" : "/shop"} key={title}><span>{icon}</span><h3>{title}</h3><p>{text}</p></a>)}</div>
+    </section>
 
-    <footer className="home-footer"><div className="footer-grid"><div><h3>🫧 Yoga Soda Pop</h3><p>Where yoga meets music and joy bubbles up — kids&apos; yoga, travel play, and dance-pop beats in one fizzy universe.</p></div><div><h3>Explore</h3><a href="/kids">Kids Yoga</a><a href="/travel">Travel Pack</a><a href="/beats">Beats</a><a href="/shop">Shop</a><a href="/about">About</a></div><div><h3>Follow Along</h3><a href="https://youtube.com/@yogasodapop">▻ @yogasodapop</a><a href="https://youtube.com/@yogasodapopbeats">▻ @yogasodapopbeats</a><a href="https://instagram.com/yogasodapop">◎ @yogasodapop</a><a href="https://instagram.com/yogasodapopbeats">◎ @yogasodapopbeats</a></div></div><div className="footer-bottom"><a href="mailto:yogasodapop@gmail.com">yogasodapop@gmail.com</a><span>© 2026 Yoga Soda Pop. All rights reserved.</span></div></footer>
+    <section className="shop-the-look" id="looks">
+      <div className="look-copy"><span>♡ Curated, not ordinary</span><h2>Shop the Look</h2><p>See a style you love in the Yoga Soda Pop universe? Discover hand-picked fashion and accessories that capture the same dreamy energy.</p><div className="look-tags"><b>Sweet Lolita</b><b>Kawaii</b><b>Holographic</b><b>Pop Star</b></div><a href="/shop">Discover the looks →</a></div>
+      <div className="look-collage"><div>🎀<small>Vanilla Café</small></div><div>🌟<small>Cosmic Pop</small></div><div>💜<small>Purple Dream</small></div></div>
+    </section>
+
+    <section className="yoga-pop-strip">
+      <div><span>🧘 YOGA POP</span><h2>Movement can be colorful too.</h2><p>Kids yoga, playful movement and bright feel-good products — the original Yoga Soda Pop world is still part of the magic.</p><a href="/kids">Explore Yoga Pop →</a></div>
+      <img src="/assets/yoga-girls-transparent.png" alt="Yoga Soda Pop yoga characters" />
+    </section>
+
+    <section className="boutique-music">
+      <div className="music-copy"><span>♫ YOGA SODA POP BEATS</span><h2>Wear the look.<br/>Play the soundtrack.</h2><p>Original dance-pop songs and animated music videos from the other side of the Yoga Soda Pop universe.</p><div className="music-buttons"><a href="/beats">Explore Music</a><a href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">YouTube ↗</a></div></div>
+      <div className="music-player"><div className="record">♫</div><div><small>NOW PLAYING</small><h3>Yoga Soda Pop Beats</h3><p>Pop fantasy in every beat</p><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">Listen on Spotify →</a></div></div>
+    </section>
+
+    <section className="affiliate-note"><b>Curated with love ♡</b><p>Some shop links may be affiliate links. If you purchase through them, Yoga Soda Pop may earn a commission at no extra cost to you.</p></section>
+
+    <footer className="boutique-footer"><div><img src="/assets/yoga-soda-pop-logo-transparent.png" alt="Yoga Soda Pop"/><p>Fashion, movement, music and pop fantasy in one fizzy universe.</p></div><div><b>Explore</b><a href="/shop">Shop</a><a href="/kids">Yoga</a><a href="/beats">Music</a><a href="/about">About</a></div><div><b>Follow</b><a href="https://instagram.com/yogasodapop">Instagram</a><a href="https://youtube.com/@yogasodapopbeats">YouTube</a><a href="mailto:yogasodapop@gmail.com">Email</a></div><small>© 2026 Yoga Soda Pop</small></footer>
   </main>;
 }
