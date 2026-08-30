@@ -1,10 +1,10 @@
 import "./boutique.css";
 
 const products = [
-  { image: "/assets/yoga-cards-cover.png", title: "Vanilla Bear Café Look", price: "$75.25" },
-  { image: "/assets/yoga-girls.png", title: "Cosmic Star Collection", price: "$62.00" },
-  { image: "/assets/pink-girl-hero.png", title: "Purple Dream Set", price: "$68.00" },
-  { image: "/assets/tree-pose-card.png", title: "Holographic Pop Look", price: "$58.00" },
+  { image: "/assets/vanilla-bear-cafe.webp", title: "Vanilla Bear Café Look", price: "$75.25" },
+  { image: "/assets/cosmic-star-collection.webp", title: "Cosmic Star Collection", price: "$62.00" },
+  { image: "/assets/purple-dream-set.webp", title: "Purple Dream Set", price: "$68.00" },
+  { image: "/assets/holographic-pop-look.webp", title: "Holographic Pop Look", price: "$58.00" },
 ];
 
 const worlds = [
