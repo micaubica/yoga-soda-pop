@@ -1,13 +1,13 @@
 .launch-home .launch-hero {
-  min-height: 646px;
   display: grid;
-  grid-template-columns: 40% 60%;
-  background: #fff;
+  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  min-height: 646px;
   overflow: hidden;
+  background: #fff;
 }
 
 .launch-home .launch-copy {
-  padding: 70px clamp(42px, 4.6vw, 88px) 56px clamp(50px, 4.8vw, 96px);
+  padding: clamp(48px, 4.8vw, 88px) clamp(38px, 4.5vw, 86px);
   background: #fff7fa;
   display: flex;
   flex-direction: column;
@@ -17,54 +17,123 @@
 
 .launch-home .launch-copy > * { max-width: 560px; }
 
+/* PRODUCT STAGE
+   The room and the backpack are separate layers. The room may crop freely,
+   while the product is always independently sized and kept fully visible. */
 .launch-home .launch-product-stage {
   position: relative;
+  min-width: 0;
   min-height: 646px;
-  width: 100%;
   overflow: hidden;
-  background: #f2ced9;
+  isolation: isolate;
+  background: #f1cbd8;
 }
 
 .launch-home .launch-product-stage::before,
 .launch-home .launch-product-stage::after,
 .launch-home .stage-light,
-.launch-home .product-pedestal { display: none !important; }
-
-/* Desktop campaign composition. */
-.launch-home .hero-stage-image {
-  position: absolute;
-  z-index: 1;
-  left: 20%;
-  top: 53%;
-  width: 146%;
-  height: 146%;
-  max-width: none;
-  max-height: none;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-  object-position: center center;
-  display: block;
-  background: transparent;
-  pointer-events: none;
+.launch-home .product-pedestal,
+.launch-home .hero-stage-image,
+.launch-home .launch-main-product {
+  display: none !important;
 }
 
-.launch-home .launch-main-product {
+.launch-home .hero-room {
   position: absolute;
-  z-index: 2;
-  left: 44%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(58%, 620px);
-  max-height: 88%;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.15), transparent 18%),
+    linear-gradient(135deg, #f6dce5 0%, #efc5d4 48%, #f9e4eb 100%);
+}
+
+.launch-home .hero-room::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 19%, rgba(255,255,255,.24) 19% 28%, transparent 28% 72%, rgba(255,255,255,.14) 72% 73%, transparent 73%),
+    linear-gradient(180deg, transparent 0 74%, rgba(172,101,126,.14) 74% 74.5%, rgba(255,255,255,.12) 74.5% 100%);
+}
+
+.launch-home .hero-room::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  bottom: 0;
+  width: 84%;
+  height: 20%;
+  background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(221,169,187,.16));
+  clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 100%);
+}
+
+.launch-home .hero-room-light {
+  position: absolute;
+  top: -9%;
+  height: 120%;
+  width: 10%;
+  transform: rotate(19deg);
+  transform-origin: top center;
+  background: rgba(255,255,255,.28);
+  filter: blur(.2px);
+}
+
+.launch-home .hero-room-light-one { left: 37%; }
+.launch-home .hero-room-light-two { left: 53%; width: 4%; opacity: .46; }
+
+.launch-home .hero-room-ribbing {
+  position: absolute;
+  inset: 0 0 0 79%;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,.40) 0 3px, rgba(205,141,165,.10) 3px 12px);
+  box-shadow: inset 14px 0 24px rgba(158,92,116,.08);
+}
+
+.launch-home .hero-room-pedestal {
+  position: absolute;
+  z-index: 1;
+  left: 10%;
+  right: 11%;
+  bottom: -7%;
+  height: 26%;
+  border-radius: 50% 50% 0 0 / 32% 32% 0 0;
+  background: linear-gradient(180deg, #fff9fb 0%, #efd6df 70%, #e5c1ce 100%);
+  box-shadow: 0 -18px 48px rgba(120,67,87,.06), inset 0 1px 0 rgba(255,255,255,.88);
+}
+
+.launch-home .hero-product {
+  position: absolute;
+  z-index: 3;
+  left: 48%;
+  bottom: 3.5%;
+  transform: translateX(-50%);
+  width: clamp(290px, 40vw, 620px);
+  max-width: 66%;
+  max-height: 91%;
   object-fit: contain;
-  display: block !important;
-  filter: drop-shadow(0 24px 24px rgba(69, 37, 48, .22));
+  object-position: center bottom;
+  display: block;
+  mix-blend-mode: darken;
+  filter: drop-shadow(0 24px 24px rgba(69,37,48,.20));
+}
+
+.launch-home .hero-product-1 {
+  width: clamp(250px, 32vw, 500px);
+  max-width: 55%;
+  left: 46%;
+}
+
+.launch-home .hero-product-2 {
+  width: clamp(270px, 35vw, 520px);
+  max-width: 58%;
+  left: 46%;
+  bottom: 6%;
 }
 
 .launch-home .launch-thumbnails {
   position: absolute;
   z-index: 5;
-  right: 4.2%;
+  right: clamp(12px, 3.4%, 42px);
   top: 50%;
   transform: translateY(-50%);
   display: grid;
@@ -72,12 +141,12 @@
 }
 
 .launch-home .launch-thumbnails button {
-  width: 128px;
-  height: 138px;
+  width: clamp(82px, 7vw, 128px);
+  aspect-ratio: .92;
   padding: 7px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,.92);
-  background: rgba(255,255,255,.94);
+  background: rgba(255,255,255,.95);
   box-shadow: 0 8px 22px rgba(92,47,64,.06);
   cursor: pointer;
 }
@@ -94,6 +163,7 @@
   background: #fff;
 }
 
+/* Feature strip */
 .launch-home .feature-band {
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
@@ -120,172 +190,146 @@
 .launch-home .feature-copy h2 { margin: 9px 0 8px; color: #101522; font-size: 16px; }
 .launch-home .feature-copy p { margin: 0; color: #69717d; font-size: 13px; line-height: 1.5; }
 
-/* Ultra-wide screens: keep the artwork centered enough that it does not drift offscreen. */
+/* Ultra-wide displays: keep composition balanced rather than scaling forever. */
 @media (min-width: 1800px) {
-  .launch-home .hero-stage-image {
-    left: 36%;
-    top: 51%;
-    width: 122%;
-    height: 122%;
+  .launch-home .launch-hero {
+    grid-template-columns: 40% 60%;
+    min-height: min(760px, 46vw);
   }
+
+  .launch-home .launch-product-stage { min-height: min(760px, 46vw); }
+  .launch-home .hero-product { width: min(30vw, 650px); max-width: 58%; }
+  .launch-home .hero-product-1 { width: min(25vw, 500px); }
+  .launch-home .hero-product-2 { width: min(27vw, 540px); }
 }
 
-/* Small desktops / landscape tablets. */
+/* Smaller desktop / landscape tablets */
 @media (max-width: 1250px) and (min-width: 901px) {
   .launch-home .launch-hero {
-    grid-template-columns: 42% 58% !important;
-    min-height: 520px !important;
+    grid-template-columns: 42% 58%;
+    min-height: 540px;
   }
 
-  .launch-home .launch-copy {
-    padding: 38px 28px 34px 32px !important;
-  }
-
-  .launch-home .launch-copy h1 {
-    font-size: clamp(40px, 4.6vw, 58px) !important;
-    line-height: .96 !important;
-  }
-
-  .launch-home .launch-description {
-    font-size: 15px !important;
-    line-height: 1.42 !important;
-    margin-top: 18px !important;
-  }
-
-  .launch-home .launch-shop-button {
-    width: 250px !important;
-    min-height: 56px !important;
-    margin-top: 24px !important;
-  }
-
-  .launch-home .trust-row { gap: 14px !important; margin-top: 26px !important; }
+  .launch-home .launch-copy { padding: 40px 30px 36px 34px; }
+  .launch-home .launch-copy h1 { font-size: clamp(40px, 4.7vw, 58px) !important; line-height: .96 !important; }
+  .launch-home .launch-description { font-size: 15px !important; line-height: 1.42 !important; }
+  .launch-home .launch-shop-button { width: 250px !important; min-height: 56px !important; margin-top: 24px !important; }
+  .launch-home .trust-row { gap: 14px !important; margin-top: 28px !important; }
   .launch-home .trust-row p { font-size: 11px !important; }
 
-  .launch-home .launch-product-stage {
-    min-height: 520px !important;
-  }
+  .launch-home .launch-product-stage { min-height: 540px; }
+  .launch-home .hero-product { width: clamp(260px, 39vw, 450px); max-width: 62%; bottom: 4%; }
+  .launch-home .hero-product-1 { width: clamp(230px, 32vw, 380px); max-width: 52%; }
+  .launch-home .hero-product-2 { width: clamp(240px, 34vw, 400px); max-width: 54%; }
+  .launch-home .launch-thumbnails button { width: 76px; }
 
-  /* Full bleed: no exposed pink background bands. */
-  .launch-home .hero-stage-image {
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    transform: none !important;
-    object-fit: cover !important;
-    object-position: center 50% !important;
-  }
-
-  .launch-home .launch-thumbnails { right: 12px !important; gap: 7px !important; }
-  .launch-home .launch-thumbnails button { width: 76px !important; height: 86px !important; border-radius: 11px !important; }
-
-  .launch-home .feature-band { grid-template-columns: 1fr !important; gap: 12px !important; }
-  .launch-home .feature-card { min-height: 170px !important; grid-template-columns: 34% 66% !important; border: 1px solid #eee7eb !important; border-radius: 16px !important; padding: 0 !important; }
-  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb !important; }
-  .launch-home .feature-visual { min-height: 170px !important; }
+  .launch-home .feature-band { grid-template-columns: 1fr; gap: 12px; }
+  .launch-home .feature-card { grid-template-columns: 34% 66%; min-height: 170px; border: 1px solid #eee7eb; border-radius: 16px; padding: 0; }
+  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb; }
+  .launch-home .feature-visual { min-height: 170px; }
 }
 
-/* Portrait tablets. */
-@media (max-width: 900px) and (min-width: 601px) {
+/* Tablets: stack the sections. Product height comes from viewport width, not a
+   hardcoded pixel height, so there are no empty bands. */
+@media (max-width: 900px) {
   .launch-home .launch-hero {
-    display: block !important;
-    min-height: 0 !important;
-    overflow: hidden !important;
+    display: block;
+    min-height: 0;
+    overflow: visible;
   }
 
   .launch-home .launch-copy {
-    min-height: 0 !important;
-    padding: 34px 38px 30px !important;
+    min-height: 0;
+    padding: clamp(30px, 5vw, 44px) clamp(22px, 5.5vw, 42px) 32px;
   }
 
-  .launch-home .launch-copy > * { max-width: 620px !important; }
-  .launch-home .launch-eyebrow { margin-bottom: 16px !important; font-size: 11px !important; }
-  .launch-home .launch-copy h1 { font-size: clamp(48px, 7vw, 62px) !important; line-height: .95 !important; margin: 0 !important; }
-  .launch-home .launch-description { max-width: 560px !important; font-size: 16px !important; line-height: 1.42 !important; margin: 18px 0 0 !important; }
-  .launch-home .launch-shop-button { width: 280px !important; min-height: 56px !important; margin-top: 22px !important; }
-  .launch-home .trust-row { max-width: 500px !important; width: 100% !important; gap: 20px !important; margin-top: 24px !important; }
-  .launch-home .trust-row p { font-size: 12px !important; }
+  .launch-home .launch-copy > * { max-width: 620px; }
+  .launch-home .launch-copy h1 { font-size: clamp(44px, 7.5vw, 64px) !important; line-height: .95 !important; }
+  .launch-home .launch-description { font-size: 16px !important; line-height: 1.42 !important; }
 
   .launch-home .launch-product-stage {
-    min-height: 0 !important;
-    height: auto !important;
-    aspect-ratio: 16 / 9 !important;
-    background: transparent !important;
+    min-height: 0;
+    height: clamp(390px, 63vw, 560px);
   }
 
-  /* Important: image itself fills the whole stage, so there are zero pink bars. */
-  .launch-home .hero-stage-image {
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    max-height: none !important;
-    transform: none !important;
-    object-fit: cover !important;
-    object-position: center 50% !important;
-    background: transparent !important;
+  .launch-home .hero-product {
+    width: clamp(260px, 52vw, 470px);
+    max-width: 62%;
+    max-height: 90%;
+    bottom: 3%;
   }
 
-  .launch-home .launch-main-product { width: 54% !important; max-height: 78% !important; left: 46% !important; }
-  .launch-home .launch-thumbnails { right: 14px !important; top: 50% !important; transform: translateY(-50%) !important; gap: 7px !important; }
-  .launch-home .launch-thumbnails button { width: 68px !important; height: 76px !important; padding: 5px !important; border-radius: 10px !important; }
+  .launch-home .hero-product-1 { width: clamp(230px, 44vw, 390px); max-width: 50%; }
+  .launch-home .hero-product-2 { width: clamp(240px, 47vw, 410px); max-width: 52%; }
 
-  .launch-home .feature-band { grid-template-columns: 1fr !important; gap: 12px !important; padding: 18px !important; }
-  .launch-home .feature-card { min-height: 0 !important; grid-template-columns: 36% 64% !important; padding: 0 !important; border: 1px solid #eee7eb !important; border-radius: 16px !important; }
-  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb !important; }
-  .launch-home .feature-visual { min-height: 160px !important; }
-  .launch-home .feature-copy { padding: 18px !important; }
+  .launch-home .launch-thumbnails { right: 16px; gap: 8px; }
+  .launch-home .launch-thumbnails button { width: clamp(64px, 10vw, 78px); border-radius: 11px; }
+
+  .launch-home .feature-band { grid-template-columns: 1fr; gap: 12px; padding: 18px; }
+  .launch-home .feature-card { grid-template-columns: 36% 64%; min-height: 0; padding: 0; border: 1px solid #eee7eb; border-radius: 16px; }
+  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb; }
+  .launch-home .feature-visual { min-height: 160px; }
 }
 
-/* Phones. */
+/* Phones: product remains separate and thumbnails move underneath it. */
 @media (max-width: 600px) {
-  .launch-home .launch-hero { display: block !important; min-height: 0 !important; overflow: hidden !important; }
-  .launch-home .launch-copy { min-height: 0 !important; padding: 28px 20px 26px !important; }
-  .launch-home .launch-copy > * { max-width: 100% !important; }
-  .launch-home .launch-eyebrow { margin-bottom: 16px !important; font-size: 10px !important; }
-  .launch-home .launch-copy h1 { font-size: clamp(38px, 11.5vw, 52px) !important; line-height: .95 !important; margin: 0 !important; }
-  .launch-home .launch-description { font-size: 15px !important; line-height: 1.4 !important; margin: 18px 0 0 !important; }
-  .launch-home .launch-shop-button { width: min(100%, 300px) !important; min-height: 54px !important; margin-top: 22px !important; }
+  .launch-home .launch-copy { padding: 28px 20px 26px; }
+  .launch-home .launch-copy > * { max-width: 100%; }
+  .launch-home .launch-copy h1 { font-size: clamp(38px, 11.5vw, 52px) !important; }
+  .launch-home .launch-description { font-size: 15px !important; }
+  .launch-home .launch-shop-button { width: min(100%, 300px) !important; min-height: 54px !important; }
 
-  .launch-home .trust-row { width: 100% !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; margin-top: 24px !important; }
+  .launch-home .trust-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    width: 100%;
+    gap: 8px !important;
+    margin-top: 24px !important;
+  }
   .launch-home .trust-row > div { gap: 6px !important; }
   .launch-home .trust-icon svg { width: 22px !important; height: 22px !important; }
   .launch-home .trust-row p { font-size: 10px !important; }
 
   .launch-home .launch-product-stage {
-    min-height: 0 !important;
-    height: auto !important;
-    aspect-ratio: 4 / 3 !important;
-    background: transparent !important;
+    height: clamp(360px, 112vw, 500px);
+    padding-bottom: 70px;
   }
 
-  .launch-home .hero-stage-image {
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    transform: none !important;
-    object-fit: cover !important;
-    object-position: center 50% !important;
-    background: transparent !important;
+  .launch-home .hero-product {
+    left: 50%;
+    width: clamp(240px, 64vw, 350px);
+    max-width: 68%;
+    max-height: 72%;
+    bottom: 18%;
   }
 
-  .launch-home .launch-main-product { width: 58% !important; max-height: 70% !important; left: 48% !important; top: 46% !important; }
-  .launch-home .launch-thumbnails { right: 8px !important; top: 50% !important; transform: translateY(-50%) !important; display: grid !important; gap: 6px !important; }
-  .launch-home .launch-thumbnails button { width: 54px !important; height: 60px !important; padding: 4px !important; border-radius: 9px !important; }
+  .launch-home .hero-product-1 { width: clamp(210px, 54vw, 300px); max-width: 58%; }
+  .launch-home .hero-product-2 { width: clamp(220px, 57vw, 315px); max-width: 60%; }
 
-  .launch-home .feature-band { grid-template-columns: 1fr !important; gap: 10px !important; padding: 14px 12px 20px !important; }
-  .launch-home .feature-card { min-height: 0 !important; grid-template-columns: 38% 62% !important; padding: 0 !important; border: 1px solid #eee7eb !important; border-radius: 14px !important; }
-  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb !important; }
-  .launch-home .feature-visual { min-height: 132px !important; }
-  .launch-home .feature-copy { padding: 14px 12px !important; }
-  .launch-home .feature-copy h2 { font-size: 13px !important; }
-  .launch-home .feature-copy p { font-size: 11px !important; line-height: 1.4 !important; }
+  .launch-home .launch-thumbnails {
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+
+  .launch-home .launch-thumbnails button { width: 58px; }
+
+  .launch-home .feature-band { gap: 10px; padding: 14px 12px 20px; }
+  .launch-home .feature-card { grid-template-columns: 38% 62%; border-radius: 14px; }
+  .launch-home .feature-visual { min-height: 132px; }
+  .launch-home .feature-copy { padding: 14px 12px; }
+  .launch-home .feature-copy h2 { font-size: 13px; }
+  .launch-home .feature-copy p { font-size: 11px; line-height: 1.4; }
 }
 
 @media (max-width: 390px) {
-  .launch-home .launch-copy { padding: 24px 16px 22px !important; }
-  .launch-home .launch-copy h1 { font-size: clamp(36px, 11vw, 46px) !important; }
+  .launch-home .launch-copy { padding: 24px 16px 22px; }
   .launch-home .launch-shop-button { width: 100% !important; }
-  .launch-home .launch-product-stage { aspect-ratio: 1 / 1 !important; }
-  .launch-home .launch-thumbnails button { width: 48px !important; height: 54px !important; }
-  .launch-home .feature-card { grid-template-columns: 40% 60% !important; }
+  .launch-home .launch-product-stage { height: 410px; }
+  .launch-home .hero-product { max-width: 72%; }
+  .launch-home .launch-thumbnails button { width: 52px; }
 }
