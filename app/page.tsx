@@ -39,7 +39,7 @@ function Icon({ name, size = 24 }: { name: IconName; size?: number }) {
 const features = [
   {
     icon: "drop" as IconName,
-    image: "/assets/feature-waterproof.webp",
+    image: "/assets/feature-waterproof.png",
     alt: "Water droplets on the pink backpack nylon fabric",
     title: "WATERPROOF & DURABLE",
     text: "15.5 oz soft nylon canvas that’s lightweight, waterproof and tear resistant.",
