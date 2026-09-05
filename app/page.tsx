@@ -33,8 +33,8 @@ export default function Home() {
           <h1><b>YOGA SODA POP</b>FASHION. MUSIC.<br/><em>POP FANTASY.</em></h1>
           <p>Cute things that make every day brighter. ♡</p>
           <div className="hero-ctas">
-            <a className="primary" href="https://www.youtube.com/watch?v=fr1hD_pc9tw" target="_blank" rel="noreferrer">▶ WATCH MY NEW MUSIC VIDEO</a>
-            <a className="secondary" href="https://www.youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">♫ LISTEN TO MY MUSIC</a>
+            <a className="primary" href="https://www.youtube.com/@yogasodapop" target="_blank" rel="noreferrer">▶ EXPLORE YOGA SODA POP ON YOUTUBE</a>
+            <a className="secondary" href="https://www.youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">♫ EXPLORE OUR MUSIC</a>
           </div>
         </div>
         <div className="hero-image"><img src="/assets/hero-yoga-soda-pop.webp" alt="Yoga Soda Pop pastel fashion world" /><div className="coming-card"><span>♡</span><h2>SHOP<br/><strong>COMING SOON</strong></h2><p>We’re curating the cutest fashion and accessories for you.</p></div></div>
@@ -51,7 +51,7 @@ export default function Home() {
       </section>
       <section className="join-strip"><div><b>JOIN THE POP CLUB!</b><span>Get early access, new drops &amp; happy vibes in your inbox.</span></div><form action="mailto:yogasodapop@gmail.com?subject=Yoga%20Soda%20Pop%20Club%20Signup" method="post" encType="text/plain"><input type="email" name="email" aria-label="Email address" placeholder="Enter your email" required/><button type="submit">JOIN NOW</button></form></section>
       <section className="affiliate-note"><b>Affiliate disclosure:</b> When the shop launches, some links may earn Yoga Soda Pop a commission at no extra cost to you.</section>
-      <footer className="premium-footer"><div className="footer-brand"><img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop"/><p>Cute things. Happy vibes.<br/>Fashion, music and pop fantasy.</p></div><div><b>SHOP</b><span>New Drops — Coming Soon</span><span>Shop the Looks — Coming Soon</span><span>Accessories — Coming Soon</span></div><div><b>MUSIC</b><a href="/beats">Yoga Soda Pop Beats</a><a href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">YouTube</a><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">Spotify</a></div><div><b>ABOUT</b><a href="/about">Our World</a><a href="https://instagram.com/yogasodapop" target="_blank" rel="noreferrer">Instagram</a><small>© 2026 Yoga Soda Pop</small></div></footer>
+      <footer className="premium-footer"><div className="footer-brand"><img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop"/><p>Cute things. Happy vibes.<br/>Fashion, music and pop fantasy.</p><small>Yoga Soda Pop is operated by Gamers4Gamers, LLC.</small></div><div><b>SHOP</b><span>New Drops — Coming Soon</span><span>Shop the Looks — Coming Soon</span><span>Accessories — Coming Soon</span></div><div><b>MUSIC</b><a href="/beats">Yoga Soda Pop Beats</a><a href="https://youtube.com/@yogasodapopbeats" target="_blank" rel="noreferrer">YouTube</a><a href="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4" target="_blank" rel="noreferrer">Spotify</a></div><div><b>ABOUT &amp; SUPPORT</b><a href="/about">Our World</a><a href="mailto:yogasodapop@gmail.com">Contact</a><a href="/legal#shipping-returns">Shipping &amp; Returns</a><a href="/legal#refunds">Refund Policy</a><a href="/legal#privacy">Privacy Policy</a><a href="/legal#terms">Terms of Service</a><small>© 2026 Yoga Soda Pop. Operated by Gamers4Gamers, LLC.</small></div></footer>
     </main>
   );
 }
