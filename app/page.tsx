@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import "./boutique.css";
+import "./launch-overrides.css";
 
 const productImages = [
   { src: "/assets/backpack-front.webp", alt: "KPOP Demon Hunters backpack front view" },
