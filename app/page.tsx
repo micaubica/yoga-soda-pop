@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import "./boutique.css";
+import "./launch-overrides.css";
 
 const productImages = [
   { src: "/assets/backpack-front.webp", alt: "KPOP Demon Hunters backpack front view" },
@@ -38,16 +39,22 @@ function Icon({ name, size = 24 }: { name: IconName; size?: number }) {
 const features = [
   {
     icon: "drop" as IconName,
+    image: "/assets/feature-waterproof.webp",
+    alt: "Water droplets on the pink backpack nylon fabric",
     title: "WATERPROOF & DURABLE",
     text: "15.5 oz soft nylon canvas that’s lightweight, waterproof and tear resistant.",
   },
   {
     icon: "layers" as IconName,
+    image: "/assets/feature-interior.webp",
+    alt: "Brown backpack interior with padded laptop compartment",
     title: "3 SPACIOUS POCKETS",
     text: "Three zippered compartments for books, a laptop and everyday essentials.",
   },
   {
     icon: "backpack" as IconName,
+    image: "/assets/feature-padding.webp",
+    alt: "Black padded mesh back panel and shoulder straps",
     title: "PADDED FOR COMFORT",
     text: "Padded mesh back panel and adjustable shoulder straps for easy carrying.",
   },
@@ -90,9 +97,6 @@ export default function Home() {
         </div>
 
         <div className="launch-product-stage">
-          <div className="stage-light stage-light-one" />
-          <div className="stage-light stage-light-two" />
-          <div className="product-pedestal" />
           <img className="launch-main-product" src={productImages[activeImage].src} alt={productImages[activeImage].alt} />
           <div className="launch-thumbnails" aria-label="Backpack views">
             {productImages.map((image, index) => (
@@ -105,14 +109,16 @@ export default function Home() {
       </section>
 
       <section className="feature-band" id="features">
-        {features.map((feature, index) => (
+        {features.map((feature) => (
           <article className="feature-card" key={feature.title}>
-            <div className={`feature-visual feature-visual-${index + 1}`}>
-              {index === 0 && <span className="water-drops">●　◦<br />　●</span>}
-              {index === 1 && <img src="/assets/backpack-front.webp" alt="Backpack storage" />}
-              {index === 2 && <img src="/assets/backpack-side.webp" alt="Backpack padded straps" />}
+            <div className="feature-visual">
+              <img src={feature.image} alt={feature.alt} />
             </div>
-            <div className="feature-copy"><span className="feature-icon"><Icon name={feature.icon} size={27} /></span><h2>{feature.title}</h2><p>{feature.text}</p></div>
+            <div className="feature-copy">
+              <span className="feature-icon"><Icon name={feature.icon} size={27} /></span>
+              <h2>{feature.title}</h2>
+              <p>{feature.text}</p>
+            </div>
           </article>
         ))}
       </section>
