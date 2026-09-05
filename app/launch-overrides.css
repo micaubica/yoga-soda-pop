@@ -15,7 +15,7 @@
   position: relative;
   min-height: 646px;
   overflow: hidden;
-  background: #f2ced9 url('/assets/hero-studio-bg.webp') center center / cover no-repeat !important;
+  background: #f2ced9 url('/assets/hero-product-stage.webp') center center / cover no-repeat !important;
 }
 
 .launch-home .launch-product-stage::before,
@@ -25,23 +25,18 @@
   display: none !important;
 }
 
+/* The hero-product-stage image already contains the studio, backpack and shadow. */
 .launch-home .launch-main-product {
-  position: absolute;
-  z-index: 3;
-  left: 43%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(53%, 560px);
-  max-height: 84%;
-  object-fit: contain;
-  opacity: 1 !important;
-  mix-blend-mode: normal !important;
-  filter: drop-shadow(0 28px 25px rgba(69, 37, 48, .25));
+  display: none !important;
 }
 
 .launch-home .launch-thumbnails {
+  position: absolute;
+  z-index: 5;
   right: 4.2%;
   top: 50%;
+  transform: translateY(-50%);
+  display: grid;
   gap: 10px;
 }
 
@@ -53,6 +48,7 @@
   border: 1px solid rgba(255,255,255,.92);
   background: rgba(255,255,255,.94);
   box-shadow: 0 8px 22px rgba(92, 47, 64, .06);
+  cursor: pointer;
 }
 
 .launch-home .launch-thumbnails button.active {
@@ -61,6 +57,8 @@
 }
 
 .launch-home .launch-thumbnails img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   background: #fff;
 }
@@ -123,7 +121,6 @@
 }
 
 @media (max-width: 1100px) {
-  .launch-home .launch-main-product { width: 58%; left: 42%; }
   .launch-home .launch-thumbnails button { width: 100px; height: 112px; }
   .launch-home .feature-band { grid-template-columns: 1fr; gap: 12px; }
   .launch-home .feature-card { border: 1px solid #eee7eb; border-radius: 18px; }
@@ -133,15 +130,16 @@
 @media (max-width: 820px) {
   .launch-home .launch-hero { grid-template-columns: 1fr; }
   .launch-home .launch-copy { padding: 48px 24px 42px; }
-  .launch-home .launch-product-stage { min-height: 580px; }
-  .launch-home .launch-main-product { width: 67%; left: 42%; }
+  .launch-home .launch-product-stage {
+    min-height: 580px;
+    background-position: center center !important;
+  }
   .launch-home .launch-thumbnails { right: 18px; }
   .launch-home .launch-thumbnails button { width: 88px; height: 100px; }
 }
 
 @media (max-width: 560px) {
   .launch-home .launch-product-stage { min-height: 520px; }
-  .launch-home .launch-main-product { width: 76%; left: 39%; }
   .launch-home .launch-thumbnails { right: 10px; gap: 8px; }
   .launch-home .launch-thumbnails button { width: 72px; height: 82px; border-radius: 12px; }
   .launch-home .feature-card { grid-template-columns: 38% 62%; padding: 0; }
