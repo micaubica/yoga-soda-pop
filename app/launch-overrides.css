@@ -30,6 +30,7 @@
 .launch-home .stage-light,
 .launch-home .product-pedestal { display: none !important; }
 
+/* Desktop campaign composition — user-approved 40/60 split and left-shifted art. */
 .launch-home .hero-stage-image {
   position: absolute;
   z-index: 1;
@@ -77,13 +78,13 @@
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,.92);
   background: rgba(255,255,255,.94);
-  box-shadow: 0 8px 22px rgba(92, 47, 64, .06);
+  box-shadow: 0 8px 22px rgba(92,47,64,.06);
   cursor: pointer;
 }
 
 .launch-home .launch-thumbnails button.active {
   border-color: #ff75ad;
-  box-shadow: 0 0 0 2px rgba(255, 47, 134, .06);
+  box-shadow: 0 0 0 2px rgba(255,47,134,.06);
 }
 
 .launch-home .launch-thumbnails img {
@@ -119,73 +120,298 @@
 .launch-home .feature-copy h2 { margin: 9px 0 8px; color: #101522; font-size: 16px; }
 .launch-home .feature-copy p { margin: 0; color: #69717d; font-size: 13px; line-height: 1.5; }
 
-/* Landscape tablets / smaller laptops */
-@media (max-width: 1100px) and (min-width: 901px) {
-  .launch-home .launch-hero { grid-template-columns: 42% 58%; min-height: 520px; }
-  .launch-home .launch-copy { padding: 38px 28px 34px 32px; }
-  .launch-home .launch-copy h1 { font-size: clamp(40px, 4.8vw, 58px) !important; line-height: .96 !important; }
-  .launch-home .launch-description { font-size: 15px !important; line-height: 1.4 !important; }
-  .launch-home .launch-product-stage { min-height: 520px; }
-  .launch-home .hero-stage-image { left: 43%; top: 51%; width: 126%; height: 126%; }
-  .launch-home .launch-thumbnails { right: 12px; gap: 7px; }
-  .launch-home .launch-thumbnails button { width: 78px; height: 88px; border-radius: 11px; }
-  .launch-home .trust-row { gap: 14px !important; }
+/* Mid-size desktop / landscape tablet: keep two columns but reduce vertical mass. */
+@media (max-width: 1250px) and (min-width: 901px) {
+  .launch-home .launch-hero {
+    grid-template-columns: 42% 58% !important;
+    min-height: 540px !important;
+  }
+
+  .launch-home .launch-copy {
+    padding: 42px 30px 38px 36px !important;
+  }
+
+  .launch-home .launch-copy h1 {
+    font-size: clamp(40px, 4.7vw, 58px) !important;
+    line-height: .96 !important;
+  }
+
+  .launch-home .launch-description {
+    font-size: 15px !important;
+    line-height: 1.42 !important;
+    margin-top: 18px !important;
+  }
+
+  .launch-home .launch-shop-button {
+    width: 250px !important;
+    min-height: 56px !important;
+    margin-top: 24px !important;
+  }
+
+  .launch-home .trust-row {
+    gap: 16px !important;
+    margin-top: 28px !important;
+  }
+
+  .launch-home .trust-row p { font-size: 11px !important; }
+
+  .launch-home .launch-product-stage {
+    min-height: 540px !important;
+  }
+
+  .launch-home .hero-stage-image {
+    left: 43% !important;
+    top: 51% !important;
+    width: 132% !important;
+    height: 132% !important;
+    object-fit: contain !important;
+  }
+
+  .launch-home .launch-thumbnails { right: 12px !important; gap: 7px !important; }
+  .launch-home .launch-thumbnails button { width: 78px !important; height: 88px !important; border-radius: 11px !important; }
+
+  .launch-home .feature-band {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .launch-home .feature-card {
+    min-height: 170px !important;
+    grid-template-columns: 34% 66% !important;
+    border: 1px solid #eee7eb !important;
+    border-radius: 16px !important;
+    padding: 0 !important;
+  }
+
+  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb !important; }
+  .launch-home .feature-visual { min-height: 170px !important; }
 }
 
-/* Portrait tablets: stack cleanly instead of squeezing two columns. */
-@media (max-width: 900px) and (min-width: 701px) {
-  .launch-home .launch-hero { grid-template-columns: 1fr; min-height: 0; }
-  .launch-home .launch-copy { padding: 42px 42px 34px; }
-  .launch-home .launch-copy > * { max-width: 620px; }
-  .launch-home .launch-copy h1 { font-size: clamp(52px, 8vw, 72px) !important; line-height: .95 !important; margin-bottom: 18px !important; }
-  .launch-home .launch-description { font-size: 17px !important; line-height: 1.42 !important; margin-bottom: 24px !important; max-width: 560px; }
-  .launch-home .launch-shop-button { width: 300px; min-height: 58px; }
-  .launch-home .trust-row { width: 100%; max-width: 500px; gap: 24px !important; margin-top: 28px !important; }
-  .launch-home .launch-product-stage { min-height: 0; aspect-ratio: 16 / 9; background: #f2ced9; }
-  .launch-home .hero-stage-image { left: 50%; top: 50%; width: 112%; height: 112%; transform: translate(-50%, -50%); object-fit: cover; object-position: center 54%; background: transparent; }
-  .launch-home .launch-thumbnails { right: 18px; top: 50%; gap: 8px; }
-  .launch-home .launch-thumbnails button { width: 74px; height: 82px; border-radius: 11px; }
-  .launch-home .launch-main-product { width: 54%; max-height: 76%; left: 46%; }
-  .launch-home .feature-band { grid-template-columns: 1fr; gap: 12px; padding: 20px 18px 26px; }
-  .launch-home .feature-card { min-height: 0; grid-template-columns: 40% 60%; padding: 0; border: 1px solid #eee7eb; border-radius: 16px; }
-  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb; }
-  .launch-home .feature-visual { min-height: 170px; }
-  .launch-home .feature-copy { padding: 20px 18px; }
-}
+/* Portrait tablets (iPad / Galaxy Tab): full-width copy followed by a compact
+   cinematic product panel. This prevents the squeezed half-and-half layout. */
+@media (max-width: 900px) and (min-width: 601px) {
+  .launch-home .launch-hero {
+    display: block !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
 
-/* Phones */
-@media (max-width: 700px) {
-  .launch-home .launch-hero { grid-template-columns: 1fr; min-height: 0; }
-  .launch-home .launch-copy { padding: 34px 22px 30px; }
-  .launch-home .launch-copy > * { max-width: 100%; }
-  .launch-home .launch-copy h1 { font-size: clamp(42px, 12vw, 60px) !important; line-height: .96 !important; margin-bottom: 20px !important; }
-  .launch-home .launch-eyebrow { margin-bottom: 20px !important; }
-  .launch-home .launch-description { font-size: 16px !important; line-height: 1.45 !important; margin-bottom: 26px !important; }
-  .launch-home .launch-shop-button { width: min(100%, 320px); min-height: 58px; }
-  .launch-home .trust-row { width: 100%; gap: 12px !important; justify-content: space-between; margin-top: 28px !important; }
-  .launch-home .trust-row > div { min-width: 0; }
+  .launch-home .launch-copy {
+    min-height: 0 !important;
+    padding: 38px 42px 32px !important;
+  }
+
+  .launch-home .launch-copy > * { max-width: 620px !important; }
+
+  .launch-home .launch-eyebrow {
+    margin-bottom: 18px !important;
+    font-size: 11px !important;
+  }
+
+  .launch-home .launch-copy h1 {
+    font-size: clamp(48px, 7.2vw, 64px) !important;
+    line-height: .95 !important;
+    margin: 0 !important;
+  }
+
+  .launch-home .launch-description {
+    max-width: 560px !important;
+    font-size: 16px !important;
+    line-height: 1.42 !important;
+    margin: 18px 0 0 !important;
+  }
+
+  .launch-home .launch-shop-button {
+    width: 280px !important;
+    min-height: 56px !important;
+    margin-top: 24px !important;
+  }
+
+  .launch-home .trust-row {
+    max-width: 500px !important;
+    width: 100% !important;
+    gap: 22px !important;
+    margin-top: 26px !important;
+  }
+
   .launch-home .trust-row p { font-size: 12px !important; }
-  .launch-home .launch-product-stage { min-height: 0; aspect-ratio: 3 / 2; background: #f2ced9; }
-  .launch-home .hero-stage-image { left: 50%; top: 50%; width: 108%; height: 108%; transform: translate(-50%, -50%); object-fit: cover; object-position: center 54%; background: transparent; }
-  .launch-home .launch-main-product { width: 58%; max-height: 78%; left: 46%; }
-  .launch-home .launch-thumbnails { right: 12px; top: 50%; transform: translateY(-50%); gap: 7px; }
-  .launch-home .launch-thumbnails button { width: 64px; height: 70px; padding: 5px; border-radius: 10px; }
-  .launch-home .feature-band { grid-template-columns: 1fr; gap: 12px; padding: 18px 16px 24px; }
-  .launch-home .feature-card { min-height: 0; grid-template-columns: 42% 58%; padding: 0; border: 1px solid #eee7eb; border-radius: 16px; }
-  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb; }
-  .launch-home .feature-visual { min-height: 150px; }
-  .launch-home .feature-copy { padding: 18px 16px; }
-  .launch-home .feature-copy h2 { font-size: 14px; }
-  .launch-home .feature-copy p { font-size: 12px; }
+
+  .launch-home .launch-product-stage {
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    background: #f2ced9 !important;
+  }
+
+  .launch-home .hero-stage-image {
+    left: 50% !important;
+    top: 50% !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover !important;
+    object-position: center 52% !important;
+    background: transparent !important;
+  }
+
+  .launch-home .launch-main-product {
+    width: 52% !important;
+    max-height: 76% !important;
+    left: 46% !important;
+  }
+
+  .launch-home .launch-thumbnails {
+    right: 14px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    gap: 7px !important;
+  }
+
+  .launch-home .launch-thumbnails button {
+    width: 68px !important;
+    height: 76px !important;
+    padding: 5px !important;
+    border-radius: 10px !important;
+  }
+
+  .launch-home .feature-band {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 18px 18px 24px !important;
+  }
+
+  .launch-home .feature-card {
+    min-height: 0 !important;
+    grid-template-columns: 36% 64% !important;
+    padding: 0 !important;
+    border: 1px solid #eee7eb !important;
+    border-radius: 16px !important;
+  }
+
+  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb !important; }
+  .launch-home .feature-visual { min-height: 160px !important; }
+  .launch-home .feature-copy { padding: 18px 18px !important; }
 }
 
-@media (max-width: 430px) {
-  .launch-home .launch-copy { padding: 28px 18px 26px; }
-  .launch-home .launch-copy h1 { font-size: clamp(38px, 11.5vw, 50px) !important; }
-  .launch-home .launch-product-stage { aspect-ratio: 4 / 3; }
-  .launch-home .hero-stage-image { width: 112%; height: 112%; object-position: center 54%; }
-  .launch-home .launch-thumbnails { right: 8px; gap: 5px; }
-  .launch-home .launch-thumbnails button { width: 54px; height: 60px; }
-  .launch-home .feature-card { grid-template-columns: 40% 60%; }
-  .launch-home .feature-copy { padding: 14px 12px; }
+/* Phones: stacked layout, compact copy, product thumbnails along the bottom so
+   they never cover the backpack. */
+@media (max-width: 600px) {
+  .launch-home .launch-hero {
+    display: block !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .launch-home .launch-copy {
+    min-height: 0 !important;
+    padding: 28px 20px 26px !important;
+  }
+
+  .launch-home .launch-copy > * { max-width: 100% !important; }
+  .launch-home .launch-eyebrow { margin-bottom: 16px !important; font-size: 10px !important; }
+
+  .launch-home .launch-copy h1 {
+    font-size: clamp(38px, 11.5vw, 52px) !important;
+    line-height: .95 !important;
+    margin: 0 !important;
+  }
+
+  .launch-home .launch-description {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    margin: 18px 0 0 !important;
+  }
+
+  .launch-home .launch-shop-button {
+    width: min(100%, 300px) !important;
+    min-height: 54px !important;
+    margin-top: 22px !important;
+  }
+
+  .launch-home .trust-row {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    margin-top: 24px !important;
+  }
+
+  .launch-home .trust-row > div { gap: 6px !important; }
+  .launch-home .trust-icon svg { width: 22px !important; height: 22px !important; }
+  .launch-home .trust-row p { font-size: 10px !important; }
+
+  .launch-home .launch-product-stage {
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    padding-bottom: 74px !important;
+    background: #f2ced9 !important;
+  }
+
+  .launch-home .hero-stage-image {
+    left: 50% !important;
+    top: calc(50% - 28px) !important;
+    width: 100% !important;
+    height: calc(100% - 70px) !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover !important;
+    object-position: center 52% !important;
+    background: transparent !important;
+  }
+
+  .launch-home .launch-main-product {
+    width: 58% !important;
+    max-height: 68% !important;
+    left: 50% !important;
+    top: 43% !important;
+  }
+
+  .launch-home .launch-thumbnails {
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 10px !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    gap: 8px !important;
+  }
+
+  .launch-home .launch-thumbnails button {
+    width: 58px !important;
+    height: 58px !important;
+    padding: 4px !important;
+    border-radius: 9px !important;
+  }
+
+  .launch-home .feature-band {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    padding: 14px 12px 20px !important;
+  }
+
+  .launch-home .feature-card {
+    min-height: 0 !important;
+    grid-template-columns: 38% 62% !important;
+    padding: 0 !important;
+    border: 1px solid #eee7eb !important;
+    border-radius: 14px !important;
+  }
+
+  .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb !important; }
+  .launch-home .feature-visual { min-height: 132px !important; }
+  .launch-home .feature-copy { padding: 14px 12px !important; }
+  .launch-home .feature-copy h2 { font-size: 13px !important; }
+  .launch-home .feature-copy p { font-size: 11px !important; line-height: 1.4 !important; }
+}
+
+/* Very small phones */
+@media (max-width: 390px) {
+  .launch-home .launch-copy { padding: 24px 16px 22px !important; }
+  .launch-home .launch-copy h1 { font-size: clamp(36px, 11vw, 46px) !important; }
+  .launch-home .launch-shop-button { width: 100% !important; }
+  .launch-home .launch-product-stage { aspect-ratio: 1 / 1 !important; }
+  .launch-home .launch-thumbnails button { width: 52px !important; height: 52px !important; }
+  .launch-home .feature-card { grid-template-columns: 40% 60% !important; }
 }
