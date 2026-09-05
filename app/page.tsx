@@ -7,7 +7,7 @@ import "./launch-overrides.css";
 const productImages = [
   { src: "/assets/backpack-front.webp", alt: "KPOP Demon Hunters backpack front view" },
   { src: "/assets/backpack-side.webp", alt: "KPOP Demon Hunters backpack side view" },
-  { src: "/assets/backpack-bottom.webp", alt: "KPOP Demon Hunters backpack bottom view" },
+  { src: "/assets/feature-padding.webp", alt: "KPOP Demon Hunters backpack padded back view" },
 ];
 
 type IconName = "search" | "heart" | "user" | "truck" | "shield" | "box" | "drop" | "layers" | "backpack";
@@ -97,19 +97,11 @@ export default function Home() {
         </div>
 
         <div className="launch-product-stage">
-          <div className="hero-room" aria-hidden="true">
-            <span className="hero-room-light hero-room-light-one" />
-            <span className="hero-room-light hero-room-light-two" />
-            <span className="hero-room-ribbing" />
-            <span className="hero-room-pedestal" />
-          </div>
-
-          <img
-            className={`hero-product hero-product-${activeImage}`}
-            src={productImages[activeImage].src}
-            alt={productImages[activeImage].alt}
-          />
-
+          {activeImage === 0 ? (
+            <img className="hero-stage-image" src="/assets/hero-product-stage.webp" alt="KPOP Demon Hunters backpack displayed in a pink studio" />
+          ) : (
+            <img className="launch-main-product" src={productImages[activeImage].src} alt={productImages[activeImage].alt} />
+          )}
           <div className="launch-thumbnails" aria-label="Backpack views">
             {productImages.map((image, index) => (
               <button className={activeImage === index ? "active" : ""} onClick={() => setActiveImage(index)} key={image.src} aria-label={`Show ${image.alt}`}>
