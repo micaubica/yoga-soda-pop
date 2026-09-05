@@ -1,7 +1,7 @@
 .launch-home .launch-hero {
   min-height: 646px;
   display: grid;
-  grid-template-columns: 36% 64%;
+  grid-template-columns: 40% 60%;
   background: #fff;
   overflow: hidden;
 }
@@ -34,13 +34,10 @@
   display: none !important;
 }
 
-/* The artwork already contains the room, pedestal, backpack and shadow.
-   Scale it inside the product panel so the backpack stays dominant without
-   letting ultrawide screens turn the copy side into a giant empty block. */
 .launch-home .hero-stage-image {
   position: absolute;
   z-index: 1;
-  left: 50%;
+  left: 20%;
   top: 53%;
   width: 146%;
   height: 146%;
@@ -157,33 +154,6 @@
   line-height: 1.5;
 }
 
-@media (min-width: 1900px) {
-  .launch-home .launch-hero {
-    grid-template-columns: 35% 65%;
-  }
-
-  .launch-home .launch-copy {
-    padding-left: clamp(72px, 4.8vw, 110px);
-  }
-
-  .launch-home .hero-stage-image {
-    width: 148%;
-    height: 148%;
-  }
-}
-
-@media (max-width: 1500px) {
-  .launch-home .launch-hero {
-    grid-template-columns: 39% 61%;
-  }
-
-  .launch-home .hero-stage-image {
-    width: 150%;
-    height: 150%;
-    top: 53%;
-  }
-}
-
 @media (max-width: 1100px) {
   .launch-home .launch-hero {
     grid-template-columns: minmax(430px, 44%) minmax(0, 56%);
@@ -196,7 +166,7 @@
 
   .launch-home .launch-thumbnails button { width: 100px; height: 112px; }
   .launch-home .launch-main-product { width: 62%; left: 42%; }
-  .launch-home .hero-stage-image { width: 158%; height: 158%; }
+  .launch-home .hero-stage-image { left: 50%; width: 158%; height: 158%; }
   .launch-home .feature-band { grid-template-columns: 1fr; gap: 12px; }
   .launch-home .feature-card { border: 1px solid #eee7eb; border-radius: 18px; }
   .launch-home .feature-card + .feature-card { border-left: 1px solid #eee7eb; }
@@ -207,6 +177,7 @@
   .launch-home .launch-copy { padding: 48px 24px 42px; }
   .launch-home .launch-product-stage { min-height: 580px; }
   .launch-home .hero-stage-image {
+    left: 50%;
     width: 150%;
     height: 150%;
     top: 52%;
@@ -219,6 +190,7 @@
 @media (max-width: 560px) {
   .launch-home .launch-product-stage { min-height: 520px; }
   .launch-home .hero-stage-image {
+    left: 50%;
     width: 158%;
     height: 158%;
     top: 52%;
