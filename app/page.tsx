@@ -60,12 +60,6 @@ const features = [
   },
 ];
 
-const heroBenefits = [
-  { icon: "✦", title: "BOLD DESIGN", text: "Inspired by your favorite heroes" },
-  { icon: "♢", title: "LIGHTWEIGHT", text: "Comfort for everyday use" },
-  { icon: "◉", title: "WATERPROOF", text: "Ready for every adventure" },
-];
-
 export default function Home() {
   const [activeImage, setActiveImage] = useState(0);
   const shopUrl = process.env.NEXT_PUBLIC_WOOCOMMERCE_PRODUCT_URL || "/shop";
@@ -109,16 +103,7 @@ export default function Home() {
             <img className="launch-main-product" src={productImages[activeImage].src} alt={productImages[activeImage].alt} />
           )}
 
-          <aside className="hero-benefits" aria-label="Backpack highlights">
-            {heroBenefits.map((benefit) => (
-              <div className="hero-benefit" key={benefit.title}>
-                <span className="hero-benefit-icon">{benefit.icon}</span>
-                <div><b>{benefit.title}</b><p>{benefit.text}</p></div>
-              </div>
-            ))}
-          </aside>
-
-          <div className="launch-thumbnails" aria-label="Backpack views">
+          <div className="launch-thumbnails hero-preview-cards" aria-label="Backpack views">
             {productImages.map((image, index) => (
               <button className={activeImage === index ? "active" : ""} onClick={() => setActiveImage(index)} key={image.src} aria-label={`Show ${image.alt}`}>
                 <img src={image.src} alt="" />
