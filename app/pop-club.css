@@ -1,0 +1,102 @@
+.join-strip { position: relative; }
+.join-strip button:disabled { opacity: .65; cursor: wait; }
+.join-error { position: absolute; right: 22px; bottom: -18px; margin: 0; color: #b42318; font-size: 12px; font-weight: 700; }
+
+.pop-club-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(16,21,34,.54);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.pop-club-modal {
+  position: relative;
+  width: min(92vw, 520px);
+  padding: 52px 46px 42px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 28px;
+  background: linear-gradient(180deg,#fff 0%,#fff6fa 100%);
+  box-shadow: 0 30px 90px rgba(41,18,30,.26);
+  text-align: center;
+}
+
+.pop-club-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #101522;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(65,31,48,.1);
+}
+
+.pop-club-heart {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,#ff2f86,#ff73ad);
+  color: #fff;
+  font-size: 36px;
+  box-shadow: 0 14px 30px rgba(255,47,134,.22);
+}
+
+.pop-club-modal > span {
+  color: #ff2f86;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .24em;
+}
+
+.pop-club-modal h2 {
+  margin: 12px 0 14px;
+  color: #101522;
+  font-size: clamp(30px,4vw,42px);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+
+.pop-club-modal p {
+  max-width: 420px;
+  margin: 0 auto;
+  color: #667085;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.pop-club-done {
+  width: min(100%, 290px);
+  min-height: 52px;
+  margin-top: 26px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#ff2f86,#ff4d9a);
+  color: #fff;
+  font-weight: 850;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(255,47,134,.18);
+}
+
+@media (max-width: 820px) {
+  .join-error { position: static; margin-top: 2px; }
+}
+
+@media (max-width: 560px) {
+  .pop-club-modal { padding: 46px 24px 30px; border-radius: 22px; }
+  .pop-club-heart { width: 56px; height: 56px; font-size: 30px; }
+  .pop-club-modal h2 { font-size: 31px; }
+  .pop-club-modal p { font-size: 14px; }
+}
