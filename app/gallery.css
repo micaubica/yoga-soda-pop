@@ -11,6 +11,16 @@
 .launch-home .home-platform-icon svg{display:block;width:25px;height:25px}
 .launch-home .home-platform-youtube{color:#ff0033}.launch-home .home-platform-spotify{color:#1ed760}.launch-home .home-platform-apple{color:#fa4b8b}.launch-home .home-platform-amazon{color:#fff}
 
+/* Compact social buttons in the homepage footer. */
+.launch-home .footer-social-links{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:9px!important;margin-top:3px}
+.launch-home .footer-social-links b{margin:0!important}
+.launch-home .footer-social-icons{display:flex;align-items:center;gap:10px}
+.launch-home .footer-social-icons a{display:grid;place-items:center;width:39px;height:39px;border:1px solid #eadfe5;border-radius:50%;background:#fff;color:#202633!important;transition:transform .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease}
+.launch-home .footer-social-icons a:hover{transform:translateY(-2px);border-color:#ffb1d0;color:#ff2f86!important;box-shadow:0 8px 18px rgba(255,47,134,.10)}
+.launch-home .footer-social-icons svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.launch-home .footer-social-icons .social-dot{fill:currentColor;stroke:none}
+.launch-home .footer-social-icons .social-play{fill:currentColor;stroke:none}
+
 /* Desktop hero copy scales with the available left panel instead of leaving dead space. */
 @media (min-width:1280px){
  .launch-home .launch-hero-v2 .launch-copy{padding-left:clamp(48px,4.2vw,86px)!important;padding-right:clamp(34px,2.8vw,58px)!important}
