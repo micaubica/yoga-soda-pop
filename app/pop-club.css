@@ -2,7 +2,8 @@
 .join-strip button:disabled { opacity: .65; cursor: wait; }
 .join-error { position: absolute; right: 22px; bottom: -18px; margin: 0; color: #b42318; font-size: 12px; font-weight: 700; }
 
-.pop-club-overlay {
+.pop-club-overlay,
+.pop-club-success-overlay {
   position: fixed;
   inset: 0;
   z-index: 1200;
@@ -14,7 +15,8 @@
   -webkit-backdrop-filter: blur(7px);
 }
 
-.pop-club-modal {
+.pop-club-modal,
+.pop-club-success-modal {
   position: relative;
   width: min(92vw, 520px);
   padding: 52px 46px 42px;
@@ -25,7 +27,8 @@
   text-align: center;
 }
 
-.pop-club-close {
+.pop-club-close,
+.pop-club-success-close {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -41,7 +44,8 @@
   box-shadow: 0 8px 22px rgba(65,31,48,.1);
 }
 
-.pop-club-heart {
+.pop-club-heart,
+.pop-club-success-heart {
   width: 64px;
   height: 64px;
   margin: 0 auto 18px;
@@ -54,14 +58,16 @@
   box-shadow: 0 14px 30px rgba(255,47,134,.22);
 }
 
-.pop-club-modal > span {
+.pop-club-modal > span,
+.pop-club-success-modal > span {
   color: #ff2f86;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: .24em;
 }
 
-.pop-club-modal h2 {
+.pop-club-modal h2,
+.pop-club-success-modal h2 {
   margin: 12px 0 14px;
   color: #101522;
   font-size: clamp(30px,4vw,42px);
@@ -69,7 +75,8 @@
   letter-spacing: -.035em;
 }
 
-.pop-club-modal p {
+.pop-club-modal p,
+.pop-club-success-modal p {
   max-width: 420px;
   margin: 0 auto;
   color: #667085;
@@ -77,7 +84,8 @@
   line-height: 1.55;
 }
 
-.pop-club-done {
+.pop-club-done,
+.pop-club-success-button {
   width: min(100%, 290px);
   min-height: 52px;
   margin-top: 26px;
@@ -95,8 +103,12 @@
 }
 
 @media (max-width: 560px) {
-  .pop-club-modal { padding: 46px 24px 30px; border-radius: 22px; }
-  .pop-club-heart { width: 56px; height: 56px; font-size: 30px; }
-  .pop-club-modal h2 { font-size: 31px; }
-  .pop-club-modal p { font-size: 14px; }
+  .pop-club-modal,
+  .pop-club-success-modal { padding: 46px 24px 30px; border-radius: 22px; }
+  .pop-club-heart,
+  .pop-club-success-heart { width: 56px; height: 56px; font-size: 30px; }
+  .pop-club-modal h2,
+  .pop-club-success-modal h2 { font-size: 31px; }
+  .pop-club-modal p,
+  .pop-club-success-modal p { font-size: 14px; }
 }
