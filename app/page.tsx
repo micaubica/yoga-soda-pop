@@ -18,6 +18,13 @@ const galleryImages = [
   { src: "/assets/backpac-preview-bottom.jpg", alt: "KPOP Demon Hunters backpack bottom view" },
 ];
 
+/* Keep the homepage clean with three previews, while the lightbox still contains all four views. */
+const homePreviewImages = [
+  { ...galleryImages[0], galleryIndex: 0 },
+  { ...galleryImages[1], galleryIndex: 1 },
+  { ...galleryImages[3], galleryIndex: 3 },
+];
+
 type IconName = "search" | "heart" | "user" | "truck" | "shield" | "box" | "drop" | "layers" | "backpack";
 
 function Icon({ name, size = 24 }: { name: IconName; size?: number }) {
@@ -97,8 +104,8 @@ export default function Home() {
           )}
 
           <div className="launch-thumbnails hero-preview-cards" aria-label="Open backpack gallery">
-            {galleryImages.map((image, index) => (
-              <button type="button" onClick={() => openGallery(index)} key={image.src} aria-label={`Open gallery at ${image.alt}`}>
+            {homePreviewImages.map((image) => (
+              <button type="button" onClick={() => openGallery(image.galleryIndex)} key={image.src} aria-label={`Open gallery at ${image.alt}`}>
                 <img src={image.src} alt="" />
               </button>
             ))}
