@@ -19,21 +19,28 @@
   background: #fff;
   box-shadow: 0 28px 90px rgba(20, 10, 15, .28);
   overflow: hidden;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
 }
 
 .product-gallery-main {
   width: 100%;
-  height: min(68vh, 680px);
+  height: min(68vh, 640px);
+  max-height: calc(92vh - 150px);
+  min-height: 0;
   display: grid;
   place-items: center;
   overflow: hidden;
   border-radius: 20px;
   background: #fff;
+  padding: 10px;
 }
 
 .product-gallery-main img {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   display: block;
 }
@@ -74,7 +81,7 @@
 .product-gallery-next { right: 18px; }
 
 .product-gallery-strip {
-  margin-top: 16px;
+  margin-top: 14px;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -105,7 +112,7 @@
   display: block;
 }
 
-/* Four updated preview images on desktop/tablet. */
+/* Three clean preview images on the homepage. */
 .launch-home .hero-preview-cards {
   gap: 12px !important;
 }
@@ -133,7 +140,16 @@
     padding: 50px 14px 16px;
     border-radius: 20px;
   }
-  .product-gallery-main { height: 68vh; }
+  .product-gallery-main {
+    height: auto;
+    max-height: calc(94vh - 150px);
+    min-height: 0;
+    padding: 6px;
+  }
+  .product-gallery-main img {
+    max-width: 100%;
+    max-height: calc(94vh - 170px);
+  }
   .product-gallery-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 24px; }
   .product-gallery-arrow { width: 40px; height: 40px; border-radius: 10px; font-size: 30px; }
   .product-gallery-prev { left: 8px; }
