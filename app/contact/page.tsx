@@ -1,0 +1,3 @@
+import "../subpages.css";
+import { SiteHeader, SiteFooter, INSTAGRAM_URL } from "../site-chrome";
+export default function Contact(){return <main className="sub-page"><SiteHeader/><section className="sub-hero"><span className="sub-kicker">SAY HELLO ♡</span><h1>We’d love to hear from you.</h1><p>Questions about an order, the shop, music or Yoga Soda Pop? Send us a message.</p></section><section className="sub-content"><div className="contact-box"><h2>Email us</h2><p>For customer support, collaborations and general questions:</p><a href="mailto:yogasodapop@gmail.com">yogasodapop@gmail.com</a><p>Or come say hi on <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Instagram</a>.</p></div></section><SiteFooter/></main>}
