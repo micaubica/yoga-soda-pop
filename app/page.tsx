@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import "./boutique.css";
 import "./launch-overrides.css";
 import "./gallery.css";
+import "./pop-club.css";
 
 const mobileProductImages = [
   { src: "/assets/backpack-preview-front.jpg", alt: "KPOP Demon Hunters backpack front view" },
@@ -18,7 +19,6 @@ const galleryImages = [
   { src: "/assets/backpac-preview-bottom.jpg", alt: "KPOP Demon Hunters backpack bottom view" },
 ];
 
-/* Keep the homepage clean with three previews, while the lightbox still contains all four views. */
 const homePreviewImages = [
   { ...galleryImages[0], galleryIndex: 0 },
   { ...galleryImages[1], galleryIndex: 1 },
@@ -61,6 +61,10 @@ export default function Home() {
   const [activeImage, setActiveImage] = useState(0);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
+  const [joinEmail, setJoinEmail] = useState("");
+  const [joinSubmitting, setJoinSubmitting] = useState(false);
+  const [joinSuccessOpen, setJoinSuccessOpen] = useState(false);
+  const [joinError, setJoinError] = useState("");
   const shopUrl = process.env.NEXT_PUBLIC_WOOCOMMERCE_PRODUCT_URL || "/shop";
 
   const showPreviousImage = () => setActiveImage((current) => (current - 1 + mobileProductImages.length) % mobileProductImages.length);
@@ -72,6 +76,31 @@ export default function Home() {
   };
   const galleryPrevious = () => setGalleryIndex((current) => (current - 1 + galleryImages.length) % galleryImages.length);
   const galleryNext = () => setGalleryIndex((current) => (current + 1) % galleryImages.length);
+
+  const handleJoin = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!joinEmail || joinSubmitting) return;
+
+    setJoinSubmitting(true);
+    setJoinError("");
+
+    try {
+      const response = await fetch("/api/join", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: joinEmail }),
+      });
+
+      if (!response.ok) throw new Error("Signup failed");
+
+      setJoinEmail("");
+      setJoinSuccessOpen(true);
+    } catch {
+      setJoinError("Something went wrong. Please try again in a moment.");
+    } finally {
+      setJoinSubmitting(false);
+    }
+  };
 
   return (
     <main className="premium-home launch-home">
@@ -137,7 +166,14 @@ export default function Home() {
         <div className="launch-video"><iframe src="https://www.youtube.com/embed/fr1hD_pc9tw?rel=0" title="Our Game by Yoga Soda Pop Beats" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div>
       </section>
 
-      <section className="join-strip launch-join"><div><b>JOIN THE POP CLUB</b><span>New drops, music releases & happy vibes in your inbox.</span></div><form action="mailto:yogasodapop@gmail.com?subject=Yoga%20Soda%20Pop%20Club%20Signup" method="post" encType="text/plain"><input type="email" name="email" aria-label="Email address" placeholder="Enter your email" required/><button type="submit">JOIN NOW</button></form></section>
+      <section className="join-strip launch-join">
+        <div><b>JOIN THE POP CLUB</b><span>New drops, music releases & happy vibes in your inbox.</span></div>
+        <form onSubmit={handleJoin}>
+          <input type="email" name="email" value={joinEmail} onChange={(event) => setJoinEmail(event.target.value)} aria-label="Email address" placeholder="Enter your email" autoComplete="email" required/>
+          <button type="submit" disabled={joinSubmitting}>{joinSubmitting ? "JOINING..." : "JOIN NOW"}</button>
+        </form>
+        {joinError && <p className="join-error" role="alert">{joinError}</p>}
+      </section>
 
       <footer className="premium-footer launch-footer">
         <div className="footer-brand"><img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop"/><p>Music, fashion and pop fantasy.</p><small>Yoga Soda Pop is operated by Gamers4Gamers, LLC.</small></div>
@@ -160,6 +196,19 @@ export default function Home() {
                 </button>
               ))}
             </div>
+          </div>
+        </div>
+      )}
+
+      {joinSuccessOpen && (
+        <div className="pop-club-overlay" role="dialog" aria-modal="true" aria-label="Pop Club signup successful" onClick={() => setJoinSuccessOpen(false)}>
+          <div className="pop-club-modal" onClick={(event) => event.stopPropagation()}>
+            <button className="pop-club-close" type="button" onClick={() => setJoinSuccessOpen(false)} aria-label="Close">×</button>
+            <div className="pop-club-heart">♡</div>
+            <span>YOU’RE IN!</span>
+            <h2>Welcome to the<br/>Yoga Soda Pop family.</h2>
+            <p>Thanks for joining the Pop Club. We’ll keep you in the loop on new drops, music releases and happy little surprises.</p>
+            <button className="pop-club-done" type="button" onClick={() => setJoinSuccessOpen(false)}>YAY, THANK YOU!</button>
           </div>
         </div>
       )}
