@@ -5,7 +5,8 @@ export const APPLE_MUSIC_URL = "https://music.apple.com/us/artist/yoga-soda-pop-
 export const AMAZON_MUSIC_URL = "https://www.amazon.com/music/player/artists/B0HCLW4V78/yoga-soda-pop-beats";
 
 export function SiteHeader() {
-  return <><div className="sub-announcement">♫ MUSIC LIVE NOW <span>│</span> ♡ SHOP THE FIRST DROP</div><header className="sub-header"><a className="sub-brand" href="/"><img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop" /></a><nav><a href={process.env.NEXT_PUBLIC_WOOCOMMERCE_PRODUCT_URL || "/shop"}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a></nav></header></>;
+  const shopUrl=process.env.NEXT_PUBLIC_WOOCOMMERCE_PRODUCT_URL||"/shop";
+  return <><div className="sub-announcement"><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">♫ MUSIC LIVE NOW</a><span>│</span><a href={shopUrl}>♡ SHOP THE FIRST DROP</a></div><header className="sub-header"><a className="sub-brand" href="/"><img src="/assets/yoga-soda-pop-logo-premium.png" alt="Yoga Soda Pop" /></a><nav><a href={shopUrl}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a></nav></header></>;
 }
 
 export function SiteFooter() {
