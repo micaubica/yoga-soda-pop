@@ -64,6 +64,14 @@ export default function Home() {
   const [activeImage, setActiveImage] = useState(0);
   const shopUrl = process.env.NEXT_PUBLIC_WOOCOMMERCE_PRODUCT_URL || "/shop";
 
+  const showPreviousImage = () => {
+    setActiveImage((current) => (current - 1 + productImages.length) % productImages.length);
+  };
+
+  const showNextImage = () => {
+    setActiveImage((current) => (current + 1) % productImages.length);
+  };
+
   return (
     <main className="premium-home launch-home">
       <div className="announcement">♫ MUSIC LIVE NOW <span>│</span> ♡ SHOP THE FIRST DROP</div>
@@ -109,6 +117,22 @@ export default function Home() {
                 <img src={image.src} alt="" />
               </button>
             ))}
+          </div>
+
+          <div className="mobile-gallery-nav" aria-label="Backpack image carousel">
+            <button className="mobile-gallery-arrow mobile-gallery-prev" type="button" onClick={showPreviousImage} aria-label="Previous backpack view">‹</button>
+            <button className="mobile-gallery-arrow mobile-gallery-next" type="button" onClick={showNextImage} aria-label="Next backpack view">›</button>
+            <div className="mobile-gallery-dots" aria-label="Choose backpack view">
+              {productImages.map((image, index) => (
+                <button
+                  type="button"
+                  key={image.src}
+                  className={activeImage === index ? "active" : ""}
+                  onClick={() => setActiveImage(index)}
+                  aria-label={`Show ${image.alt}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
