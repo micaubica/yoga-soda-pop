@@ -7,7 +7,7 @@ import "./launch-overrides.css";
 const productImages = [
   { src: "/assets/backpack-front.webp", alt: "KPOP Demon Hunters backpack front view" },
   { src: "/assets/backpack-side.webp", alt: "KPOP Demon Hunters backpack side view" },
-  { src: "/assets/feature-padding.webp", alt: "KPOP Demon Hunters backpack padded back view" },
+  { src: "/assets/backpack-bottom.webp", alt: "KPOP Demon Hunters backpack bottom view" },
 ];
 
 type IconName = "search" | "heart" | "user" | "truck" | "shield" | "box" | "drop" | "layers" | "backpack";
