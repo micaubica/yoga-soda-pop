@@ -96,7 +96,7 @@
 
   .launch-home .launch-hero-v2 { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
   .launch-home .launch-product-stage-v2 { order: 1; min-height: 0; height: auto; aspect-ratio: 1.12 / 1; background: #f0cbd8; }
-  .launch-home .launch-product-stage-v2 .hero-stage-image { object-position: 50% center !important; }
+  .launch-home .launch-product-stage-v2 .hero-stage-image { object-position: 0% center !important; }
   .launch-home .launch-product-stage-v2 .launch-main-product { left: 50% !important; top: 46% !important; width: min(68%, 330px) !important; max-height: 76% !important; }
 
   .launch-home .hero-preview-cards { display: none !important; }
@@ -184,7 +184,7 @@
   .launch-home .header-tools { gap: 12px !important; }
   .launch-home .header-tools svg { width: 20px !important; height: 20px !important; }
   .launch-home .launch-product-stage-v2 { aspect-ratio: 1 / 1; }
-  .launch-home .launch-product-stage-v2 .hero-stage-image { object-position: 50% center !important; }
+  .launch-home .launch-product-stage-v2 .hero-stage-image { object-position: 0% center !important; }
   .launch-home .mobile-gallery-arrow { width: 34px; height: 34px; font-size: 26px; }
   .launch-home .mobile-gallery-prev { left: 9px; }
   .launch-home .mobile-gallery-next { right: 9px; }
