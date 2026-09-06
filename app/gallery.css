@@ -24,7 +24,6 @@
 .launch-home .hero-preview-cards button { width:clamp(84px,5.8vw,104px) !important; }
 .launch-home .mobile-carousel-product { display:none; }
 
-/* Stack the product first, then copy, for tablet/mobile layouts. */
 @media (max-width:900px) {
   .launch-home .launch-hero-v2 {
     display:flex !important;
@@ -47,8 +46,22 @@
     background:linear-gradient(180deg,#fff8fb 0%,#fdeef4 100%) !important;
   }
 
-  .launch-home .desktop-hero-image { display:none !important; }
-  .launch-home .mobile-carousel-product {
+  /* First mobile view is the same studio hero image used on desktop. */
+  .launch-home .mobile-show-studio .desktop-hero-image {
+    display:block !important;
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+    transform:none !important;
+  }
+  .launch-home .mobile-show-studio .mobile-carousel-product { display:none !important; }
+
+  /* After selecting one of the four dots, show the corresponding white product image. */
+  .launch-home .mobile-show-product .desktop-hero-image { display:none !important; }
+  .launch-home .mobile-show-product .mobile-carousel-product {
     display:block !important;
     position:absolute !important;
     left:50% !important;
@@ -103,19 +116,19 @@
     transform:translateX(-50%) !important;
     align-items:center !important;
     justify-content:center !important;
-    gap:9px !important;
-    padding:7px 11px !important;
+    gap:10px !important;
+    padding:8px 12px !important;
     border-radius:999px !important;
-    background:rgba(255,255,255,.94) !important;
+    background:rgba(255,255,255,.95) !important;
     box-shadow:0 5px 16px rgba(71,36,50,.08) !important;
     pointer-events:auto !important;
   }
   .launch-home .mobile-gallery-dots button {
     display:block !important;
-    width:8px !important;
-    height:8px !important;
-    min-width:8px !important;
-    min-height:8px !important;
+    width:9px !important;
+    height:9px !important;
+    min-width:9px !important;
+    min-height:9px !important;
     padding:0 !important;
     border:0 !important;
     border-radius:50% !important;
@@ -124,10 +137,10 @@
     cursor:pointer !important;
   }
   .launch-home .mobile-gallery-dots button.active {
-    width:10px !important;
-    height:10px !important;
-    min-width:10px !important;
-    min-height:10px !important;
+    width:11px !important;
+    height:11px !important;
+    min-width:11px !important;
+    min-height:11px !important;
     background:#ff3f8f !important;
     box-shadow:0 0 0 3px rgba(255,63,143,.14) !important;
   }
@@ -148,7 +161,7 @@
     height:clamp(360px,92vw,500px) !important;
     min-height:360px !important;
   }
-  .launch-home .mobile-carousel-product {
+  .launch-home .mobile-show-product .mobile-carousel-product {
     top:45% !important;
     width:min(76%,330px) !important;
     max-height:70% !important;
@@ -161,7 +174,7 @@
     height:390px !important;
     min-height:390px !important;
   }
-  .launch-home .mobile-carousel-product {
+  .launch-home .mobile-show-product .mobile-carousel-product {
     top:45% !important;
     width:min(78%,300px) !important;
     max-height:68% !important;
