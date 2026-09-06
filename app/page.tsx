@@ -104,7 +104,7 @@ export default function Home() {
 
         <div className="launch-product-stage launch-product-stage-v2">
           {activeImage === 0 ? (
-            <img className="hero-stage-image" src="/assets/hero-product-stage.webp" alt="KPOP Demon Hunters backpack displayed in a pink studio" />
+            <img className="hero-stage-image" src="/assets/hero-product-stage3.webp" alt="KPOP Demon Hunters backpack displayed in a pink studio" />
           ) : (
             <img className="launch-main-product" src={productImages[activeImage].src} alt={productImages[activeImage].alt} />
           )}
