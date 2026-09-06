@@ -32,6 +32,7 @@
 .launch-home .hero-preview-cards button:hover { transform: translateX(-3px); box-shadow: 0 17px 34px rgba(92,47,64,.15); }
 .launch-home .hero-preview-cards button.active { border-color: #ff4b96; box-shadow: 0 0 0 2px rgba(255,47,134,.13),0 16px 34px rgba(92,47,64,.13); }
 .launch-home .hero-preview-cards img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 10px; background: #fff; }
+.launch-home .mobile-gallery-nav { display: none; }
 .launch-home .hero-benefits { display: none !important; }
 
 .launch-home .feature-band { grid-template-columns: repeat(3,1fr); gap: 0; padding: 26px 3vw 30px; background: #fff; }
@@ -94,26 +95,62 @@
   .launch-home .header-tools svg { width: 22px !important; height: 22px !important; }
 
   .launch-home .launch-hero-v2 { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
-  .launch-home .launch-product-stage-v2 { order: 1; min-height: 0; height: auto; aspect-ratio: 1.18 / 1; }
+  .launch-home .launch-product-stage-v2 { order: 1; min-height: 0; height: auto; aspect-ratio: 1.12 / 1; background: #f0cbd8; }
   .launch-home .launch-product-stage-v2 .hero-stage-image { object-position: 50% center !important; }
+  .launch-home .launch-product-stage-v2 .launch-main-product { left: 50% !important; top: 46% !important; width: min(68%, 330px) !important; max-height: 76% !important; }
 
-  .launch-home .hero-preview-cards {
-    left: auto;
-    right: 14px;
+  .launch-home .hero-preview-cards { display: none !important; }
+  .launch-home .mobile-gallery-nav { display: block; position: absolute; inset: 0; z-index: 6; pointer-events: none; }
+  .launch-home .mobile-gallery-arrow {
+    position: absolute;
     top: 50%;
-    bottom: auto;
     transform: translateY(-50%);
-    display: grid !important;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,.76);
+    border-radius: 50%;
+    background: rgba(255,255,255,.78);
+    color: #202735;
+    display: grid;
+    place-items: center;
+    padding: 0 0 3px;
+    font-size: 29px;
+    line-height: 1;
+    box-shadow: 0 8px 20px rgba(71,36,50,.12);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .launch-home .mobile-gallery-prev { left: 12px; }
+  .launch-home .mobile-gallery-next { right: 12px; }
+  .launch-home .mobile-gallery-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.52);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    pointer-events: auto;
   }
-  .launch-home .hero-preview-cards button {
-    width: 46px;
-    aspect-ratio: 1 / 1;
-    padding: 4px;
-    border-radius: 10px;
-    box-shadow: 0 8px 18px rgba(92,47,64,.10);
+  .launch-home .mobile-gallery-dots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 0 0 1px rgba(79,41,56,.12);
+    cursor: pointer;
   }
-  .launch-home .hero-preview-cards button:hover { transform: none; }
+  .launch-home .mobile-gallery-dots button.active { width: 10px; height: 10px; background: #ff3f8f; box-shadow: 0 0 0 3px rgba(255,63,143,.14); }
 
   .launch-home .launch-copy {
     order: 2;
@@ -148,8 +185,10 @@
   .launch-home .header-tools svg { width: 20px !important; height: 20px !important; }
   .launch-home .launch-product-stage-v2 { aspect-ratio: 1 / 1; }
   .launch-home .launch-product-stage-v2 .hero-stage-image { object-position: 50% center !important; }
-  .launch-home .hero-preview-cards { right: 10px; gap: 6px; }
-  .launch-home .hero-preview-cards button { width: 42px; border-radius: 9px; }
+  .launch-home .mobile-gallery-arrow { width: 34px; height: 34px; font-size: 26px; }
+  .launch-home .mobile-gallery-prev { left: 9px; }
+  .launch-home .mobile-gallery-next { right: 9px; }
+  .launch-home .mobile-gallery-dots { bottom: 10px; }
   .launch-home .launch-copy { padding: 24px 16px 26px !important; }
   .launch-home .launch-hero-v2 .launch-copy h1 { font-size: clamp(30px,8.8vw,36px) !important; }
   .launch-home .launch-hero-v2 .launch-description { max-width: 300px; }
