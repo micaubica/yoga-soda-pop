@@ -60,6 +60,12 @@ const features = [
   },
 ];
 
+const heroBenefits = [
+  { icon: "✦", title: "BOLD DESIGN", text: "Inspired by your favorite heroes" },
+  { icon: "♢", title: "LIGHTWEIGHT", text: "Comfort for everyday use" },
+  { icon: "◉", title: "WATERPROOF", text: "Ready for every adventure" },
+];
+
 export default function Home() {
   const [activeImage, setActiveImage] = useState(0);
   const shopUrl = process.env.NEXT_PUBLIC_WOOCOMMERCE_PRODUCT_URL || "/shop";
@@ -83,10 +89,10 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="launch-hero">
+      <section className="launch-hero launch-hero-v2">
         <div className="launch-copy">
           <p className="launch-eyebrow">K-POP <span>/</span> ACCESSORIES</p>
-          <h1>KPOP<br />DEMON HUNTERS<br /><strong>BACKPACK</strong></h1>
+          <h1>KPOP<br />DEMON<br />HUNTERS<br /><strong>BACKPACK</strong></h1>
           <p className="launch-description"><b>Made to stand out.</b><br />Lightweight, waterproof and ready for school, travel and everyday adventures.</p>
           <a className="launch-shop-button" href={shopUrl}>Shop Now <span>→</span></a>
           <div className="trust-row">
@@ -96,12 +102,22 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="launch-product-stage">
+        <div className="launch-product-stage launch-product-stage-v2">
           {activeImage === 0 ? (
             <img className="hero-stage-image" src="/assets/hero-product-stage.webp" alt="KPOP Demon Hunters backpack displayed in a pink studio" />
           ) : (
             <img className="launch-main-product" src={productImages[activeImage].src} alt={productImages[activeImage].alt} />
           )}
+
+          <aside className="hero-benefits" aria-label="Backpack highlights">
+            {heroBenefits.map((benefit) => (
+              <div className="hero-benefit" key={benefit.title}>
+                <span className="hero-benefit-icon">{benefit.icon}</span>
+                <div><b>{benefit.title}</b><p>{benefit.text}</p></div>
+              </div>
+            ))}
+          </aside>
+
           <div className="launch-thumbnails" aria-label="Backpack views">
             {productImages.map((image, index) => (
               <button className={activeImage === index ? "active" : ""} onClick={() => setActiveImage(index)} key={image.src} aria-label={`Show ${image.alt}`}>
