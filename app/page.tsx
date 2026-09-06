@@ -23,7 +23,11 @@ const galleryImages = [
   { src: "/assets/backpack-preview-side-left.jpg", alt: "KPOP Demon Hunters backpack left side view" },
   { src: "/assets/backpac-preview-bottom.jpg", alt: "KPOP Demon Hunters backpack bottom view" },
 ];
-const homePreviewImages = galleryImages.map((image, galleryIndex) => ({ ...image, galleryIndex }));
+const homePreviewImages = [
+  { ...galleryImages[0], galleryIndex: 0 },
+  { ...galleryImages[1], galleryIndex: 1 },
+  { ...galleryImages[3], galleryIndex: 3 },
+];
 
 type IconName = "truck" | "shield" | "box" | "drop" | "layers" | "backpack";
 function Icon({ name, size = 24 }: { name: IconName; size?: number }) {
