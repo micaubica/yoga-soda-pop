@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import "./launch-overrides.css";
+import "./asset-fixes.css";
 import "./pop-club.css";
 
 const SHOP_URL="https://shop.yogasodapop.com/?v=30fd57ddcc95";
