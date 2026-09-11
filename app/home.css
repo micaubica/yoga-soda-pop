@@ -1,0 +1,659 @@
+.ysp-home {
+  --pink:#f33580;
+  --paper:#fff9fb;
+  color:#090909;
+  background:var(--paper);
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:clip}
+.ysp-home a {
+  color:inherit;
+  text-decoration:none}
+.ysp-home a:focus-visible,.ysp-home button:focus-visible,.ysp-home input:focus-visible {
+  outline:3px solid #9d164c;
+  outline-offset:4px}
+.ysp-home a,.ysp-home button {
+  transition:background .2s,transform .2s}
+.ysp-home svg {
+  display:block;
+  width:24px;
+  height:24px}
+.ysp-topbar {
+  height:29px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  background:linear-gradient(90deg,#fbd0df,#ffc4da);
+  font-size:10px;
+  letter-spacing:.035em}
+.ysp-topbar span::first-letter {
+  color:#b62460}
+.ysp-header {
+  height:52px;
+  padding:0 5.6%;
+  display:grid;
+  grid-template-columns:23% 1fr auto auto;
+  gap:32px;
+  align-items:center;
+  background:#fff9fb;
+  position:relative;
+  z-index:2}
+.ysp-logo {
+  position:absolute;
+  left:7%;
+  top:-15px;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid white}
+.ysp-logo img {
+  width:100%;
+  height:100%;
+  object-fit:cover}
+.ysp-header nav {
+  grid-column:2;
+  gap:36px;
+  font-size:13px}
+.ysp-header-tools {
+  display:flex;
+  gap:20px;
+  align-items:center}
+.ysp-header-tools a {
+  padding:3px}
+.ysp-header-cta,.ysp-actions .primary,.ysp-buy,.ysp-join button {
+  background:var(--pink);
+  color:white!important;
+  border:1px solid var(--pink);
+  font-weight:700}
+.ysp-header-cta {
+  padding:11px 20px;
+  border-radius:14px;
+  font-size:12px;
+  white-space:nowrap}
+.ysp-hero {
+  position:relative;
+  display:grid;
+  grid-template-columns:46% 54%;
+  height:46vw;
+  max-height:670px;
+  min-height:460px;
+  background:#f9c4d7 url('/assets/home-pink-room.webp') center/cover no-repeat}
+.ysp-hero-copy {
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-end;
+  padding:30px 0 22px 5.6vw;
+  background:linear-gradient(90deg,#ffe7ef99,transparent)}
+.ysp-fox {
+  align-self:center;
+  color:var(--pink);
+  width:120px;
+  margin:0 0 7px -20px}
+.ysp-fox svg {
+  width:100%;
+  height:auto}
+.ysp-hero h1 {
+  font-family:Arial Black,Arial,Helvetica,sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-size:clamp(80px,9.3vw,138px);
+  font-weight:1000;
+  line-height:.78;
+  letter-spacing:-.075em;
+  color:#fff1f5;
+  -webkit-text-stroke:2px #171017;
+  paint-order:stroke fill;
+  text-shadow:5px 5px 0 #130b10,8px 7px 0 #f33580,-4px -3px 0 #f33580;
+  transform:rotate(-3deg);
+  margin:4px 0 20px;
+  width:82%}
+.ysp-hero h1 span:last-child {
+  font-size:1.08em}
+.ysp-sub {
+  font-size:clamp(12px,1.4vw,19px);
+  font-weight:700;
+  line-height:1.45;
+  margin:0 0 15px}
+.ysp-actions {
+  display:flex;
+  gap:16px;
+  white-space:nowrap}
+.ysp-actions a {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:42px;
+  padding:0 24px;
+  border-radius:11px;
+  font-size:13px;
+  font-weight:700}
+.ysp-actions .secondary {
+  border:1px solid var(--pink);
+  background:#fffafbe8}
+.ysp-hero-product {
+  position:relative;
+  min-width:0}
+.ysp-hero-product>img {
+  position:absolute;
+  left:-1%;
+  bottom:3%;
+  width:62%;
+  height:90%;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+  filter:drop-shadow(0 12px 8px #7a284a33)}
+.ysp-hero-words {
+  position:absolute;
+  left:57%;
+  top:17%;
+  font-size:14px;
+  line-height:1.48;
+  font-weight:600}
+.ysp-hero-words:after {
+  content:'';
+  display:block;
+  width:32px;
+  height:1px;
+  background:var(--pink);
+  margin-top:15px}
+.ysp-shop {
+  padding:12px 5.1% 12px;
+  background:linear-gradient(110deg,#fffafd,#fff8fa)}
+.ysp-section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+  gap:16px}
+.ysp-section-head h2 {
+  font-size:clamp(28px,3.5vw,50px);
+  font-weight:1000;
+  letter-spacing:-.045em;
+  margin:0;
+  line-height:1.25}
+.ysp-section-head h2 span {
+  color:var(--pink);
+  margin-left:6px}
+.ysp-section-head>a {
+  font-size:11px;
+  font-weight:700;
+  white-space:nowrap}
+.ysp-products {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px}
+.ysp-card {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:0 25px 15px;
+  border-radius:6px;
+  background:#fbeef3;
+  text-align:center;
+  min-width:0}
+.ysp-card-image {
+  display:flex;
+  width:100%;
+  height:25vw;
+  max-height:360px;
+  align-items:center;
+  justify-content:center}
+.ysp-card-image img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+  transition:transform .25s}
+.ysp-card-image:hover img {
+  transform:scale(1.04)}
+.ysp-card h3 {
+  font-size:14px;
+  line-height:1.28;
+  letter-spacing:0;
+  font-weight:500;
+  margin:3px 0 4px;
+  max-width:245px;
+  min-height:54px}
+.ysp-card strong {
+  font-size:17px;
+  line-height:1.4;
+  margin-bottom:6px}
+.ysp-buy {
+  margin-top:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  width:85%;
+  min-height:41px;
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:13px;
+  white-space:nowrap}
+.ysp-buy svg {
+  width:21px;
+  height:21px}
+.ysp-buy:hover,.ysp-header-cta:hover,.ysp-actions .primary:hover,.ysp-join button:hover {
+  background:#ce2166}
+.ysp-perks {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:14px 6%;
+  background:#fffafb}
+.ysp-perks>div {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  border-right:1px solid #f294b7;
+  min-height:36px}
+.ysp-perks>div:last-child {
+  border:0}
+.ysp-perks svg {
+  width:37px;
+  height:37px}
+.ysp-perks b {
+  font-size:12px;
+  line-height:1.4;
+  font-weight:600}
+.ysp-music {
+  height:28.3vw;
+  min-height:285px;
+  max-height:430px;
+  position:relative;
+  color:white;
+  background:#371422;
+  overflow:hidden}
+.ysp-music-art {
+  position:absolute;
+  inset:0}
+.ysp-music-art img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center}
+.ysp-music-art:after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,#28101ca6,transparent 58%)}
+.ysp-music-overlay {
+  position:relative;
+  padding:18px 5.6%;
+  height:100%;
+  width:50%}
+.ysp-music-overlay>span {
+  font-size:13px;
+  letter-spacing:.08em;
+  color:#ff9bc1}
+.ysp-music-overlay h2 {
+  font-family:Arial Black,Arial,sans-serif;
+  font-size:clamp(37px,4.7vw,68px);
+  font-weight:1000;
+  font-style:italic;
+  line-height:.88;
+  letter-spacing:-.04em;
+  transform:rotate(-3deg);
+  margin:7px 0 17px}
+.ysp-music-overlay p {
+  font-size:15px;
+  line-height:1.25;
+  max-width:290px;
+  margin:0 0 10px}
+.ysp-music-actions a {
+  display:inline-flex;
+  align-items:center;
+  min-height:40px;
+  padding:8px 16px;
+  background:white;
+  border:1px solid var(--pink);
+  border-radius:12px;
+  color:#101010;
+  font-weight:700;
+  font-size:12px}
+.ysp-music-tags {
+  position:absolute;
+  right:3.8%;
+  top:32%;
+  display:flex;
+  flex-direction:column;
+  gap:7px}
+.ysp-music-tags a {
+  padding:8px 12px;
+  background:#202020eb;
+  border:1px solid #f5bad0;
+  border-radius:7px;
+  font-size:12px;
+  font-weight:700;
+  min-width:146px}
+.ysp-join {
+  display:grid;
+  grid-template-columns:68px auto 1fr;
+  align-items:center;
+  gap:16px;
+  padding:15px 12%;
+  background:#fcecf2;
+  border-bottom:1px solid #ffdfeb}
+.ysp-join-symbol svg {
+  width:68px;
+  height:48px;
+  color:var(--pink)}
+.ysp-join b {
+  display:block;
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:-.04em;
+  white-space:nowrap}
+.ysp-join span {
+  display:block;
+  font-size:13px;
+  white-space:nowrap}
+.ysp-join form {
+  display:flex;
+  margin-left:18px}
+.ysp-join input {
+  width:100%;
+  min-width:0;
+  height:41px;
+  border:1px solid #ffaccb;
+  border-radius:13px 0 0 13px;
+  padding:0 17px;
+  background:#fffafb;
+  font-family:inherit;
+  font-size:12px}
+.ysp-join button {
+  border-radius:0 13px 13px 0;
+  padding:0 24px;
+  font-size:13px;
+  cursor:pointer;
+  white-space:nowrap}
+.ysp-join button:disabled {
+  opacity:.65;
+  cursor:wait}
+.ysp-join small {
+  grid-column:2/-1;
+  color:#9d164c}
+.ysp-footer {
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:12px 30px;
+  padding:16px 4.5% 24px;
+  background:#fffafb;
+  align-items:center}
+.ysp-footer>b {
+  font-size:15px;
+  font-stretch:condensed;
+  font-weight:1000;
+  letter-spacing:-.06em}
+.ysp-footer nav {
+  gap:20px;
+  font-size:9px;
+  font-weight:500;
+  justify-content:flex-start}
+.ysp-footer>div {
+  display:flex;
+  gap:16px}
+.ysp-footer>div svg {
+  width:21px;
+  height:21px}
+.ysp-footer small {
+  grid-column:1/-1;
+  text-align:right;
+  font-size:10px;
+  color:#777}
+.ysp-home a:hover {
+  color:#ba205b}
+.ysp-buy:hover,.ysp-header-cta:hover {
+  color:white}
+.ysp-music-tags a:hover {
+  color:white;
+  background:#6e2747}
+
+@media(min-width:1450px) {
+  .ysp-hero-copy {
+  padding-bottom:35px}
+.ysp-sub {
+  margin-top:15px}
+.ysp-music-overlay {
+  padding-top:30px}
+.ysp-card h3 {
+  max-width:310px;
+  font-size:17px}
+.ysp-join {
+  padding-top:22px;
+  padding-bottom:22px}
+}
+
+@media(max-width:1000px) {
+  .ysp-header {
+  gap:20px;
+  grid-template-columns:22% 1fr auto auto}
+.ysp-header nav {
+  gap:22px}
+.ysp-header-tools {
+  gap:13px}
+.ysp-actions a {
+  padding:0 17px;
+  font-size:12px}
+.ysp-buy {
+  width:100%;
+  font-size:11px;
+  gap:7px}
+.ysp-join {
+  padding-inline:6%}
+.ysp-join b {
+  font-size:19px}
+.ysp-footer {
+  gap:16px}
+.ysp-footer nav {
+  gap:12px}
+}
+
+@media(max-width:700px) {
+  .ysp-topbar {
+  gap:15px;
+  font-size:8px;
+  height:27px}
+.ysp-header {
+  height:66px;
+  grid-template-columns:76px 1fr auto;
+  padding:0 18px;
+  gap:12px}
+.ysp-logo {
+  width:75px;
+  height:75px;
+  left:16px;
+  top:-8px}
+.ysp-header nav {
+  justify-content:center;
+  gap:15px;
+  font-size:11px}
+.ysp-header-tools {
+  gap:12px}
+.ysp-header-tools a:first-child {
+  display:none}
+.ysp-header-cta {
+  display:none}
+.ysp-header-tools svg {
+  width:21px;
+  height:21px}
+.ysp-hero {
+  height:auto;
+  min-height:0;
+  grid-template-columns:1fr;
+  background-position:60% top;
+  background-size:auto 420px;
+  background-repeat:no-repeat}
+.ysp-hero-product {
+  grid-row:1;
+  height:360px}
+.ysp-hero-product>img {
+  left:15%;
+  width:64%;
+  height:96%;
+  bottom:0}
+.ysp-hero-words {
+  left:auto;
+  right:5%;
+  top:15%;
+  font-size:11px}
+.ysp-hero-copy {
+  padding:28px 24px;
+  align-items:center;
+  background:linear-gradient(#ffe8f1ed,#fff5f9);
+  text-align:center}
+.ysp-fox {
+  width:70px;
+  margin:0 0 10px}
+.ysp-hero h1 {
+  font-size:68px;
+  line-height:.84;
+  margin-bottom:24px;
+  width:100%;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:0 16px;
+  letter-spacing:-.075em}
+.ysp-hero h1 span:last-child {
+  font-size:1em}
+.ysp-sub {
+  font-size:12px;
+  margin-bottom:18px}
+.ysp-actions {
+  gap:10px;
+  justify-content:center;
+  width:100%}
+.ysp-actions a {
+  padding:0 12px;
+  font-size:10px;
+  flex:1;
+  max-width:210px;
+  height:44px}
+.ysp-shop {
+  padding:22px 18px}
+.ysp-section-head {
+  margin-bottom:16px}
+.ysp-section-head h2 {
+  font-size:27px}
+.ysp-section-head>a {
+  font-size:9px}
+.ysp-products {
+  grid-template-columns:1fr;
+  gap:18px}
+.ysp-card {
+  padding:8px 24px 22px;
+  max-width:430px;
+  width:100%;
+  margin:auto}
+.ysp-card-image {
+  height:310px;
+  max-height:none}
+.ysp-card h3 {
+  font-size:15px;
+  min-height:0;
+  max-width:290px;
+  margin:8px 0}
+.ysp-card strong {
+  font-size:19px;
+  margin-bottom:12px}
+.ysp-buy {
+  width:85%;
+  font-size:13px;
+  min-height:44px}
+.ysp-perks {
+  grid-template-columns:1fr 1fr;
+  gap:22px 0;
+  padding:20px 14px}
+.ysp-perks>div {
+  gap:12px}
+.ysp-perks>div:nth-child(2) {
+  border:0}
+.ysp-perks b {
+  font-size:10px}
+.ysp-perks svg {
+  width:32px;
+  height:32px}
+.ysp-music {
+  height:460px;
+  max-height:none}
+.ysp-music-art img {
+  object-position:62% center}
+.ysp-music-art:after {
+  background:linear-gradient(90deg,#28101cba,transparent)}
+.ysp-music-overlay {
+  padding:28px 24px;
+  width:100%}
+.ysp-music-overlay>span {
+  font-size:11px}
+.ysp-music-overlay h2 {
+  font-size:45px;
+  margin-top:18px;
+  max-width:340px}
+.ysp-music-overlay p {
+  font-size:14px;
+  max-width:235px;
+  margin-top:20px}
+.ysp-music-tags {
+  top:auto;
+  bottom:22px;
+  left:24px;
+  right:24px;
+  flex-direction:row;
+  gap:6px}
+.ysp-music-tags a {
+  min-width:0;
+  font-size:9px;
+  padding:9px 7px}
+.ysp-join {
+  grid-template-columns:52px 1fr;
+  gap:12px;
+  padding:22px 24px}
+.ysp-join-symbol svg {
+  width:52px}
+.ysp-join b {
+  font-size:21px}
+.ysp-join span {
+  font-size:11px;
+  white-space:normal}
+.ysp-join form {
+  grid-column:1/-1;
+  margin:4px 0 0}
+.ysp-join input {
+  height:46px}
+.ysp-join button {
+  padding:0 17px;
+  font-size:11px}
+.ysp-join small {
+  grid-column:1/-1}
+.ysp-footer {
+  grid-template-columns:1fr auto;
+  padding:24px;
+  gap:20px}
+.ysp-footer nav {
+  grid-column:1/-1;
+  grid-row:2;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px 18px;
+  font-size:10px}
+.ysp-footer small {
+  text-align:center;
+  font-size:9px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .ysp-home * {
+  transition:none!important}
+.ysp-card-image:hover img {
+  transform:none}
+}
+
+/* Keep shared legacy navigation rules from hiding homepage links. */
+.ysp-home nav a { display: block !important; }
+.ysp-hero-product > img { mix-blend-mode: normal; }
