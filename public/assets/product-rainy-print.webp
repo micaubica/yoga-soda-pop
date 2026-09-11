@@ -1,0 +1,202 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+import "./launch-overrides.css";
+
+const SHOP_URL = "https://shop.yogasodapop.com/?v=30fd57ddcc95";
+const BAG_1 = "https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag/?v=30fd57ddcc95";
+const BAG_2 = "https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-pink-anime-girl-band-school-bag/?v=30fd57ddcc95";
+const BAG_3 = "https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-rainy-day-anime-girl-raindrops-print/?v=30fd57ddcc95";
+const YOUTUBE_URL = "https://www.youtube.com/@yogasodapopbeats";
+const INSTAGRAM_URL = "https://www.instagram.com/yogasodapop/";
+const SPOTIFY_URL = "https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4";
+
+const products = [
+  {
+    name: "K-Pop Demon Hunters Backpack — Cute Anime Girls Raindrop School Bag",
+    price: "$69.99",
+    image: "/assets/backpack-raindrop.webp",
+    href: BAG_1,
+  },
+  {
+    name: "K-Pop Demon Hunters Backpack — Pink Anime Girl Band School Bag",
+    price: "$63.99",
+    image: "/assets/backpack-preview-front.jpg",
+    href: BAG_2,
+  },
+  {
+    name: "K-Pop Demon Hunters Backpack — Cute Rainy Day Anime Girl Raindrops Print",
+    price: "$69.99",
+    image: "/assets/backpack-rainy.webp",
+    href: BAG_3,
+  },
+];
+
+function BrandMark() {
+  return (
+    <span className="ysp-brandmark" aria-label="Yoga Soda Pop">
+      <span className="ysp-fox">◇</span>
+      <span>YOGA</span>
+      <span>SODA</span>
+      <span>POP</span>
+    </span>
+  );
+}
+
+function Icon({ type }: { type: "globe" | "shield" | "box" | "heart" }) {
+  if (type === "globe") return <span aria-hidden="true">◎</span>;
+  if (type === "shield") return <span aria-hidden="true">♢</span>;
+  if (type === "box") return <span aria-hidden="true">□</span>;
+  return <span aria-hidden="true">♡</span>;
+}
+
+export default function Home() {
+  const [joinEmail, setJoinEmail] = useState("");
+  const [joinSubmitting, setJoinSubmitting] = useState(false);
+  const [joinSuccess, setJoinSuccess] = useState(false);
+  const [joinError, setJoinError] = useState("");
+
+  const handleJoin = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!joinEmail || joinSubmitting) return;
+    setJoinSubmitting(true);
+    setJoinError("");
+    try {
+      const response = await fetch("https://shop.yogasodapop.com/wp-json/yogasodapop/v1/join", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: joinEmail }),
+      });
+      if (!response.ok) throw new Error("Signup failed");
+      setJoinEmail("");
+      setJoinSuccess(true);
+    } catch {
+      setJoinError("Something went wrong. Please try again.");
+    } finally {
+      setJoinSubmitting(false);
+    }
+  };
+
+  return (
+    <main className="ysp-home">
+      <div className="ysp-topbar">
+        <span>★ WORLDWIDE SHIPPING</span>
+        <span>★ SECURE CHECKOUT</span>
+        <span>★ EASY RETURNS</span>
+      </div>
+
+      <header className="ysp-header">
+        <a href="/" className="ysp-header-logo" aria-label="Yoga Soda Pop home">
+          <BrandMark />
+        </a>
+        <nav>
+          <a href={SHOP_URL}>SHOP</a>
+          <a href="/music">MUSIC</a>
+          <a href="/about">ABOUT</a>
+        </nav>
+        <a className="ysp-header-cta" href={SHOP_URL}>SHOP THE DROP →</a>
+      </header>
+
+      <section className="ysp-hero">
+        <div className="ysp-hero-copy">
+          <div className="ysp-hero-fox">◇</div>
+          <h1>
+            <span>YOGA</span>
+            <span>SODA</span>
+            <span>POP</span>
+          </h1>
+          <p className="ysp-tagline">WEAR THE MUSIC.<br />CARRY THE ATTITUDE.</p>
+          <p className="ysp-subcopy">Anime-inspired bags, art & accessories made to stand out.</p>
+          <div className="ysp-hero-actions">
+            <a className="ysp-primary" href={SHOP_URL}>SHOP THE DROP →</a>
+            <a className="ysp-secondary" href="/music">EXPLORE THE MUSIC</a>
+          </div>
+        </div>
+
+        <div className="ysp-hero-product">
+          <div className="ysp-poster-lines" aria-hidden="true" />
+          <span className="sparkle s1">✦</span>
+          <span className="sparkle s2">✦</span>
+          <img src="/assets/backpack-preview-front.jpg" alt="Pink K-Pop Demon Hunters anime girl band backpack" />
+          <div className="ysp-hero-label">
+            <b>FEATURED DROP</b>
+            <span>Pink Anime Girl Band</span>
+            <strong>$63.99</strong>
+            <a href={BAG_2}>SHOP THIS BAG →</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="ysp-products">
+        <div className="ysp-section-heading">
+          <h2>SHOP THE DROP <span>✦</span></h2>
+          <a href={SHOP_URL}>VIEW ALL PRODUCTS →</a>
+        </div>
+        <div className="ysp-product-grid">
+          {products.map((product, index) => (
+            <article className="ysp-product-card" key={product.href}>
+              <div className="ysp-product-art">
+                <span className="ysp-card-star">{index === 1 ? "♡" : "✦"}</span>
+                <img src={product.image} alt={product.name} />
+              </div>
+              <h3>{product.name}</h3>
+              <p className="ysp-price">{product.price}</p>
+              <a href={product.href} className="ysp-product-button">SHOP BAG →</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="ysp-benefits" aria-label="Shopping benefits">
+        <div><Icon type="globe" /><p><b>WORLDWIDE</b><br />SHIPPING</p></div>
+        <div><Icon type="shield" /><p><b>SECURE</b><br />CHECKOUT</p></div>
+        <div><Icon type="box" /><p><b>EASY</b><br />RETURNS</p></div>
+        <div><Icon type="heart" /><p><b>MADE FOR</b><br />K-POP FANS</p></div>
+      </section>
+
+      <section className="ysp-music">
+        <div className="ysp-music-copy">
+          <span>YOGA SODA POP BEATS</span>
+          <h2>MUSIC FOR<br />ANOTHER WORLD</h2>
+          <p>Original beats, animated stories and bright pop energy.</p>
+          <div className="ysp-music-links">
+            <a href={YOUTUBE_URL} target="_blank" rel="noreferrer">▶ WATCH ON YOUTUBE →</a>
+            <a href={SPOTIFY_URL} target="_blank" rel="noreferrer">♫ LISTEN ON SPOTIFY →</a>
+          </div>
+        </div>
+        <div className="ysp-music-art">
+          <img src="/assets/pink-girl-hero.png" alt="Yoga Soda Pop Beats anime artist in a pink music studio" />
+        </div>
+      </section>
+
+      <section className="ysp-club">
+        <div className="ysp-club-title">
+          <span className="ysp-mini-fox">◇</span>
+          <div><b>JOIN THE POP CLUB</b><span>Get updates on new drops, music and more.</span></div>
+        </div>
+        <form onSubmit={handleJoin}>
+          <input type="email" value={joinEmail} onChange={(e) => setJoinEmail(e.target.value)} placeholder="Your email" required />
+          <button type="submit" disabled={joinSubmitting}>{joinSubmitting ? "JOINING..." : "SUBSCRIBE →"}</button>
+        </form>
+        {joinSuccess && <p className="ysp-success">Thank you for joining the family ♡</p>}
+        {joinError && <p className="ysp-error">{joinError}</p>}
+      </section>
+
+      <footer className="ysp-footer">
+        <a href="/" className="ysp-footer-brand">YOGA SODA POP</a>
+        <nav>
+          <a href={SHOP_URL}>SHOP</a>
+          <a href="/music">MUSIC</a>
+          <a href="/about">ABOUT</a>
+          <a href="/contact">CONTACT</a>
+          <a href="/privacy-policy">PRIVACY POLICY</a>
+        </nav>
+        <div className="ysp-social">
+          <a href={YOUTUBE_URL} target="_blank" rel="noreferrer">YouTube</a>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+        <small>© 2026 Yoga Soda Pop · Gamers4Gamers, LLC.</small>
+      </footer>
+    </main>
+  );
+}
