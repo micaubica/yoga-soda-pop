@@ -5,7 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Yoga Soda Pop | Yoga, Music & Joy",
   description: "Playful yoga cards, positive affirmations, original music, and joyful movement for kids and families.",
-  icons: { icon: "/favicon.svg" },
+  icons: {
+    icon: [{ url: "/assets/ysp-logo-round.webp", type: "image/webp" }],
+    shortcut: "/assets/ysp-logo-round.webp",
+    apple: "/assets/ysp-logo-round.webp",
+  },
 };
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
