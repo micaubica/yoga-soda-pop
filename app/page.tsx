@@ -6,11 +6,10 @@ import "./pop-club.css";
 
 const SHOP_URL="https://shop.yogasodapop.com/?v=30fd57ddcc95";
 const PRODUCTS=[
-  {slug:"k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag",name:"K-Pop Demon Hunters Backpack — Cute Anime Girls Raindrop School Bag",price:"$69.99",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag/?v=30fd57ddcc95"},
-  {slug:"k-pop-demon-hunters-backpack-pink-anime-girl-band-school-bag",name:"K-Pop Demon Hunters Backpack — Pink Anime Girl Band School Bag",price:"$63.99",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-pink-anime-girl-band-school-bag/?v=30fd57ddcc95"},
-  {slug:"k-pop-demon-hunters-backpack-cute-rainy-day-anime-girl-raindrops-print",name:"K-Pop Demon Hunters Backpack — Cute Rainy Day Anime Girl Raindrops Print",price:"$69.99",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-rainy-day-anime-girl-raindrops-print/?v=30fd57ddcc95"},
+  {name:"K-Pop Demon Hunters Backpack — Cute Anime Girls Raindrop School Bag",price:"$69.99",image:"/assets/product-raindrop.webp",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag/?v=30fd57ddcc95"},
+  {name:"K-Pop Demon Hunters Backpack — Pink Anime Girl Band School Bag",price:"$63.99",image:"/assets/product-pink-band.webp",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-pink-anime-girl-band-school-bag/?v=30fd57ddcc95"},
+  {name:"K-Pop Demon Hunters Backpack — Cute Rainy Day Anime Girl Raindrops Print",price:"$69.99",image:"/assets/product-rainy-print.webp",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-rainy-day-anime-girl-raindrops-print/?v=30fd57ddcc95"},
 ];
-const imageFor=(slug:string)=>`/api/product-image?slug=${encodeURIComponent(slug)}`;
 const YOUTUBE_URL="https://www.youtube.com/@yogasodapopbeats";
 const SPOTIFY_URL="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4";
 const INSTAGRAM_URL="https://www.instagram.com/yogasodapop/";
@@ -44,14 +43,14 @@ export default function Home(){
       </div>
       <div className="ysp-hero-product">
         <div className="ysp-city-lines" aria-hidden="true"></div>
-        <img src={imageFor(PRODUCTS[0].slug)} alt="Cute anime girls raindrop backpack"/>
+        <img src="/assets/product-raindrop.webp" alt="Cute anime girls raindrop backpack"/>
         <div className="ysp-hero-words">MUSIC<br/>BAGS<br/>ART<br/>POP CULTURE<br/>YOU</div>
       </div>
     </section>
 
     <section className="ysp-shop" id="shop-the-drop">
       <div className="ysp-section-head"><h2>SHOP THE DROP <span>✦</span></h2><a href={SHOP_URL}>VIEW ALL PRODUCTS →</a></div>
-      <div className="ysp-products">{PRODUCTS.map((p)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}><img src={imageFor(p.slug)} alt={p.name}/></a><h3>{p.name}</h3><strong>{p.price}</strong><a className="ysp-buy" href={p.url}>ADD TO CART →</a></article>)}</div>
+      <div className="ysp-products">{PRODUCTS.map((p)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}><img src={p.image} alt={p.name}/></a><h3>{p.name}</h3><strong>{p.price}</strong><a className="ysp-buy" href={p.url}>ADD TO CART →</a></article>)}</div>
     </section>
 
     <section className="ysp-perks">
@@ -59,7 +58,7 @@ export default function Home(){
     </section>
 
     <section className="ysp-music">
-      <div className="ysp-music-scene" aria-hidden="true"><div className="ysp-neon-fox">◇</div><div className="ysp-studio-screen">YSP<br/><span>BEATS</span></div><div className="ysp-headphones">◖◗</div></div>
+      <div className="ysp-music-art"><img src="/assets/hero-yoga-soda-pop.webp" alt="Yoga Soda Pop Beats anime artwork"/></div>
       <div className="ysp-music-overlay"><span>YOGA SODA POP BEATS</span><h2>MUSIC<br/>FOR ANOTHER<br/>WORLD</h2><p>Original beats, animated stories and bright pop energy.</p><div className="ysp-music-actions"><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">▶ WATCH ON YOUTUBE →</a><a href={SPOTIFY_URL} target="_blank" rel="noreferrer">♫ LISTEN ON SPOTIFY</a></div></div>
     </section>
 
