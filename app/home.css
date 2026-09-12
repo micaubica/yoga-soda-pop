@@ -657,3 +657,41 @@
 /* Keep shared legacy navigation rules from hiding homepage links. */
 .ysp-home nav a { display: block !important; }
 .ysp-hero-product > img { mix-blend-mode: normal; }
+
+/* Backpack promotion */
+.ysp-card-image {
+  position:relative}
+.ysp-trending {
+  position:absolute;
+  top:12px;
+  left:0;
+  z-index:1;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#9e3156;
+  color:#fff;
+  font-size:12px;
+  font-weight:800}
+.ysp-price {
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:4px 0 8px}
+.ysp-price strong {
+  margin:0;
+  color:#9e3156;
+  font-size:22px}
+.ysp-price del {
+  color:#71616a;
+  font-size:16px}
+.ysp-free-shipping {
+  display:inline-block;
+  margin-bottom:14px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#e4f3e9;
+  color:#255c3c;
+  font-size:12px;
+  font-weight:700}

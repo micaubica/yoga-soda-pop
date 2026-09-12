@@ -6,9 +6,9 @@ import "./home.css";
 
 const SHOP_URL="https://shop.yogasodapop.com/?v=30fd57ddcc95";
 const PRODUCTS=[
-  {name:"K-Pop Demon Hunters Backpack — Cute Anime Girls Raindrop School Bag",price:"$64.99",image:"/assets/002.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag/?v=30fd57ddcc95"},
-  {name:"K-Pop Demon Hunters Backpack — Pink Anime Girl Band School Bag",price:"$64.99",image:"/assets/001.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-pink-anime-girl-band-school-bag/?v=30fd57ddcc95"},
-  {name:"K-Pop Demon Hunters Backpack — Cute Rainy Day Anime Girl Raindrops Print",price:"$64.99",image:"/assets/003.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-rainy-day-anime-girl-raindrops-print/?v=30fd57ddcc95"},
+  {name:"K-Pop Demon Hunters Backpack — Cute Anime Girls Raindrop School Bag",price:"$59.99",originalPrice:"$64.99",image:"/assets/002.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag/?v=30fd57ddcc95"},
+  {name:"K-Pop Demon Hunters Backpack — Pink Anime Girl Band School Bag",price:"$59.99",originalPrice:"$64.99",image:"/assets/001.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-pink-anime-girl-band-school-bag/?v=30fd57ddcc95"},
+  {name:"K-Pop Demon Hunters Backpack — Cute Rainy Day Anime Girl Raindrops Print",price:"$59.99",originalPrice:"$64.99",image:"/assets/003.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-rainy-day-anime-girl-raindrops-print/?v=30fd57ddcc95"},
 ];
 const YOUTUBE_URL="https://www.youtube.com/@yogasodapopbeats";
 const SPOTIFY_URL="https://open.spotify.com/artist/6cuzPp7tY0HYgngxwuKdg4";
@@ -62,7 +62,7 @@ export default function Home(){
 
     <section className="ysp-shop" id="shop-the-drop">
       <div className="ysp-section-head"><h2>SHOP THE DROP <span>✦</span></h2><a href={SHOP_URL}>VIEW ALL PRODUCTS →</a></div>
-      <div className="ysp-products">{PRODUCTS.map((p)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}><img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><strong>{p.price}</strong><a className="ysp-buy" href={p.url}><UtilityIcon type="cart"/> SHOP BACKPACK <span>→</span></a></article>)}</div>
+      <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">Trending</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className="ysp-price"><strong aria-label={`Sale price ${p.price}`}>{p.price}</strong><del aria-label={`Original price ${p.originalPrice}`}>{p.originalPrice}</del></div><span className="ysp-free-shipping">Free shipping</span><a className="ysp-buy" href={p.url}><UtilityIcon type="cart"/> SHOP BACKPACK <span>→</span></a></article>)}</div>
     </section>
 
     <section className="ysp-perks">
