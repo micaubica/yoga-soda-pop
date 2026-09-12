@@ -662,16 +662,16 @@
 .ysp-card-image {
   position:relative}
 .ysp-trending {
-  position:absolute;
-  top:12px;
-  left:0;
-  z-index:1;
+  display:inline-block;
+  margin:4px 0 8px;
   padding:7px 12px;
   border-radius:999px;
   background:#9e3156;
   color:#fff;
   font-size:12px;
-  font-weight:800}
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase}
 .ysp-price {
   display:flex;
   align-items:baseline;
@@ -681,8 +681,9 @@
   margin:4px 0 8px}
 .ysp-price strong {
   margin:0;
-  color:#9e3156;
   font-size:22px}
+.ysp-price-sale strong {
+  color:#9e3156}
 .ysp-price del {
   color:#71616a;
   font-size:16px}
