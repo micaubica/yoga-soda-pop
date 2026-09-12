@@ -664,16 +664,16 @@
 .ysp-trending {
   position:absolute;
   top:48px;
-  right:0;
+  left:0;
   z-index:2;
   display:block;
   margin:0;
-  transform:rotate(45deg);
+  transform:rotate(-45deg);
   pointer-events:none;
-  padding:8px 16px;
+  padding:10px 22px;
   border-radius:0;
-  border-left:5px solid #ff82ad;
-  background:#181217;
+  background:#b82060;
+  clip-path:polygon(0 0,100% 0,93% 50%,100% 100%,0 100%,7% 50%);
   color:#fff;
   font-size:15px;
   font-weight:900;
