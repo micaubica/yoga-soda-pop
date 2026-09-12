@@ -63,6 +63,7 @@ export default function Home(){
     <section className="ysp-shop" id="shop-the-drop">
       <div className="ysp-section-head"><h2>SHOP THE DROP <span>✦</span></h2><a href={SHOP_URL}>VIEW ALL PRODUCTS →</a></div>
       <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">Trending</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className={`ysp-price${p.originalPrice?" ysp-price-sale":""}`}><strong aria-label={`${p.originalPrice?"Sale price":"Price"} ${p.price}`}>{p.price}</strong>{p.originalPrice&&<del aria-label={`Original price ${p.originalPrice}`}>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping</span><a className="ysp-buy" href={p.url}><UtilityIcon type="cart"/> SHOP BACKPACK <span>→</span></a></article>)}</div>
+      <p className="ysp-shop-contact">Questions about a backpack or your order? <a href="mailto:contact@yogasodapop.com">Email us <span aria-hidden="true">↗</span></a></p>
     </section>
 
     <section className="ysp-perks">

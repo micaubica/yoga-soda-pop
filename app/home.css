@@ -704,3 +704,24 @@
   color:#255c3c;
   font-size:12px;
   font-weight:700}
+
+/* Help shoppers reach us directly from the product section. */
+.ysp-shop-contact {
+  margin:24px 0 0;
+  text-align:center;
+  font-size:14px;
+  line-height:1.7;
+  color:#59414e}
+.ysp-shop-contact a {
+  display:inline-block;
+  margin-left:5px;
+  padding:6px 2px;
+  color:#9e3156;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px}
+.ysp-shop-contact a:hover {
+  color:#181217}
+.ysp-shop-contact a:focus-visible {
+  outline:2px solid #9e3156;
+  outline-offset:4px}
