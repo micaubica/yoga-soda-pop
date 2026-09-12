@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import LiveChat from "./live-chat";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body>
         {children}
+        <LiveChat />
         {GA_MEASUREMENT_ID ? (
           <>
             <Script
