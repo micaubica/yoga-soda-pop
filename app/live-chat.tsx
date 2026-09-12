@@ -1,11 +1,11 @@
 import Script from "next/script";
 
-const propertyId = process.env.NEXT_PUBLIC_TAWK_PROPERTY_ID?.trim();
-const widgetId = process.env.NEXT_PUBLIC_TAWK_WIDGET_ID?.trim();
+// Public widget identifiers supplied by the site owner, not secret API keys.
+const propertyId = process.env.NEXT_PUBLIC_TAWK_PROPERTY_ID?.trim() || "6aa55cd5406bce344a95da51";
+const widgetId = process.env.NEXT_PUBLIC_TAWK_WIDGET_ID?.trim() || "1k2av598j";
 
 export default function LiveChat() {
-  // Leave chat disabled until a real account is configured.
-  if (!propertyId || !widgetId) return null;
+  if (process.env.NEXT_PUBLIC_TAWK_ENABLED === "false") return null;
   if (!/^[a-zA-Z0-9]+$/.test(propertyId) || !/^[a-zA-Z0-9]+$/.test(widgetId)) {
     throw new Error("Tawk.to configuration must contain only the property and widget IDs, not an embed URL.");
   }

@@ -1,14 +1,16 @@
 # Live chat setup
 
-The shared layout loads the Tawk.to widget on every page when both public IDs
-are configured. It loads after the page finishes loading. Without IDs, no chat
-script is requested; the existing contact page and email link remain available.
+The shared layout loads the owner's Tawk.to widget on every page after the page
+finishes loading. The public widget IDs are configured in `app/live-chat.tsx`,
+so no environment setup is required to preview this widget. To disable chat,
+set `NEXT_PUBLIC_TAWK_ENABLED=false` before building. The existing contact page
+and email link remain available.
 
 1. Create or sign in to your Tawk.to account and select your website property.
 2. Open Administration → Chat Widget and copy the Property ID and Widget ID.
    You can also get both from the Direct Chat Link:
    `https://tawk.to/chat/PROPERTY_ID/WIDGET_ID`.
-3. Set `NEXT_PUBLIC_TAWK_PROPERTY_ID` and `NEXT_PUBLIC_TAWK_WIDGET_ID` in
+3. To replace the configured widget, set `NEXT_PUBLIC_TAWK_PROPERTY_ID` and `NEXT_PUBLIC_TAWK_WIDGET_ID` in
    `.env.local` for local testing and in the production build environment when
    ready to publish. Restart the dev server after changing these values.
    Static exports need to be rebuilt when the IDs change.
@@ -24,8 +26,8 @@ script is requested; the existing contact page and email link remain available.
 Before publishing, use a private browser window to verify that the widget opens
 on desktop and mobile, a live conversation reaches your dashboard, and an
 offline submission reaches your Inbox. Only perform message-delivery tests with
-the account owner's authorization. Account connectivity and delivery cannot be
-verified until real IDs are provided.
+the account owner's authorization. Message delivery and offline account
+settings still need to be verified in the owner's dashboard.
 
 This repository covers the main website. The separate WooCommerce shop needs
 the widget installed in WordPress as well; this integration does not change it.
