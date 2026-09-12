@@ -662,8 +662,14 @@
 .ysp-card-image {
   position:relative}
 .ysp-trending {
-  display:inline-block;
-  margin:4px 0 12px;
+  position:absolute;
+  top:48px;
+  right:0;
+  z-index:2;
+  display:block;
+  margin:0;
+  transform:rotate(45deg);
+  pointer-events:none;
   padding:8px 16px;
   border-radius:0;
   border-left:5px solid #ff82ad;
