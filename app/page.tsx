@@ -3,9 +3,12 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import "./home.css";
+import "./design-merch.css";
 
 const SHOP_URL="https://shop.yogasodapop.com/?v=30fd57ddcc95";
+const ETSY_URL="https://lenabeatsmerch.etsy.com";
 const PRODUCTS=[
+  {name:"Kawaii Cat Backpack — Pink Anime Tongue Design",price:"$59.99",originalPrice:null,image:"/assets/catbackpack.jpg",url:SHOP_URL,new:true},
   {name:"K-Pop Demon Hunters Backpack — Cute Anime Girls Raindrop School Bag",price:"$59.99",originalPrice:"$64.99",image:"/assets/002.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag/?v=30fd57ddcc95"},
   {name:"K-Pop Demon Hunters Backpack — Pink Anime Girl Band School Bag",price:"$64.99",originalPrice:null,image:"/assets/001.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-pink-anime-girl-band-school-bag/?v=30fd57ddcc95"},
   {name:"K-Pop Demon Hunters Backpack — Cute Rainy Day Anime Girl Raindrops Print",price:"$59.99",originalPrice:"$64.99",image:"/assets/003.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-rainy-day-anime-girl-raindrops-print/?v=30fd57ddcc95"},
@@ -37,37 +40,37 @@ export default function Home(){
   const[email,setEmail]=useState(""); const[busy,setBusy]=useState(false); const[ok,setOk]=useState(false); const[error,setError]=useState("");
   const join=async(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();if(!email||busy)return;setBusy(true);setError("");try{const r=await fetch("https://shop.yogasodapop.com/wp-json/yogasodapop/v1/join",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})});if(!r.ok)throw new Error();setEmail("");setOk(true);}catch{setError("Something went wrong. Please try again.");}finally{setBusy(false)}};
   return <main className="ysp-home">
-    <div className="ysp-topbar"><span>* FREE WORLDWIDE SHIPPING</span><span>* SECURE CHECKOUT</span><span>* EASY RETURNS</span></div>
+    <div className="ysp-topbar"><span>★ FREE WORLDWIDE SHIPPING ON OUR SHOP</span><span>★ SECURE CHECKOUT</span><span>★ EASY RETURNS</span></div>
     <header className="ysp-header">
       <Link className="ysp-logo" href="/" aria-label="Yoga Soda Pop home"><img src="/assets/ysp-logo-round.webp" alt="Yoga Soda Pop"/></Link>
       <nav aria-label="Main navigation"><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a></nav>
       <div className="ysp-header-tools"><a href="https://shop.yogasodapop.com/?s=&post_type=product" aria-label="Search products"><UtilityIcon type="search"/></a><a href="https://shop.yogasodapop.com/my-account/" aria-label="My account"><UtilityIcon type="account"/></a><a href="https://shop.yogasodapop.com/cart/" aria-label="Shopping cart"><UtilityIcon type="cart"/></a></div>
-      <a className="ysp-header-cta" href={SHOP_URL}>SHOP THE DROP →</a>
+      <a className="ysp-header-cta" href={SHOP_URL}>SHOP NOW →</a>
     </header>
 
     <section className="ysp-hero">
       <div className="ysp-hero-copy">
         <div className="ysp-fox"><Fox/></div>
         <h1><span>YOGA</span><span>SODA</span><span>POP</span></h1>
-        
-        <p className="ysp-sub">ANIME-INSPIRED BAGS, ART & ACCESSORIES<br/>MADE TO STAND OUT.</p>
-        <div className="ysp-actions"><a className="primary" href={SHOP_URL}>SHOP THE DROP →</a><a className="secondary" href="/music">EXPLORE THE MUSIC</a></div>
+        <p className="ysp-sub">DESIGN MERCH FOR K-POP &amp; ANIME FANS.</p>
+        <p className="ysp-brand-copy">Not just another merch shop. Yoga Soda Pop is a small design brand creating playful bags, accessories and pop-culture pieces made for fans who want something more original.</p>
+        <div className="ysp-actions"><a className="primary" href={SHOP_URL}>SHOP ON OUR SITE →</a><a className="etsy" href={ETSY_URL} target="_blank" rel="noreferrer">PREFER ETSY? SHOP THERE →</a></div>
+        <div className="ysp-shipping-note">🌍 FREE WORLDWIDE SHIPPING INCLUDED WHEN YOU BUY ON OUR SHOP</div>
       </div>
       <div className="ysp-hero-product">
-        
-        <img src="/assets/home-raindrop-backpack.webp" alt="Cute anime girls raindrop backpack" fetchPriority="high"/>
-        <div className="ysp-hero-words">MUSIC<br/>BAGS<br/>ART<br/>POP CULTURE<br/>YOU</div>
+        <img src="/assets/ysp-hero-cat.png" alt="Pink anime cat backpack in a bright K-pop inspired room" fetchPriority="high"/>
       </div>
     </section>
 
     <section className="ysp-shop" id="shop-the-drop">
-      <div className="ysp-section-head"><h2>SHOP THE DROP <span>✦</span></h2><a href={SHOP_URL}>VIEW ALL PRODUCTS →</a></div>
-      <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">Trending</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className={`ysp-price${p.originalPrice?" ysp-price-sale":""}`}><strong aria-label={`${p.originalPrice?"Sale price":"Price"} ${p.price}`}>{p.price}</strong>{p.originalPrice&&<del aria-label={`Original price ${p.originalPrice}`}>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping</span><a className="ysp-buy" href={p.url}><UtilityIcon type="cart"/> SHOP BACKPACK <span>→</span></a></article>)}</div>
+      <div className="ysp-section-head"><h2>EXPLORE OUR DESIGNS <span>✦</span></h2><a href={SHOP_URL}>VIEW ALL PRODUCTS →</a></div>
+      <div className="ysp-products">{PRODUCTS.map((p)=><article className="ysp-card" key={p.name}><a className="ysp-card-image" href={p.url}>{p.new&&<span className="ysp-new">NEW</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className={`ysp-price${p.originalPrice?" ysp-price-sale":""}`}><strong aria-label={`${p.originalPrice?"Sale price":"Price"} ${p.price}`}>{p.price}</strong>{p.originalPrice&&<del aria-label={`Original price ${p.originalPrice}`}>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping on our shop</span><a className="ysp-buy" href={p.url}><UtilityIcon type="cart"/> SHOP DESIGN <span>→</span></a></article>)}</div>
+      <p className="ysp-channel-note"><strong>Best value:</strong> buy directly from shop.yogasodapop.com and worldwide shipping is included. Prefer Etsy? No problem — you can also shop our designs at <a href={ETSY_URL} target="_blank" rel="noreferrer">lenabeatsmerch.etsy.com ↗</a>.</p>
       <p className="ysp-shop-contact">Questions about a backpack or your order? <a href="mailto:contact@yogasodapop.com">Email us <span aria-hidden="true">↗</span></a></p>
     </section>
 
     <section className="ysp-perks">
-      <div><Icon type="truck"/><b>FREE<br/>SHIPPING</b></div><div><Icon type="shield"/><b>SECURE<br/>CHECKOUT</b></div><div><Icon type="box"/><b>EASY<br/>RETURNS</b></div><div><Icon type="heart"/><b>MADE FOR<br/>K-POP FANS</b></div>
+      <div><Icon type="truck"/><b>FREE WORLDWIDE<br/>SHIPPING ON OUR SHOP</b></div><div><Icon type="shield"/><b>SECURE<br/>CHECKOUT</b></div><div><Icon type="box"/><b>EASY<br/>RETURNS</b></div><div><Icon type="heart"/><b>INDEPENDENT DESIGN<br/>MADE FOR FANS</b></div>
     </section>
 
     <section className="ysp-music">
@@ -78,6 +81,6 @@ export default function Home(){
 
     <section className="ysp-join"><div className="ysp-join-symbol"><Fox/></div><div><b>JOIN THE POP CLUB</b><span>Get updates on new drops, music and more.</span></div><form onSubmit={join}><input aria-label="Your email address" autoComplete="email" name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email" required/><button disabled={busy}>{busy?"JOINING...":"SUBSCRIBE →"}</button></form>{ok&&<small role="status">Thank you for joining the family ♡</small>}{error&&<small role="alert">{error}</small>}</section>
 
-    <footer className="ysp-footer"><b>YOGA SODA POP</b><nav><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a><a href="/contact">CONTACT</a><a href="/shipping-returns">FAQ</a><a href="/privacy-policy">PRIVACY POLICY</a></nav><div><a href={YOUTUBE_URL} target="_blank" rel="noreferrer" aria-label="YouTube"><UtilityIcon type="youtube"/></a><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" aria-label="Instagram"><UtilityIcon type="instagram"/></a><a href={SPOTIFY_URL} aria-label="Spotify"><UtilityIcon type="spotify"/></a></div><small>© 2026 Yoga Soda Pop · Gamers4Gamers, LLC.</small></footer>
+    <footer className="ysp-footer"><b>YOGA SODA POP</b><nav><a href={SHOP_URL}>SHOP</a><a href={ETSY_URL} target="_blank" rel="noreferrer">ETSY</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a><a href="/contact">CONTACT</a><a href="/shipping-returns">FAQ</a><a href="/privacy-policy">PRIVACY POLICY</a></nav><div><a href={YOUTUBE_URL} target="_blank" rel="noreferrer" aria-label="YouTube"><UtilityIcon type="youtube"/></a><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" aria-label="Instagram"><UtilityIcon type="instagram"/></a><a href={SPOTIFY_URL} aria-label="Spotify"><UtilityIcon type="spotify"/></a></div><small>© 2026 Yoga Soda Pop · Gamers4Gamers, LLC.</small></footer>
   </main>;
 }
