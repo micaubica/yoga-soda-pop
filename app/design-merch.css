@@ -13,12 +13,11 @@
 .ysp-home .ysp-hero-product{overflow:hidden;background:#f6c2d5}
 .ysp-home .ysp-hero-product>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;mix-blend-mode:normal;filter:none}
 .ysp-home .ysp-hero-words{display:none}
-.ysp-home .ysp-products{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ysp-home .ysp-products{grid-template-columns:repeat(3,minmax(0,1fr))}
 .ysp-home .ysp-card{padding:0 18px 16px}
-.ysp-home .ysp-card-image{height:22vw;max-height:320px}
+.ysp-home .ysp-card-image{height:25vw;max-height:360px}
 .ysp-home .ysp-card h3{min-height:44px}
 .ysp-home .ysp-card:first-child{box-shadow:inset 0 0 0 1px #f7b4cc}
-.ysp-home .ysp-new{position:absolute;left:12px;top:12px;background:#f33580;color:#fff;border-radius:999px;padding:6px 11px;font-size:10px;font-weight:900;letter-spacing:.06em;z-index:2}
 .ysp-home .ysp-card-image{position:relative}
 .ysp-home .ysp-channel-note{margin:18px auto 2px;max-width:780px;text-align:center;font-size:13px;line-height:1.5;color:#513342}
 .ysp-home .ysp-channel-note strong{color:#c71f61}
