@@ -8,7 +8,6 @@ import "./design-merch.css";
 const SHOP_URL="https://shop.yogasodapop.com/?v=30fd57ddcc95";
 const ETSY_URL="https://lenabeatsmerch.etsy.com";
 const PRODUCTS=[
-  {name:"Kawaii Cat Backpack — Pink Anime Tongue Design",price:"$59.99",originalPrice:null,image:"/assets/catbackpack.jpg",url:SHOP_URL,new:true},
   {name:"K-Pop Demon Hunters Backpack — Cute Anime Girls Raindrop School Bag",price:"$59.99",originalPrice:"$64.99",image:"/assets/002.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag/?v=30fd57ddcc95"},
   {name:"K-Pop Demon Hunters Backpack — Pink Anime Girl Band School Bag",price:"$64.99",originalPrice:null,image:"/assets/001.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-pink-anime-girl-band-school-bag/?v=30fd57ddcc95"},
   {name:"K-Pop Demon Hunters Backpack — Cute Rainy Day Anime Girl Raindrops Print",price:"$59.99",originalPrice:"$64.99",image:"/assets/003.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-rainy-day-anime-girl-raindrops-print/?v=30fd57ddcc95"},
@@ -58,13 +57,13 @@ export default function Home(){
         <div className="ysp-shipping-note">🌍 FREE WORLDWIDE SHIPPING INCLUDED WHEN YOU BUY ON OUR SHOP</div>
       </div>
       <div className="ysp-hero-product">
-        <img src="/assets/ysp-hero-cat.png" alt="Pink anime cat backpack in a bright K-pop inspired room" fetchPriority="high"/>
+        <img src="/assets/ysp-hero-cat.jpg" alt="Pink anime cat backpack in a bright K-pop inspired room" fetchPriority="high"/>
       </div>
     </section>
 
     <section className="ysp-shop" id="shop-the-drop">
       <div className="ysp-section-head"><h2>EXPLORE OUR DESIGNS <span>✦</span></h2><a href={SHOP_URL}>VIEW ALL PRODUCTS →</a></div>
-      <div className="ysp-products">{PRODUCTS.map((p)=><article className="ysp-card" key={p.name}><a className="ysp-card-image" href={p.url}>{p.new&&<span className="ysp-new">NEW</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className={`ysp-price${p.originalPrice?" ysp-price-sale":""}`}><strong aria-label={`${p.originalPrice?"Sale price":"Price"} ${p.price}`}>{p.price}</strong>{p.originalPrice&&<del aria-label={`Original price ${p.originalPrice}`}>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping on our shop</span><a className="ysp-buy" href={p.url}><UtilityIcon type="cart"/> SHOP DESIGN <span>→</span></a></article>)}</div>
+      <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">Trending</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className={`ysp-price${p.originalPrice?" ysp-price-sale":""}`}><strong aria-label={`${p.originalPrice?"Sale price":"Price"} ${p.price}`}>{p.price}</strong>{p.originalPrice&&<del aria-label={`Original price ${p.originalPrice}`}>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping on our shop</span><a className="ysp-buy" href={p.url}><UtilityIcon type="cart"/> SHOP DESIGN <span>→</span></a></article>)}</div>
       <p className="ysp-channel-note"><strong>Best value:</strong> buy directly from shop.yogasodapop.com and worldwide shipping is included. Prefer Etsy? No problem — you can also shop our designs at <a href={ETSY_URL} target="_blank" rel="noreferrer">lenabeatsmerch.etsy.com ↗</a>.</p>
       <p className="ysp-shop-contact">Questions about a backpack or your order? <a href="mailto:contact@yogasodapop.com">Email us <span aria-hidden="true">↗</span></a></p>
     </section>
