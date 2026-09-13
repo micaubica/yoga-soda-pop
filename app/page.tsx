@@ -56,7 +56,7 @@ export default function Home(){
       <div className="ysp-collage ysp-collage-second"><img src="/assets/hero-backpack-closeup.png" alt="Close-up of Yoga Soda Pop backpack"/></div>
       <div className="ysp-hero-card">
         <span>NEW DROP</span>
-        <h1>K-POP STYLE<br/>FOR EVERY DAY</h1>
+        <h1 style={{color:"#111318"}}>K-POP STYLE<br/>FOR EVERY DAY</h1>
         <p>Anime-inspired merch, accessories & art made to stand out.</p>
         <a href={SHOP_URL}>SHOP THE DROP →</a>
       </div>
