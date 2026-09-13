@@ -5,7 +5,7 @@ import Link from "next/link";
 import "./home.css";
 
 const SHOP_URL="https://shop.yogasodapop.com/?v=30fd57ddcc95";
-const ETSY_URL="https://lenabeats.merch.etsy.com";
+const ETSY_URL="https://lenabeatsmerch.etsy.com";
 const PRODUCTS=[
   {name:"K-Pop Demon Hunters Backpack — Cute Anime Girls Raindrop School Bag",price:"$54.49",originalPrice:"$64.99",image:"/assets/002.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag/?v=30fd57ddcc95"},
   {name:"K-Pop Demon Hunters Backpack — Pink Anime Girl Band School Bag",price:"$64.99",originalPrice:null,image:"/assets/001.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-pink-anime-girl-band-school-bag/?v=30fd57ddcc95"},
@@ -38,7 +38,7 @@ export default function Home(){
   const join=async(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();if(!email||busy)return;setBusy(true);setError("");try{const r=await fetch("https://shop.yogasodapop.com/wp-json/yogasodapop/v1/join",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})});if(!r.ok)throw new Error();setEmail("");setOk(true);}catch{setError("Something went wrong. Please try again.");}finally{setBusy(false)}};
 
   return <main className="ysp-home">
-    <div className="ysp-topbar"><span>FREE SHIPPING WORLDWIDE</span><span>SECURE CHECKOUT</span><span>EASY RETURNS</span></div>
+    <div className="ysp-topbar"><span>FREE WORLDWIDE SHIPPING — WEBSITE ORDERS ONLY</span><span>SECURE CHECKOUT</span><span>EASY RETURNS</span></div>
 
     <header className="ysp-header">
       <Link className="ysp-brand" href="/">YOGA SODA POP</Link>
@@ -63,11 +63,11 @@ export default function Home(){
     </section>
 
     <section className="ysp-perks">
-      <div><Icon type="truck"/><b>FREE SHIPPING<br/>WORLDWIDE</b></div>
+      <div><Icon type="truck"/><b>FREE WORLDWIDE SHIPPING<br/><small>Website orders only</small></b></div>
       <div><Icon type="bolt"/><b>UNIQUE<br/>ARTWORK</b></div>
       <div><Icon type="heart"/><b>MADE<br/>WITH LOVE</b></div>
       <div><Icon type="music"/><b>K-POP INSPIRED</b></div>
-      <a className="ysp-etsy-perk" href={ETSY_URL} target="_blank" rel="noreferrer"><span>E</span><b>SHOP ON ETSY<small>Our full collection →</small></b></a>
+      <a className="ysp-etsy-perk" href={ETSY_URL} target="_blank" rel="noreferrer"><span>E</span><b>SHOP ON ETSY<small>Our Etsy collection →</small></b></a>
     </section>
 
     <section className="ysp-welcome">
@@ -79,19 +79,12 @@ export default function Home(){
     <section className="ysp-shop" id="shop-the-drop">
       <div className="ysp-section-head"><div><span className="ysp-kicker">FRESH PICKS</span><h2>NEW ARRIVALS <em>✦</em></h2></div><a href={SHOP_URL}>VIEW ALL →</a></div>
       <div className="ysp-tabs"><span className="active">NEW ARRIVALS</span><span>BEST SELLERS</span><span>BACKPACKS</span><span>ACCESSORIES</span></div>
-      <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">NEW</span>}<span className="ysp-heart">♡</span><img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><div className="ysp-card-body"><h3>{index===0?"Chibi Anime Backpack":index===1?"Pink Anime Backpack":"Cute Kawaii Print Backpack"}</h3><div className="ysp-price"><strong>{p.price}</strong>{p.originalPrice&&<del>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping</span><a className="ysp-buy" href={p.url}>SHOP BACKPACK →</a></div></article>)}</div>
+      <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">NEW</span>}<span className="ysp-heart">♡</span><img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><div className="ysp-card-body"><h3>{index===0?"Chibi Anime Backpack":index===1?"Pink Anime Backpack":"Cute Kawaii Print Backpack"}</h3><div className="ysp-price"><strong>{p.price}</strong>{p.originalPrice&&<del>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping on our website</span><a className="ysp-buy" href={p.url}>SHOP BACKPACK →</a></div></article>)}</div>
     </section>
 
     <section className="ysp-feature-row">
       <div className="ysp-more-card"><div className="ysp-more-art"><img src="/assets/hero-shoes.png" alt="Yoga Soda Pop street style"/></div><div className="ysp-more-copy"><span>DISCOVER MORE</span><h2>EXPLORE THE WORLD OF<br/>YOGA SODA POP</h2><p>Accessories, art, music and more — all in one place.</p><a href={SHOP_URL}>EXPLORE COLLECTION →</a></div></div>
       <div className="ysp-music-card"><div className="ysp-music-copy"><span>YOGA SODA POP BEATS</span><h2>MUSIC FOR<br/>ANOTHER WORLD</h2><p>Original beats, animated stories and bright pop energy.</p><div><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">MORE ON YOUTUBE →</a><a href={SPOTIFY_URL} target="_blank" rel="noreferrer" aria-label="Spotify"><UtilityIcon type="spotify"/></a></div></div><div className="ysp-music-image"><iframe width="560" height="315" src="https://www.youtube.com/embed/fr1hD_pc9tw?si=skESmYSR44jgk9ky" title="Yoga Soda Pop featured YouTube video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div></div>
-    </section>
-
-    <section className="ysp-values">
-      <div><span>◇</span><p><b>ORIGINAL DESIGNS</b><small>Anime-inspired & unique</small></p></div>
-      <div><Icon type="heart"/><p><b>FOR K-POP DREAMERS</b><small>Express your style</small></p></div>
-      <div><span>✦</span><p><b>HIGH QUALITY</b><small>Made to last</small></p></div>
-      <div><Icon type="truck"/><p><b>WORLDWIDE SHIPPING</b><small>No matter where you are</small></p></div>
     </section>
 
     <section className="ysp-join"><div className="ysp-join-icon">✉</div><div><b>JOIN THE POP CLUB</b><span>Get updates on new drops, music and more.</span></div><form onSubmit={join}><input aria-label="Your email address" autoComplete="email" name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email" required/><button disabled={busy}>{busy?"JOINING...":"SUBSCRIBE"}</button></form>{ok&&<small>Thank you for joining the family ♡</small>}{error&&<small>{error}</small>}</section>
