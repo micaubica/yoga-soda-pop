@@ -57,7 +57,7 @@ export default function Home(){
         <div className="ysp-shipping-note">🌍 FREE WORLDWIDE SHIPPING INCLUDED WHEN YOU BUY ON OUR SHOP</div>
       </div>
       <div className="ysp-hero-product">
-        <img src="/assets/ysp-hero-cat.jpg" alt="Pink anime cat backpack in a bright K-pop inspired room" fetchPriority="high"/>
+        <img src="/assets/ysp-hero-cat.svg" alt="Pink anime cat backpack in a bright K-pop inspired room" fetchPriority="high"/>
       </div>
     </section>
 
