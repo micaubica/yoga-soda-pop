@@ -48,11 +48,12 @@ export default function Home(){
     </header>
 
     <section className="ysp-collage-hero">
-      <div className="ysp-collage ysp-collage-girl"><img src="/assets/pink-girl-new.png" alt="Anime-inspired Yoga Soda Pop artwork"/></div>
-      <div className="ysp-collage ysp-collage-bag"><img src="/assets/002.jpg" alt="Yoga Soda Pop backpack"/></div>
-      <div className="ysp-collage ysp-collage-music"><img src="/assets/home-music-studio.webp" alt="Yoga Soda Pop music studio"/></div>
-      <div className="ysp-collage ysp-collage-detail"><div className="ysp-detail-pattern">✦ ✧ ✦<br/>K-POP<br/>ANIME<br/>STYLE</div></div>
-      <div className="ysp-collage ysp-collage-second"><img src="/assets/pink-girl-new.png" alt="Yoga Soda Pop anime detail"/></div>
+      <div className="ysp-collage ysp-collage-girl"><img src="/assets/manga-girl-one.png" alt="Retro manga girl artwork"/></div>
+      <div className="ysp-collage ysp-collage-bag"><img src="/assets/backpack-hero.png" alt="Yoga Soda Pop backpack artwork"/></div>
+      <div className="ysp-collage ysp-collage-shoes"><img src="/assets/hero-shoes.png" alt="K-pop street style shoes"/></div>
+      <div className="ysp-collage ysp-collage-music"><img src="/assets/hero-studio.png" alt="Yoga Soda Pop music studio"/></div>
+      <div className="ysp-collage ysp-collage-detail"><div className="ysp-detail-pattern"><span className="ysp-detail-fox">◇</span><b>K-POP<br/>ANIME<br/>FASHION<br/>FOR A BRIGHTER<br/>TOMORROW</b></div></div>
+      <div className="ysp-collage ysp-collage-second"><img src="/assets/hero-backpack-closeup.png" alt="Close-up of Yoga Soda Pop backpack"/></div>
       <div className="ysp-hero-card">
         <span>NEW DROP</span>
         <h1>K-POP STYLE<br/>FOR EVERY DAY</h1>
@@ -70,7 +71,7 @@ export default function Home(){
     </section>
 
     <section className="ysp-welcome">
-      <div className="ysp-polaroids"><div><img src="/assets/pink-girl-new.png" alt="Yoga Soda Pop artwork"/></div><div><img src="/assets/002.jpg" alt="Yoga Soda Pop product"/></div></div>
+      <div className="ysp-polaroids"><div><img src="/assets/manga-girl-one.png" alt="Yoga Soda Pop manga artwork"/></div><div><img src="/assets/backpack-hero.png" alt="Yoga Soda Pop backpack"/></div></div>
       <div className="ysp-welcome-copy"><span>HELLO FROM YOGA SODA POP</span><h2>WELCOME!</h2><p>We bring together anime, K-pop, music and everyday style. From school to travel to concerts — carry what you love.</p><div className="ysp-tags"><span>ANIME</span><span>K-POP</span><span>EVERYDAY</span><span>YOU</span></div></div>
       <div className="ysp-checks" aria-hidden="true">▦<br/>✦</div>
     </section>
@@ -82,8 +83,8 @@ export default function Home(){
     </section>
 
     <section className="ysp-feature-row">
-      <div className="ysp-more-card"><div className="ysp-more-art"><img src="/assets/003.jpg" alt="Yoga Soda Pop merch"/></div><div className="ysp-more-copy"><span>DISCOVER MORE</span><h2>EXPLORE THE WORLD OF<br/>YOGA SODA POP</h2><p>Accessories, art, music and more — all in one place.</p><a href={SHOP_URL}>EXPLORE COLLECTION →</a></div></div>
-      <div className="ysp-music-card"><div className="ysp-music-copy"><span>YOGA SODA POP BEATS</span><h2>MUSIC FOR<br/>ANOTHER WORLD</h2><p>Original beats, animated stories and bright pop energy.</p><div><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">LISTEN ON YOUTUBE →</a><a href={SPOTIFY_URL} target="_blank" rel="noreferrer" aria-label="Spotify"><UtilityIcon type="spotify"/></a></div></div><div className="ysp-music-image"><img src="/assets/home-music-studio.webp" alt="Yoga Soda Pop music studio"/></div></div>
+      <div className="ysp-more-card"><div className="ysp-more-art"><img src="/assets/hero-shoes.png" alt="Yoga Soda Pop street style"/></div><div className="ysp-more-copy"><span>DISCOVER MORE</span><h2>EXPLORE THE WORLD OF<br/>YOGA SODA POP</h2><p>Accessories, art, music and more — all in one place.</p><a href={SHOP_URL}>EXPLORE COLLECTION →</a></div></div>
+      <div className="ysp-music-card"><div className="ysp-music-copy"><span>YOGA SODA POP BEATS</span><h2>MUSIC FOR<br/>ANOTHER WORLD</h2><p>Original beats, animated stories and bright pop energy.</p><div><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">LISTEN ON YOUTUBE →</a><a href={SPOTIFY_URL} target="_blank" rel="noreferrer" aria-label="Spotify"><UtilityIcon type="spotify"/></a></div></div><div className="ysp-music-image"><img src="/assets/hero-studio.png" alt="Yoga Soda Pop music studio"/></div></div>
     </section>
 
     <section className="ysp-values">
