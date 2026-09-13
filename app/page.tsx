@@ -44,7 +44,7 @@ export default function Home(){
       <Link className="ysp-logo" href="/" aria-label="Yoga Soda Pop home"><img src="/assets/ysp-logo-round.webp" alt="Yoga Soda Pop"/></Link>
       <nav aria-label="Main navigation"><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a></nav>
       <div className="ysp-header-tools"><a href="https://shop.yogasodapop.com/?s=&post_type=product" aria-label="Search products"><UtilityIcon type="search"/></a><a href="https://shop.yogasodapop.com/my-account/" aria-label="My account"><UtilityIcon type="account"/></a><a href="https://shop.yogasodapop.com/cart/" aria-label="Shopping cart"><UtilityIcon type="cart"/></a></div>
-      <a className="ysp-header-cta" href={SHOP_URL}>SHOP NOW →</a>
+      <a className="ysp-header-cta" href={SHOP_URL}>SHOP OUR DESIGNS →</a>
     </header>
 
     <section className="ysp-hero">
@@ -52,12 +52,13 @@ export default function Home(){
         <div className="ysp-fox"><Fox/></div>
         <h1><span>YOGA</span><span>SODA</span><span>POP</span></h1>
         <p className="ysp-sub">DESIGN MERCH FOR K-POP &amp; ANIME FANS.</p>
-        <p className="ysp-brand-copy">Not just another merch shop. Yoga Soda Pop is a small design brand creating playful bags, accessories and pop-culture pieces made for fans who want something more original.</p>
-        <div className="ysp-actions"><a className="primary" href={SHOP_URL}>SHOP ON OUR SITE →</a><a className="etsy" href={ETSY_URL} target="_blank" rel="noreferrer">PREFER ETSY? SHOP THERE →</a></div>
-        <div className="ysp-shipping-note">🌍 FREE WORLDWIDE SHIPPING INCLUDED WHEN YOU BUY ON OUR SHOP</div>
+        <p className="ysp-brand-copy">Original bags, art &amp; accessories for fans who like to stand out. Designed with love for the K-pop, anime and pop culture community.</p>
+        <div className="ysp-actions"><a className="primary" href={SHOP_URL}>SHOP OUR DESIGNS →</a></div>
+        <div className="ysp-shipping-note">🌍 FREE WORLDWIDE SHIPPING INCLUDED</div>
+        <a className="ysp-etsy-card" href={ETSY_URL} target="_blank" rel="noreferrer"><span className="ysp-etsy-icon">E</span><span><strong>Prefer Etsy?</strong><small>You can also shop our designs on Etsy too →</small></span></a>
       </div>
       <div className="ysp-hero-product">
-        <img src="/assets/ysp-hero-cat.svg" alt="Pink anime cat backpack in a bright K-pop inspired room" fetchPriority="high"/>
+        <img src="/assets/ysp-cat-girl-hero.jpg" alt="Anime girl wearing a pink cat backpack in a cherry blossom city scene" fetchPriority="high"/>
       </div>
     </section>
 
