@@ -67,9 +67,24 @@ export default function Home(){
       <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">Trending</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className="ysp-price"><strong>{p.price}</strong>{p.originalPrice&&<del>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping</span><a className="ysp-buy" href={p.url}>SHOP BACKPACK →</a></article>)}</div>
     </section>
 
-    <section className="ysp-music"><div className="ysp-music-art"><img src="/assets/home-music-studio.webp" alt="Yoga Soda Pop music" loading="lazy"/></div><div className="ysp-music-overlay"><span>YOGA SODA POP BEATS</span><h2>MUSIC FOR<br/>ANOTHER WORLD</h2><p>Original beats, animated stories and bright pop energy.</p><div className="ysp-music-actions"><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">WATCH ON YOUTUBE →</a></div></div></section>
+    <section className="ysp-music">
+      <div className="ysp-music-copy">
+        <span className="ysp-music-kicker">YOGA SODA POP BEATS</span>
+        <h2>MUSIC FOR<br/>ANOTHER WORLD</h2>
+        <p>Original beats, animated stories and bright pop energy.</p>
+        <div className="ysp-music-actions"><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">LISTEN ON YOUTUBE →</a><a className="ysp-music-icon" href={YOUTUBE_URL} target="_blank" rel="noreferrer" aria-label="YouTube"><UtilityIcon type="youtube"/></a><a className="ysp-music-icon" href={SPOTIFY_URL} target="_blank" rel="noreferrer" aria-label="Spotify"><UtilityIcon type="spotify"/></a><span className="ysp-music-note" aria-hidden="true">♫</span></div>
+      </div>
+      <div className="ysp-music-art"><img src="/assets/home-music-studio.webp" alt="Pink neon music studio" loading="lazy"/></div>
+    </section>
 
-    <section className="ysp-join"><div className="ysp-join-symbol"><Fox/></div><div><b>JOIN THE POP CLUB</b><span>Get updates on new drops, music and more.</span></div><form onSubmit={join}><input aria-label="Your email address" autoComplete="email" name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email" required/><button disabled={busy}>{busy?"JOINING...":"SUBSCRIBE →"}</button></form>{ok&&<small>Thank you for joining the family ♡</small>}{error&&<small>{error}</small>}</section>
+    <section className="ysp-values" aria-label="Why Yoga Soda Pop">
+      <div><span className="ysp-value-icon">◇</span><p><b>ORIGINAL DESIGNS</b><small>Anime-inspired & unique</small></p></div>
+      <div><Icon type="heart"/><p><b>FOR K-POP DREAMERS</b><small>Express your style</small></p></div>
+      <div><span className="ysp-value-icon">✦</span><p><b>HIGH QUALITY</b><small>Made to last</small></p></div>
+      <div><Icon type="truck"/><p><b>WORLDWIDE SHIPPING</b><small>No matter where you are</small></p></div>
+    </section>
+
+    <section className="ysp-join"><div className="ysp-join-symbol"><Fox/></div><div><b>JOIN THE POP CLUB</b><span>Get updates on new drops, music and more.</span></div><form onSubmit={join}><input aria-label="Your email address" autoComplete="email" name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email" required/><button disabled={busy}>{busy?"JOINING...":"SUBSCRIBE"}</button></form>{ok&&<small>Thank you for joining the family ♡</small>}{error&&<small>{error}</small>}</section>
 
     <footer className="ysp-footer"><b>YOGA SODA POP</b><nav><a href={SHOP_URL}>SHOP</a><a href={ETSY_URL} target="_blank" rel="noreferrer">ETSY</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a><a href="/contact">CONTACT</a><a href="/shipping-returns">FAQ</a><a href="/privacy-policy">PRIVACY POLICY</a></nav><div><a href={YOUTUBE_URL}><UtilityIcon type="youtube"/></a><a href={INSTAGRAM_URL}><UtilityIcon type="instagram"/></a><a href={SPOTIFY_URL}><UtilityIcon type="spotify"/></a></div><small>© 2026 Yoga Soda Pop · Gamers4Gamers, LLC.</small></footer>
   </main>;
