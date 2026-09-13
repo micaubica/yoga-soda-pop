@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">Pink anime cat backpack hero artwork</title>
+<desc id="desc">A pastel K-pop inspired room with a pink cat backpack, an anime fan and headphones.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffdce9"/><stop offset=".5" stop-color="#efc8f8"/><stop offset="1" stop-color="#9ed9ff"/></linearGradient>
+  <linearGradient id="tongue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4f9a"/><stop offset=".55" stop-color="#e44da7"/><stop offset="1" stop-color="#6755cf"/></linearGradient>
+  <radialGradient id="eye"><stop stop-color="#fff"/><stop offset=".18" stop-color="#a9eaff"/><stop offset=".48" stop-color="#5f75d7"/><stop offset="1" stop-color="#1e225c"/></radialGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#72244c" flood-opacity=".23"/></filter>
+</defs>
+<rect width="1200" height="720" fill="url(#bg)"/>
+<circle cx="1020" cy="120" r="220" fill="#ff7eb6" opacity=".18"/><circle cx="180" cy="110" r="170" fill="#fff" opacity=".22"/>
+<path d="M0 520C190 455 300 590 475 526s290-34 405 12 220 34 320-18v200H0z" fill="#f7abc8" opacity=".5"/>
+<g opacity=".42" fill="#fff"><circle cx="70" cy="145" r="18"/><circle cx="105" cy="126" r="11"/><circle cx="145" cy="165" r="15"/><circle cx="1100" cy="210" r="18"/><circle cx="1138" cy="176" r="10"/><circle cx="1080" cy="165" r="12"/></g>
+<!-- city/window -->
+<g opacity=".32"><rect x="430" y="80" width="380" height="330" rx="18" fill="#fff"/><path d="M470 390V230h60v160m28 0V170h75v220m30 0V260h48v130m30 0V145h56v245" stroke="#7386cf" stroke-width="18" opacity=".55"/></g>
+<!-- anime girl -->
+<g transform="translate(760 80)" filter="url(#shadow)">
+  <path d="M105 110c14-80 132-95 190-42 58 53 33 164 20 218-15 66-2 136-74 173-72 38-170-6-177-91-7-80 16-169 41-258z" fill="#342043"/>
+  <ellipse cx="206" cy="205" rx="100" ry="120" fill="#ffd8d7"/>
+  <path d="M102 188c6-90 51-139 119-139 68 0 112 48 116 121-49-9-80-37-106-76-26 47-67 83-129 94z" fill="#241932"/>
+  <path d="M134 177c17-25 42-35 65-34m48 1c25-2 49 7 65 29" fill="none" stroke="#52324d" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="176" cy="213" rx="18" ry="25" fill="#7f438d"/><ellipse cx="274" cy="213" rx="18" ry="25" fill="#7f438d"/><circle cx="170" cy="205" r="6" fill="#fff"/><circle cx="268" cy="205" r="6" fill="#fff"/>
+  <path d="M215 250q16 12 33 0" fill="none" stroke="#d3687e" stroke-width="5" stroke-linecap="round"/>
+  <path d="M121 322c80-44 170-20 225 51l-31 197H77l7-151c2-45 10-76 37-97z" fill="#f7f4ff"/>
+  <path d="M83 414c70 42 166 57 247 18" fill="none" stroke="#f1a8c4" stroke-width="22" opacity=".55"/>
+  <path d="M121 354l-42 178m253-156 24 149" stroke="#c47bc0" stroke-width="12" opacity=".5"/>
+  <path d="M99 263c-42 6-74 40-74 83 0 39 23 69 54 80" fill="none" stroke="#4b294c" stroke-width="30" stroke-linecap="round"/><path d="M346 258c43 1 79 35 81 77 2 39-19 71-51 83" fill="none" stroke="#4b294c" stroke-width="30" stroke-linecap="round"/>
+</g>
+<!-- cat backpack -->
+<g transform="translate(350 92)" filter="url(#shadow)">
+  <path d="M120 76C120 25 162 0 210 0s90 25 90 76" fill="none" stroke="#17131a" stroke-width="26" stroke-linecap="round"/>
+  <rect x="35" y="70" width="350" height="560" rx="118" fill="#f58fc0" stroke="#1e1821" stroke-width="12"/>
+  <path d="M45 165c89-64 235-71 330 0v150H45z" fill="#f4a0d0"/>
+  <path d="M72 210 126 142l52 84m170-16-52-68-53 85" fill="#e466a9" stroke="#2f2b5c" stroke-width="13" stroke-linejoin="round"/>
+  <path d="M88 185c40-50 87-76 122-76 40 0 89 27 128 78l-17 157H104z" fill="#ef87bf" opacity=".55"/>
+  <circle cx="142" cy="278" r="67" fill="#fff" stroke="#35316b" stroke-width="10"/><circle cx="284" cy="278" r="67" fill="#fff" stroke="#35316b" stroke-width="10"/>
+  <circle cx="147" cy="286" r="48" fill="url(#eye)"/><circle cx="279" cy="286" r="48" fill="url(#eye)"/>
+  <circle cx="130" cy="266" r="14" fill="#fff"/><circle cx="262" cy="266" r="14" fill="#fff"/><circle cx="160" cy="300" r="7" fill="#fff"/><circle cx="292" cy="300" r="7" fill="#fff"/>
+  <path d="M188 343q22-17 44 0-22 28-44 0z" fill="#f45b9f" stroke="#2a204d" stroke-width="7"/>
+  <path d="M208 368c-20 24-48 31-80 29m80-29c20 24 48 31 80 29M116 355 66 343m58 37-62 10m238-35 50-12m-58 37 62 10" fill="none" stroke="#2e2852" stroke-width="8" stroke-linecap="round"/>
+  <path d="M42 396h336v130c0 73-64 104-168 104S42 599 42 526z" fill="#f47fb7" stroke="#1e1821" stroke-width="12"/>
+  <path d="M135 404h151v172c0 69-37 88-75 88-42 0-76-19-76-88z" fill="url(#tongue)" stroke="#30265c" stroke-width="10"/>
+  <path d="M210 422v208" stroke="#643879" stroke-width="5" opacity=".7"/>
+  <g fill="#83d8ff" opacity=".7"><circle cx="88" cy="480" r="10"/><circle cx="327" cy="478" r="8"/><circle cx="97" cy="555" r="7"/></g>
+  <g fill="#ff4f9a" opacity=".72"><path d="M77 126l9 18 20 3-15 14 4 20-18-9-18 9 4-20-15-14 20-3z"/><path d="M332 122l7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z"/></g>
+</g>
+<!-- decor -->
+<g transform="translate(930 500) rotate(-8)"><circle cx="95" cy="80" r="74" fill="#5b315a"/><circle cx="95" cy="80" r="49" fill="#f47fb7"/><path d="M20 80c0-52 34-92 75-92s75 40 75 92" fill="none" stroke="#28202d" stroke-width="22"/></g>
+<g opacity=".55" fill="#f06ca8"><path d="M82 88c28-40 62-40 90 0-30-15-60-15-90 0z"/><path d="M1095 82c22-32 50-32 72 0-24-12-48-12-72 0z"/></g>
+</svg>
