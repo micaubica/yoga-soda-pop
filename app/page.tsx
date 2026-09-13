@@ -25,51 +25,50 @@ function UtilityIcon({type}:{type:"search"|"account"|"cart"|"youtube"|"instagram
  return <svg {...p}><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="m10 9 6 3-6 3Z" fill="white" stroke="white"/></svg>;
 }
 
+function Icon({type}:{type:"truck"|"heart"|"bolt"|"music"}){
+ const p={viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:1.8,strokeLinecap:"round" as const,strokeLinejoin:"round" as const};
+ if(type==="truck")return <svg {...p}><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>;
+ if(type==="heart")return <svg {...p}><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.9-8.6a5.5 5.5 0 0 0-.1-7.8Z"/></svg>;
+ if(type==="bolt")return <svg {...p}><path d="M13 2 5 14h6l-1 8 8-12h-6z"/></svg>;
+ return <svg {...p}><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>;
+}
+
 export default function Home(){
   const[email,setEmail]=useState(""); const[busy,setBusy]=useState(false); const[ok,setOk]=useState(false); const[error,setError]=useState("");
   const join=async(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();if(!email||busy)return;setBusy(true);setError("");try{const r=await fetch("https://shop.yogasodapop.com/wp-json/yogasodapop/v1/join",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})});if(!r.ok)throw new Error();setEmail("");setOk(true);}catch{setError("Something went wrong. Please try again.");}finally{setBusy(false)}};
   return <main className="ysp-home">
-    <div className="ysp-topbar"><span>FREE WORLDWIDE SHIPPING</span><span>SECURE CHECKOUT</span><span>EASY RETURNS</span></div>
     <header className="ysp-header">
-      <Link className="ysp-brand" href="/" aria-label="Yoga Soda Pop home">YOGA SODA POP</Link>
-      <nav aria-label="Main navigation"><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a></nav>
-      <div className="ysp-header-tools"><a href="https://shop.yogasodapop.com/?s=&post_type=product" aria-label="Search products"><UtilityIcon type="search"/></a><a href="https://shop.yogasodapop.com/my-account/" aria-label="My account"><UtilityIcon type="account"/></a><a href="https://shop.yogasodapop.com/cart/" aria-label="Shopping cart"><UtilityIcon type="cart"/></a></div>
+      <Link className="ysp-brand" href="/">YOGA SODA POP</Link>
+      <nav><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a></nav>
+      <div className="ysp-header-tools"><a href="https://shop.yogasodapop.com/?s=&post_type=product" aria-label="Search"><UtilityIcon type="search"/></a><a href="https://shop.yogasodapop.com/my-account/" aria-label="Account"><UtilityIcon type="account"/></a><a href="https://shop.yogasodapop.com/cart/" aria-label="Cart"><UtilityIcon type="cart"/></a></div>
       <a className="ysp-header-cta" href={SHOP_URL}>SHOP THE DROP →</a>
     </header>
 
     <section className="ysp-hero">
       <div className="ysp-hero-copy">
-        <p className="ysp-eyebrow">ANIME-INSPIRED BAGS</p>
-        <h1>YOGA<br/>SODA POP</h1>
-        <p className="ysp-sub">FOR K-POP DREAMERS</p>
-        <div className="ysp-actions"><a className="primary" href={SHOP_URL}>SHOP THE DROP →</a><a className="secondary" href="/music">EXPLORE MUSIC</a></div>
+        <h1>YOGA<br/>SODA<br/>POP</h1>
+        <p className="ysp-sub">ANIME-INSPIRED BAGS<br/>FOR K-POP DREAMERS</p>
+        <a className="ysp-hero-cta" href={SHOP_URL}>SHOP THE DROP →</a>
       </div>
-      <div className="ysp-hero-product">
-        <div className="ysp-hero-orb"/>
-        <span className="ysp-spark ysp-spark-one">✦</span><span className="ysp-spark ysp-spark-two">✦</span>
-        <img src="/assets/home-raindrop-backpack.webp" alt="K-pop inspired Yoga Soda Pop backpack" fetchPriority="high"/>
-        <p className="ysp-hero-words">MUSIC<br/>FASHION<br/>CREATIVITY<br/>YOU</p>
-      </div>
+      <div className="ysp-hero-art"><img src="/assets/pink-girl-hero.png" alt="Anime-inspired Yoga Soda Pop hero artwork" fetchPriority="high"/></div>
     </section>
 
-    <section className="ysp-category-grid" aria-label="Explore Yoga Soda Pop">
-      <a className="ysp-category-card" href={SHOP_URL}><img src="/assets/yoga-girls.png" alt="Anime girls artwork"/><span>BACKPACKS →</span></a>
-      <a className="ysp-category-card" href={SHOP_URL}><img src="/assets/accessories-icon.webp" alt="K-pop accessories"/><span>ACCESSORIES →</span></a>
-      <a className="ysp-category-card" href="/music"><img src="/assets/home-music-studio.webp" alt="Yoga Soda Pop music"/><span>MUSIC →</span></a>
+    <section className="ysp-perks">
+      <div><Icon type="truck"/><b>FREE SHIPPING<br/>WORLDWIDE</b></div>
+      <div><Icon type="heart"/><b>K-POP INSPIRED</b></div>
+      <div><Icon type="bolt"/><b>UNIQUE ARTWORK</b></div>
+      <div><Icon type="music"/><b>MUSIC & MERCH</b></div>
     </section>
 
     <section className="ysp-shop" id="shop-the-drop">
       <div className="ysp-section-head"><h2>SHOP THE DROP <span>✦</span></h2><a href={SHOP_URL}>VIEW ALL PRODUCTS →</a></div>
-      <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">Trending</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className={`ysp-price${p.originalPrice?" ysp-price-sale":""}`}><strong>{p.price}</strong>{p.originalPrice&&<del>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping</span><a className="ysp-buy" href={p.url}>SHOP BACKPACK →</a></article>)}</div>
+      <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">Trending</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className="ysp-price"><strong>{p.price}</strong>{p.originalPrice&&<del>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping</span><a className="ysp-buy" href={p.url}>SHOP BACKPACK →</a></article>)}</div>
     </section>
 
-    <section className="ysp-music">
-      <div className="ysp-music-art"><img src="/assets/home-music-studio.webp" alt="Pink-haired anime girl listening to music in a pink recording studio" loading="lazy"/></div>
-      <div className="ysp-music-overlay"><span>YOGA SODA POP BEATS</span><h2>MUSIC FOR<br/>ANOTHER WORLD</h2><p>Original beats, animated stories and bright pop energy.</p><div className="ysp-music-actions"><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">WATCH ON YOUTUBE →</a></div></div>
-    </section>
+    <section className="ysp-music"><div className="ysp-music-art"><img src="/assets/home-music-studio.webp" alt="Yoga Soda Pop music" loading="lazy"/></div><div className="ysp-music-overlay"><span>YOGA SODA POP BEATS</span><h2>MUSIC FOR<br/>ANOTHER WORLD</h2><p>Original beats, animated stories and bright pop energy.</p><div className="ysp-music-actions"><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">WATCH ON YOUTUBE →</a></div></div></section>
 
-    <section className="ysp-join"><div className="ysp-join-symbol"><Fox/></div><div><b>JOIN THE POP CLUB</b><span>Get updates on new drops, music and more.</span></div><form onSubmit={join}><input aria-label="Your email address" autoComplete="email" name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email" required/><button disabled={busy}>{busy?"JOINING...":"SUBSCRIBE →"}</button></form>{ok&&<small role="status">Thank you for joining the family ♡</small>}{error&&<small role="alert">{error}</small>}</section>
+    <section className="ysp-join"><div className="ysp-join-symbol"><Fox/></div><div><b>JOIN THE POP CLUB</b><span>Get updates on new drops, music and more.</span></div><form onSubmit={join}><input aria-label="Your email address" autoComplete="email" name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email" required/><button disabled={busy}>{busy?"JOINING...":"SUBSCRIBE →"}</button></form>{ok&&<small>Thank you for joining the family ♡</small>}{error&&<small>{error}</small>}</section>
 
-    <footer className="ysp-footer"><b>YOGA SODA POP</b><nav><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a><a href="/contact">CONTACT</a><a href="/shipping-returns">FAQ</a><a href="/privacy-policy">PRIVACY POLICY</a></nav><div><a href={YOUTUBE_URL} target="_blank" rel="noreferrer" aria-label="YouTube"><UtilityIcon type="youtube"/></a><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" aria-label="Instagram"><UtilityIcon type="instagram"/></a><a href={SPOTIFY_URL} aria-label="Spotify"><UtilityIcon type="spotify"/></a></div><small>© 2026 Yoga Soda Pop · Gamers4Gamers, LLC.</small></footer>
+    <footer className="ysp-footer"><b>YOGA SODA POP</b><nav><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a><a href="/contact">CONTACT</a><a href="/shipping-returns">FAQ</a><a href="/privacy-policy">PRIVACY POLICY</a></nav><div><a href={YOUTUBE_URL}><UtilityIcon type="youtube"/></a><a href={INSTAGRAM_URL}><UtilityIcon type="instagram"/></a><a href={SPOTIFY_URL}><UtilityIcon type="spotify"/></a></div><small>© 2026 Yoga Soda Pop · Gamers4Gamers, LLC.</small></footer>
   </main>;
 }
