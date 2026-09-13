@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import LiveChat from "./live-chat";
 import "./globals.css";
+import "./header-fix.css";
 
 export const metadata: Metadata = {
   title: "Yoga Soda Pop | Yoga, Music & Joy",
