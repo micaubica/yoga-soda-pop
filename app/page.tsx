@@ -52,7 +52,7 @@ export default function Home(){
         <p className="ysp-sub">ANIME-INSPIRED BAGS<br/>FOR BRIGHTER DAYS</p>
         <a className="ysp-hero-cta" href={SHOP_URL}>SHOP THE DROP →</a>
       </div>
-      <div className="ysp-hero-art"><img src="/assets/pink-girl-hero.png" alt="Anime-inspired Yoga Soda Pop hero artwork" fetchPriority="high"/><p className="ysp-hero-words">MUSIC<br/>FASHION<br/>SELF EXPRESSION<br/>FOR A BRIGHTER<br/>TOMORROW</p></div>
+      <div className="ysp-hero-art"><img src="/assets/pink-girl-new.png" alt="Anime girl wearing a Yoga Soda Pop K-pop backpack" fetchPriority="high"/><p className="ysp-hero-words">MUSIC<br/>FASHION<br/>SELF EXPRESSION<br/>FOR A BRIGHTER<br/>TOMORROW</p></div>
     </section>
 
     <section className="ysp-perks">
