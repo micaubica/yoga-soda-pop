@@ -37,9 +37,9 @@ export default function Home(){
   const[email,setEmail]=useState(""); const[busy,setBusy]=useState(false); const[ok,setOk]=useState(false); const[error,setError]=useState("");
   const join=async(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();if(!email||busy)return;setBusy(true);setError("");try{const r=await fetch("https://shop.yogasodapop.com/wp-json/yogasodapop/v1/join",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})});if(!r.ok)throw new Error();setEmail("");setOk(true);}catch{setError("Something went wrong. Please try again.");}finally{setBusy(false)}};
   return <main className="ysp-home">
-    <div className="ysp-topbar"><span>* FREE WORLDWIDE SHIPPING</span><span>* SECURE CHECKOUT</span><span>* EASY RETURNS</span></div>
+    <div className="ysp-topbar"><span>✦ FREE WORLDWIDE SHIPPING</span><span>✦ SECURE CHECKOUT</span><span>✦ EASY RETURNS</span></div>
     <header className="ysp-header">
-      <Link className="ysp-logo" href="/" aria-label="Yoga Soda Pop home"><img src="/assets/ysp-logo-round.webp" alt="Yoga Soda Pop"/></Link>
+      <Link className="ysp-logo" href="/" aria-label="Yoga Soda Pop home"><img src="/assets/yoga-soda-pop-logo-transparent.png" alt="Yoga Soda Pop"/></Link>
       <nav aria-label="Main navigation"><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a></nav>
       <div className="ysp-header-tools"><a href="https://shop.yogasodapop.com/?s=&post_type=product" aria-label="Search products"><UtilityIcon type="search"/></a><a href="https://shop.yogasodapop.com/my-account/" aria-label="My account"><UtilityIcon type="account"/></a><a href="https://shop.yogasodapop.com/cart/" aria-label="Shopping cart"><UtilityIcon type="cart"/></a></div>
       <a className="ysp-header-cta" href={SHOP_URL}>SHOP THE DROP →</a>
@@ -47,27 +47,24 @@ export default function Home(){
 
     <section className="ysp-hero">
       <div className="ysp-hero-copy">
-        <div className="ysp-fox"><Fox/></div>
         <h1><span>YOGA</span><span>SODA</span><span>POP</span></h1>
-        
-        <p className="ysp-sub">ANIME-INSPIRED BAGS, ART & ACCESSORIES<br/>MADE TO STAND OUT.</p>
-        <div className="ysp-actions"><a className="primary" href={SHOP_URL}>SHOP THE DROP →</a><a className="secondary" href="/music">EXPLORE THE MUSIC</a></div>
+        <p className="ysp-sub">ANIME-INSPIRED BAGS<br/>FOR BRIGHTER DAYS.</p>
+        <div className="ysp-actions"><a className="primary" href={SHOP_URL}>SHOP THE DROP →</a><a className="secondary" href="/music">EXPLORE MUSIC</a></div>
       </div>
       <div className="ysp-hero-product">
-        
-        <img src="/assets/home-raindrop-backpack.webp" alt="Cute anime girls raindrop backpack" fetchPriority="high"/>
-        <div className="ysp-hero-words">MUSIC<br/>BAGS<br/>ART<br/>POP CULTURE<br/>YOU</div>
+        <img src="/assets/pink-girl-hero.png" alt="Anime-inspired Yoga Soda Pop hero artwork" fetchPriority="high"/>
+        <div className="ysp-hero-words">MUSIC<br/>FASHION<br/>SELF EXPRESSION<br/>FOR A BRIGHTER<br/>TOMORROW</div>
       </div>
+    </section>
+
+    <section className="ysp-perks">
+      <div><Icon type="truck"/><b>FREE WORLDWIDE<br/>SHIPPING</b></div><div><Icon type="heart"/><b>UNIQUE<br/>DESIGNS</b></div><div><Icon type="shield"/><b>K-POP<br/>INSPIRED</b></div><div><span className="ysp-note">♫</span><b>FOR A BRIGHTER<br/>YOU</b></div>
     </section>
 
     <section className="ysp-shop" id="shop-the-drop">
       <div className="ysp-section-head"><h2>SHOP THE DROP <span>✦</span></h2><a href={SHOP_URL}>VIEW ALL PRODUCTS →</a></div>
       <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">Trending</span>}<img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><h3>{p.name}</h3><div className={`ysp-price${p.originalPrice?" ysp-price-sale":""}`}><strong aria-label={`${p.originalPrice?"Sale price":"Price"} ${p.price}`}>{p.price}</strong>{p.originalPrice&&<del aria-label={`Original price ${p.originalPrice}`}>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping</span><a className="ysp-buy" href={p.url}><UtilityIcon type="cart"/> SHOP BACKPACK <span>→</span></a></article>)}</div>
       <p className="ysp-shop-contact">Questions about a backpack or your order? <a href="mailto:contact@yogasodapop.com">Email us <span aria-hidden="true">↗</span></a></p>
-    </section>
-
-    <section className="ysp-perks">
-      <div><Icon type="truck"/><b>FREE<br/>SHIPPING</b></div><div><Icon type="shield"/><b>SECURE<br/>CHECKOUT</b></div><div><Icon type="box"/><b>EASY<br/>RETURNS</b></div><div><Icon type="heart"/><b>MADE FOR<br/>K-POP FANS</b></div>
     </section>
 
     <section className="ysp-music">
