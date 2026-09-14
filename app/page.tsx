@@ -22,18 +22,10 @@ function UtilityIcon({type}:{type:"search"|"account"|"cart"|"youtube"|"instagram
  if(type==="cart")return <svg {...p}><path d="M2 3h3l3 13h11l3-10H6"/><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/></svg>;
  if(type==="instagram")return <svg {...p}><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg>;
  if(type==="spotify")return <svg {...p}><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M6 9q6-3 12 0M7 12q5-2 10 0M8 15q4-1 8 0" stroke="white"/></svg>;
- return <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="m10 9 6 3-6 3Z" fill="#fff"/></svg>;
+ return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5 19 12 8 18.5Z" fill="currentColor"/></svg>;
 }
-
 function TopYoutubeIcon(){return <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="white"/><path d="m10 9 6 3-6 3Z" fill="#e96f91"/></svg>}
-
-function Icon({type}:{type:"truck"|"heart"|"bolt"|"music"}){
- const p={viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:1.9,strokeLinecap:"round" as const,strokeLinejoin:"round" as const};
- if(type==="truck")return <svg {...p}><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>;
- if(type==="heart")return <svg {...p}><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.9-8.6a5.5 5.5 0 0 0-.1-7.8Z"/></svg>;
- if(type==="bolt")return <svg {...p}><path d="M13 2 5 14h6l-1 8 8-12h-6z"/></svg>;
- return <svg {...p}><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>;
-}
+function Icon({type}:{type:"truck"|"heart"|"bolt"|"music"}){const p={viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:1.9,strokeLinecap:"round" as const,strokeLinejoin:"round" as const};if(type==="truck")return <svg {...p}><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>;if(type==="heart")return <svg {...p}><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.9-8.6a5.5 5.5 0 0 0-.1-7.8Z"/></svg>;if(type==="bolt")return <svg {...p}><path d="M13 2 5 14h6l-1 8 8-12h-6z"/></svg>;return <svg {...p}><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>}
 
 export default function Home(){
  const[email,setEmail]=useState("");const[busy,setBusy]=useState(false);const[ok,setOk]=useState(false);const[error,setError]=useState("");
