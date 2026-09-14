@@ -8,7 +8,7 @@ const SHOP_URL="https://shop.yogasodapop.com/?v=30fd57ddcc95";
 const ETSY_URL="https://lenabeatsmerch.etsy.com";
 const PRODUCTS=[
   {name:"K-Pop Demon Hunters Backpack — Cute Anime Girls Raindrop School Bag",price:"$49.99",originalPrice:"$65.99",image:"/assets/002.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-anime-girls-raindrop-school-bag/?v=30fd57ddcc95"},
-  {name:"Nezuko Anime Backpack — Demon Slayer Inspired School Bookbag",price:"$87.56",originalPrice:null,image:"/assets/004.webp",url:"https://shop.yogasodapop.com/product/nezuko-anime-backpack-demon-slayer-inspired-school-bookbag/?v=30fd57ddcc95"},
+  {name:"Nezuko Anime Backpack — Demon Slayer Inspired School Bookbag",price:"$87.56",originalPrice:null,image:"/assets/004.jpg",url:"https://shop.yogasodapop.com/product/nezuko-anime-backpack-demon-slayer-inspired-school-bookbag/?v=30fd57ddcc95"},
   {name:"K-Pop Demon Hunters Backpack — Cute Rainy Day Anime Girl Raindrops Print",price:"$49.99",originalPrice:"$65.99",image:"/assets/003.jpg",url:"https://shop.yogasodapop.com/product/k-pop-demon-hunters-backpack-cute-rainy-day-anime-girl-raindrops-print/?v=30fd57ddcc95"},
 ];
 const YOUTUBE_URL="https://www.youtube.com/@yogasodapopbeats";
