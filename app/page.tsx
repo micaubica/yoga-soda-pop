@@ -34,64 +34,20 @@ function Icon({type}:{type:"truck"|"heart"|"bolt"|"music"}){
 }
 
 export default function Home(){
-  const[email,setEmail]=useState(""); const[busy,setBusy]=useState(false); const[ok,setOk]=useState(false); const[error,setError]=useState("");
-  const join=async(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();if(!email||busy)return;setBusy(true);setError("");try{const r=await fetch("https://shop.yogasodapop.com/wp-json/yogasodapop/v1/join",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})});if(!r.ok)throw new Error();setEmail("");setOk(true);}catch{setError("Something went wrong. Please try again.");}finally{setBusy(false)}};
-
-  return <main className="ysp-home">
-    <div className="ysp-topbar"><span>FREE WORLDWIDE SHIPPING — WEBSITE ORDERS ONLY</span><span>SECURE CHECKOUT</span><span>EASY RETURNS</span></div>
-
-    <header className="ysp-header">
-      <Link className="ysp-brand" href="/">YOGA SODA POP</Link>
-      <nav><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a></nav>
-      <div className="ysp-header-tools"><a href="https://shop.yogasodapop.com/?s=&post_type=product" aria-label="Search"><UtilityIcon type="search"/></a><a href="https://shop.yogasodapop.com/my-account/" aria-label="Account"><UtilityIcon type="account"/></a><a href="https://shop.yogasodapop.com/cart/" aria-label="Cart"><UtilityIcon type="cart"/></a></div>
-      <div className="ysp-header-actions"><a className="ysp-header-cta" href={SHOP_URL}>SHOP BACKPACKS →</a><a className="ysp-etsy-cta" href={ETSY_URL} target="_blank" rel="noreferrer"><span>E</span> SHOP ON ETSY →</a></div>
-    </header>
-
-    <section className="ysp-product-hero">
-      <div className="ysp-product-hero-copy">
-        <span className="ysp-hero-kicker">K-POP + ANIME INSPIRED</span>
-        <h1>BACKPACKS<br/>MADE TO<br/>STAND OUT.</h1>
-        <p>Playful statement bags for school, travel and everyday adventures — designed for fans who want something different.</p>
-        <div className="ysp-hero-actions">
-          <a className="ysp-primary-cta" href={SHOP_URL}>SHOP BACKPACKS →</a>
-          <a className="ysp-secondary-cta" href="#shop-the-drop">SEE BESTSELLERS</a>
-        </div>
-        <div className="ysp-hero-proof"><span>✦ FREE WORLDWIDE SHIPPING</span><span>✦ ORIGINAL ARTWORK</span></div>
-      </div>
-      <div className="ysp-product-hero-media">
-        <div className="ysp-hero-image-main"><img src="/assets/002.jpg" alt="Yoga Soda Pop K-pop anime backpack"/></div>
-        <div className="ysp-hero-image-side"><img src="/assets/001.jpg" alt="Pink Yoga Soda Pop anime backpack"/></div>
-        <span className="ysp-hero-sticker">NEW<br/>DROP</span>
-      </div>
-    </section>
-
-    <section className="ysp-perks">
-      <div><Icon type="truck"/><b>FREE WORLDWIDE SHIPPING<br/><small>Website orders only</small></b></div>
-      <div><Icon type="bolt"/><b>UNIQUE<br/>ARTWORK</b></div>
-      <div><Icon type="heart"/><b>PLAYFUL<br/>DESIGN</b></div>
-      <div><Icon type="music"/><b>K-POP INSPIRED</b></div>
-      <a className="ysp-etsy-perk" href={ETSY_URL} target="_blank" rel="noreferrer"><span>E</span><b>SHOP ON ETSY<small>Our Etsy collection →</small></b></a>
-    </section>
-
-    <section className="ysp-welcome">
-      <div className="ysp-polaroids"><div><img src="/assets/002.jpg" alt="Yoga Soda Pop backpack"/></div><div><img src="/assets/001.jpg" alt="Yoga Soda Pop pink backpack"/></div></div>
-      <div className="ysp-welcome-copy"><span>HELLO FROM YOGA SODA POP</span><h2>WEAR THE FUN.</h2><p>We create colorful K-pop and anime-inspired backpacks, accessories and art for fans who want everyday pieces with personality.</p><div className="ysp-tags"><span>BACKPACKS</span><span>K-POP</span><span>ANIME</span><span>ORIGINAL ART</span></div></div>
-      <div className="ysp-checks" aria-hidden="true">▦<br/>✦</div>
-    </section>
-
-    <section className="ysp-shop" id="shop-the-drop">
-      <div className="ysp-section-head"><div><span className="ysp-kicker">FAN FAVORITES</span><h2>SHOP BACKPACKS <em>✦</em></h2></div><a href={SHOP_URL}>VIEW ALL →</a></div>
-      <div className="ysp-tabs"><span className="active">BACKPACKS</span></div>
-      <div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">TRENDING</span>}<span className="ysp-heart">♡</span><img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><div className="ysp-card-body"><h3>{index===0?"Chibi Anime Backpack":index===1?"Pink Anime Backpack":"Cute Kawaii Print Backpack"}</h3><div className="ysp-price"><strong>{p.price}</strong>{p.originalPrice&&<del>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping on our website</span><a className="ysp-buy" href={p.url}>SHOP BACKPACK →</a></div></article>)}</div>
-    </section>
-
-    <section className="ysp-feature-row">
-      <div className="ysp-more-card"><div className="ysp-more-art"><img src="/assets/003.jpg" alt="Yoga Soda Pop backpack collection"/></div><div className="ysp-more-copy"><span>DISCOVER MORE</span><h2>MORE COLOR.<br/>MORE PERSONALITY.</h2><p>Explore backpacks, accessories, art and new drops from Yoga Soda Pop.</p><a href={SHOP_URL}>EXPLORE COLLECTION →</a></div></div>
-      <div className="ysp-music-card"><div className="ysp-music-copy"><span>YOGA SODA POP BEATS</span><h2>MUSIC FOR<br/>ANOTHER WORLD</h2><p>Original beats, animated stories and bright pop energy.</p><div><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">MORE ON YOUTUBE →</a></div></div><div className="ysp-music-image"><iframe width="560" height="315" src="https://www.youtube.com/embed/fr1hD_pc9tw?si=skESmYSR44jgk9ky" title="Yoga Soda Pop featured YouTube video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div></div>
-    </section>
-
-    <section className="ysp-join"><div className="ysp-join-icon">✉</div><div><b>JOIN THE POP CLUB</b><span>Get updates on new drops, music and more.</span></div><form onSubmit={join}><input aria-label="Your email address" autoComplete="email" name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email" required/><button disabled={busy}>{busy?"JOINING...":"SUBSCRIBE"}</button></form>{ok&&<small>Thank you for joining the family ♡</small>}{error&&<small>{error}</small>}</section>
-
-    <footer className="ysp-footer"><b>YOGA SODA POP</b><nav><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a><a href="/shipping-returns">SHIPPING</a><a href="/contact">CONTACT</a><a href={ETSY_URL} target="_blank" rel="noreferrer">ETSY</a></nav><div><a href={YOUTUBE_URL}><UtilityIcon type="youtube"/></a><a href={INSTAGRAM_URL}><UtilityIcon type="instagram"/></a><a href={SPOTIFY_URL}><UtilityIcon type="spotify"/></a></div><small>© 2026 Yoga Soda Pop · Gamers4Gamers, LLC.</small></footer>
-  </main>;
+ const[email,setEmail]=useState("");const[busy,setBusy]=useState(false);const[ok,setOk]=useState(false);const[error,setError]=useState("");
+ const join=async(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();if(!email||busy)return;setBusy(true);setError("");try{const r=await fetch("https://shop.yogasodapop.com/wp-json/yogasodapop/v1/join",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})});if(!r.ok)throw new Error();setEmail("");setOk(true);}catch{setError("Something went wrong. Please try again.");}finally{setBusy(false)}};
+ return <main className="ysp-home">
+  <div className="ysp-topbar"><a className="ysp-youtube-top" href={YOUTUBE_URL} target="_blank" rel="noreferrer"><UtilityIcon type="youtube"/> WATCH OUR MUSIC ON YOUTUBE →</a><span>FREE WORLDWIDE SHIPPING — WEBSITE ORDERS ONLY</span><span>SECURE CHECKOUT</span><span>EASY RETURNS</span></div>
+  <header className="ysp-header"><Link className="ysp-brand" href="/">YOGA SODA POP</Link><nav><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a></nav><div className="ysp-header-tools"><a href="https://shop.yogasodapop.com/?s=&post_type=product" aria-label="Search"><UtilityIcon type="search"/></a><a href="https://shop.yogasodapop.com/my-account/" aria-label="Account"><UtilityIcon type="account"/></a><a href="https://shop.yogasodapop.com/cart/" aria-label="Cart"><UtilityIcon type="cart"/></a></div><div className="ysp-header-actions"><a className="ysp-header-cta" href={SHOP_URL}>SHOP THE DROP →</a><a className="ysp-etsy-cta" href={ETSY_URL} target="_blank" rel="noreferrer"><span>E</span> SHOP ON ETSY →</a></div></header>
+  <section className="ysp-collage-hero">
+   <div className="ysp-collage ysp-collage-girl"><img src="/assets/manga-girl-one.png" alt="Retro manga girl artwork"/></div><div className="ysp-collage ysp-collage-bag"><img src="/assets/backpack-hero.png" alt="Yoga Soda Pop backpack artwork"/></div><div className="ysp-collage ysp-collage-shoes"><img src="/assets/hero-shoes.png" alt="K-pop street style shoes"/></div><div className="ysp-collage ysp-collage-music"><img src="/assets/hero-studio.png" alt="Yoga Soda Pop music studio"/></div><div className="ysp-collage ysp-collage-detail"><div className="ysp-detail-pattern"><span className="ysp-detail-fox">◇</span><b>K-POP<br/>ANIME<br/>MUSIC<br/>FASHION<br/>FOR A BRIGHTER<br/>TOMORROW</b></div></div><div className="ysp-collage ysp-collage-second"><img src="/assets/hero-backpack-closeup.png" alt="Close-up of Yoga Soda Pop backpack"/></div>
+   <div className="ysp-hero-card"><span>SHOP + MUSIC</span><h1 style={{color:"#111318"}}>K-POP STYLE<br/>FOR EVERY DAY</h1><p>Original K-pop inspired backpacks, merch & music for fans who like to stand out.</p><div className="ysp-hero-buttons"><a href={SHOP_URL}>SHOP BACKPACKS →</a><a className="ysp-youtube-hero" href={YOUTUBE_URL} target="_blank" rel="noreferrer"><UtilityIcon type="youtube"/> WATCH ON YOUTUBE →</a></div></div>
+  </section>
+  <section className="ysp-perks"><div><Icon type="truck"/><b>FREE WORLDWIDE SHIPPING<br/><small>Website orders only</small></b></div><div><Icon type="bolt"/><b>ORIGINAL<br/>DESIGNS</b></div><a className="ysp-music-perk" href={YOUTUBE_URL} target="_blank" rel="noreferrer"><Icon type="music"/><b>ORIGINAL MUSIC<small>Watch on YouTube →</small></b></a><div><Icon type="heart"/><b>FAN<br/>COMMUNITY</b></div><a className="ysp-etsy-perk" href={ETSY_URL} target="_blank" rel="noreferrer"><span>E</span><b>SHOP ON ETSY<small>Our Etsy collection →</small></b></a></section>
+  <section className="ysp-welcome"><div className="ysp-polaroids"><div><img src="/assets/manga-girl-one.png" alt="Yoga Soda Pop manga artwork"/></div><div><img src="/assets/backpack-hero.png" alt="Yoga Soda Pop backpack"/></div></div><div className="ysp-welcome-copy"><span>HELLO FROM YOGA SODA POP</span><h2>WELCOME!</h2><p>We bring together anime, K-pop, original music and everyday style. From school to travel to concerts — carry what you love.</p><div className="ysp-tags"><span>SHOP</span><span>MUSIC</span><span>K-POP</span><span>YOU</span></div></div><div className="ysp-checks" aria-hidden="true">▦<br/>✦</div></section>
+  <section className="ysp-shop" id="shop-the-drop"><div className="ysp-section-head"><div><span className="ysp-kicker">FRESH PICKS</span><h2>NEW ARRIVALS <em>✦</em></h2></div><a href={SHOP_URL}>VIEW ALL →</a></div><div className="ysp-tabs"><span className="active">NEW ARRIVALS</span></div><div className="ysp-products">{PRODUCTS.map((p,index)=><article className="ysp-card" key={p.url}><a className="ysp-card-image" href={p.url}>{index===0&&<span className="ysp-trending">TRENDING</span>}<span className="ysp-heart">♡</span><img src={p.image} alt={p.name} width="480" height="480" loading="lazy"/></a><div className="ysp-card-body"><h3>{index===0?"Chibi Anime Backpack":index===1?"Pink Anime Backpack":"Cute Kawaii Print Backpack"}</h3><div className="ysp-price"><strong>{p.price}</strong>{p.originalPrice&&<del>{p.originalPrice}</del>}</div><span className="ysp-free-shipping">Free shipping on our website</span><a className="ysp-buy" href={p.url}>SHOP BACKPACK →</a></div></article>)}</div></section>
+  <section className="ysp-feature-row"><div className="ysp-more-card"><div className="ysp-more-art"><img src="/assets/hero-shoes.png" alt="Yoga Soda Pop street style"/></div><div className="ysp-more-copy"><span>DISCOVER MORE</span><h2>EXPLORE THE WORLD OF<br/>YOGA SODA POP</h2><p>Accessories, art, music and more — all in one place.</p><a href={SHOP_URL}>EXPLORE COLLECTION →</a></div></div><div className="ysp-music-card"><div className="ysp-music-copy"><span>YOGA SODA POP BEATS</span><h2>MUSIC FOR<br/>ANOTHER WORLD</h2><p>Original beats, animated stories and bright pop energy.</p><div><a href={YOUTUBE_URL} target="_blank" rel="noreferrer">MORE ON YOUTUBE →</a></div></div><div className="ysp-music-image"><iframe width="560" height="315" src="https://www.youtube.com/embed/fr1hD_pc9tw?si=skESmYSR44jgk9ky" title="Yoga Soda Pop featured YouTube video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div></div></section>
+  <section className="ysp-join"><div className="ysp-join-icon">✉</div><div><b>JOIN THE POP CLUB</b><span>Get updates on new drops, music and more.</span></div><form onSubmit={join}><input aria-label="Your email address" autoComplete="email" name="email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email" required/><button disabled={busy}>{busy?"JOINING...":"SUBSCRIBE"}</button></form>{ok&&<small>Thank you for joining the family ♡</small>}{error&&<small>{error}</small>}</section>
+  <footer className="ysp-footer"><b>YOGA SODA POP</b><nav><a href={SHOP_URL}>SHOP</a><a href="/music">MUSIC</a><a href="/about">ABOUT</a><a href="/shipping-returns">SHIPPING</a><a href="/contact">CONTACT</a><a href={ETSY_URL} target="_blank" rel="noreferrer">ETSY</a></nav><div><a href={YOUTUBE_URL}><UtilityIcon type="youtube"/></a><a href={INSTAGRAM_URL}><UtilityIcon type="instagram"/></a><a href={SPOTIFY_URL}><UtilityIcon type="spotify"/></a></div><small>© 2026 Yoga Soda Pop · Gamers4Gamers, LLC.</small></footer>
+ </main>;
 }
