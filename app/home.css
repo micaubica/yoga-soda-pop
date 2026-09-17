@@ -4,11 +4,12 @@
 .ysp-home .ysp-header{position:relative;z-index:10}
 .ysp-home .ysp-header-tools{position:relative;z-index:1}
 .ysp-home .ysp-header-tools a{width:44px;height:44px;touch-action:manipulation}
-.ysp-home .ysp-perks{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ysp-home .ysp-perks{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:1000px){
   .ysp-home .ysp-perks{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:700px){
   .ysp-home .ysp-header-tools{gap:0}
   .ysp-home .ysp-footer nav a{display:inline-flex!important;align-items:center;min-height:44px;padding:8px 6px}
+  .ysp-home .ysp-perks>a:last-child{grid-column:auto}
 }
